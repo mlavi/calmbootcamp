@@ -6,13 +6,34 @@
   :name: _calm
   :hidden:
 
-  what_is_calm/what_is_calm
-  calm_enable/calm_enable
-  calm_projects/calm_projects
+  labsetup/labsetup
+  calm_iaas/calm_iaas
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Calm with Linux Track
+  :name: _calm_linux_track
+  :hidden:
+
   calm_linux/calm_linux
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Calm with Windows Track
+  :name: _calm_windows_track
+  :hidden:
+
   calm_win/calm_win
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Additional Calm Labs
+  :name: _additional_calm_labs
+  :hidden:
+
   calm_day2/calm_day2
   calm_escript/calm_escript
+  calm_dsl/calm_dsl
   calm_marketplace/calm_marketplace
 
 .. toctree::
@@ -82,7 +103,7 @@ Initial Setup
 Cluster assignment
 ++++++++++++++++++
 
-The instructor will tell the attendees their assigned clusters. 
+The instructor will tell the attendees their assigned clusters.
 
 .. note::
   If these are Single Node Clusters (SNCs) pay close attention on the networking part. The SNCs are completely different setup and configured compared to the "normal" three/four node clusters
@@ -169,49 +190,49 @@ The network in the SNC config is using a /26 network. This splits the network ad
     - 10.38.x.129
     - 10.38.x.193
     - Gateway
-    - 
+    -
   * - 10.38.x.5
     - 10.38.x.69
     - 10.38.x.133
     - 10.38.x.197
     - AHV Host
-    - 
+    -
   * - 10.38.x.6
     - 10.38.x.70
     - 10.38.x.134
     - 10.38.x.198
     - CVM IP
-    - 
+    -
   * - 10.38.x.7
     - 10.38.x.71
     - 10.38.x.135
     - 10.38.x.199
     - Cluster IP
-    - 
+    -
   * - 10.38.x.8
     - 10.38.x.72
     - 10.38.x.136
     - 10.38.x.200
     - Data Services IP
-    - 
+    -
   * - 10.38.x.9
     - 10.38.x.73
     - 10.38.x.137
     - 10.38.x.201
     - Prism Central IP
-    - 
+    -
   * - 10.38.x.11
     - 10.38.x.75
     - 10.38.x.139
     - 10.38.x.203
     - AutoDC IP(DC)
-    - 
+    -
   * - 10.38.x.32-37
     - 10.38.x.96-101
     - 10.38.x.160-165
     - 10.38.x.224-229
     - Objects 1
-    - 
+    -
   * - 10.38.x.38-58
     - 10.38.x.102-122
     - 10.38.x.166-186
