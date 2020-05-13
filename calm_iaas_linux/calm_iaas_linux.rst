@@ -1,10 +1,10 @@
-.. _calm_iaas:
+.. _calm_iaas_linux:
 
 ---------------------------------
 Calm: Infrastructure as a Service
 ---------------------------------
 
-*The estimated time to complete this lab is ?? minutes.*
+*The estimated time to complete this lab is 20 minutes.*
 
 Overview
 ++++++++
@@ -13,14 +13,14 @@ Nutanix Calm allows you to seamlessly select, provision, and manage your busines
 
 Infrastructure-as-a-Service (IaaS) is defined as the ability to quickly provide compute resources, on-demand through a self service portal.  While many customers utilize Nutanix Calm to orchestrate complex, multi-tiered applications, a significant portion of customers also utilize Calm to provide basic IaaS for their end users.
 
-**In this lab you'll create a "Single VM Blueprint" based on either a Linux or Microsoft OS, launch the blueprint, and manage the resulting application.**
+**In this lab you'll create a "Single VM Blueprint" based on Linux, launch the blueprint, and manage the resulting application.**
 
 Creating a Single VM Blueprint
 ++++++++++++++++++++++++++++++
 
 A blueprint is the framework for every application or piece of infrastructure that you model by using Nutanix Calm.  While complex, multi-tiered applications utilize the "Multi VM/Pod Blueprint", the streamlined interface of the "Single VM Blueprint" is conducive for IaaS use cases.  You can model each type of infrastructure your company utilizes (for instance Windows, CentOS, and/or Ubuntu) in a Single VM blueprint, and end users can repeatedly launch the blueprint to create infrastructure on demand.  The resulting infrastructure (which is still referred to as an "application"), can then be managed throughout its entire lifecycle within Calm, including managing Nutanix Guest Tools (NGT), modifying resources, snapshotting, and cloning.
 
-In this lab, you have the option of either creating a **CentOS 7** Linux server, or **Windows 2016** server.  It is recommended to start with the OS that you're most familiar with.  If desired, repeat the lab with the other OS after you've completed it with your first OS.
+In this lab, you will be creating a **CentOS 7** Linux server.
 
 #. In **Prism Central**, select :fa:`bars` **> Services > Calm**.
 
@@ -36,9 +36,9 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
 
 #. Fill out the following fields:
 
-   - **Name** - *Initials*-CentOS-IaaS or *Initials*-Windows-IaaS, depending on your OS choice
+   - **Name** - *Initials*-CentOS-IaaS
    - **Description** - Something descriptive of your choice
-   - **Project** - *Initials*-Calm
+   - **Project** - *Initials*-Project
 
    .. figure:: images/2_centos_1.png
        :align: center
@@ -46,19 +46,13 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
 
        CentOS 7 Blueprint Settings
 
-   .. figure:: images/3_windows_1.png
-       :align: center
-       :alt: Windows 2016 Blueprint Settings
-
-       Windows 2016 Blueprint Settings
-
 #. Click **VM Details** to proceed to the next step.
 
 #. Note the following fields on the **VM Details** page:
 
    - **Name** - The internal-to-Calm name of the VM.  Can be left as default.
    - **Cloud** - The cloud we're deploying the infrastructure on.  Should be left as **Nutanix**.
-   - **Operating System** - The type of OS we're deploying.  It should be left as Linux if you're using CentOS 7, or changed to Windows if using Windows 2016. 
+   - **Operating System** - The type of OS we're deploying.  It should be left as Linux if you're using CentOS 7, or changed to Windows if using Windows 2016.
 
    .. figure:: images/4_centos_2.png
        :align: center
@@ -79,9 +73,9 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
    - **General Configuration**
 
      - **VM Name** - this is the name of the virtual machine according to the hypervisor/cloud.  It can be left as default.
-     - **vCPUs** - the number of vCPUs to assign to the VM.  For **CentOS**, enter **2**.  For **Windows**, enter **4**.  For both, mark the field as **runtime** by clicking the running man icon so it turns blue.  This allows the end user to modify this field at launch.
-     - **Cores per vCPU** - the number of cores per vCPU to assign to the VM.  For both OSes, enter **1**.
-     - **Memory (GiB)** - the amount of RAM to assign to the VM.  For **CentOS**, enter **4**.  For **Windows**, enter **6**.  Mark this field as **runtime**.
+     - **vCPUs** - 2 (Mark the field as **runtime** by clicking the running man icon so it turns blue.  This allows the end user to modify this field at launch.)
+     - **Cores per vCPU** - 1
+     - **Memory (GiB)** - 4 (Mark this field as **runtime**.)
 
      .. figure:: images/6_centos_3.png
          :align: center
@@ -89,15 +83,7 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
 
          CentOS 7 VM Configuration - General Configuration
 
-     .. figure:: images/7_windows_3.png
-         :align: center
-         :alt: Windows 2016 VM Configuration - General Configuration
-
-         Windows 2016 VM Configuration - General Configuration
-
-
-   - **Guest Customization** - Guest customization allows for the modification of certain settings at boot.  Linux OSes use "Cloud Init", while Windows OSes use "Sysprep".  Select the **Guest Customization**, and then paste in one of the two following scripts, depending on your OS.  If you're deploying Windows, leave the Install Type (Prepared) and Join a Domain (un-checked) as defaults.
-
+   - **Guest Customization** - Guest customization allows for the modification of certain settings at boot.  Linux OSes use "Cloud Init", while Windows OSes use "Sysprep".  Select the **Guest Customization**, and then paste in the following script.
      - CentOS 7
 
        .. literalinclude:: cloud-init.sh
@@ -109,17 +95,6 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
 
            CentOS 7 Cloud Init
 
-     - Windows 2016
-
-       .. literalinclude:: sysprep.xml
-          :language: xml
-
-       .. figure:: images/9_windows_4.png
-           :align: center
-           :alt: Windows 2016 Sysprep
-
-           Windows 2016 Sysprep
-
      .. note::
         Take note of the "@@{vm_password}@@" text.  In Calm the "@@{" and "}@@" characters represent a macro.  At runtime, Calm will automatically "patch" or substitute in the proper value(s) when it encounters a macro.  A macro could represent a system defined value, a VM property, or (as it does in this case) a runtime variable.  Later in this lab we'll create a runtime variable with the name "vm_password".
 
@@ -128,7 +103,7 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
      - **Type** - The type of disk, this can be left as default (**DISK**).
      - **Bus Type** - The bus type of the disk, this can be left as default (**SCSI**).
      - **Operation** - How the disk will be sourced.  "Allocate on Storage Container" is used for blank disks.  We're going to keep the default, **Clone from Image Service**, as we're using a pre-defined image.
-     - **Image** - The image the VM will be based off of.  Select either **CentOS7.qcow2** or **Windows2016.qcow2**, depending on your OS choice.
+     - **Image** - The image the VM will be based off of.  Select **CentOS7.qcow2**.
      - **Bootable** - Whether or not this particular disk is bootable.  A minimum of one disk *must* be bootable.  In our case, leave it **enabled**.
 
      .. figure:: images/10_centos_5.png
@@ -136,12 +111,6 @@ In this lab, you have the option of either creating a **CentOS 7** Linux server,
          :alt: CentOS 7 VM Configuration - Disks
 
          CentOS 7 VM Configuration - Disks
-
-     .. figure:: images/11_windows_5.png
-         :align: center
-         :alt: Windows 2016 VM Configuration - Disks
-
-         Windows 2016 VM Configuration - Disks
 
    - **Boot Configuration** - The boot method of the VM.  We'll leave the default of **Legacy BIOS**.
 
@@ -200,7 +169,7 @@ Variables can be used in scripts executed against objects using the **@@{variabl
    - **Enable** the **Secret** checkbox, as we do not want this password to be visible.
    - Click the **Show Additional Options** link at the bottom.
    - Leave the **Label** field blank.
-   - In the **Description** field, paste in either **Create a password for the user "centos"** or **Create a password for the user "Administrator"**, depending on your OS choice.
+   - In the **Description** field, paste in **Create a password for the user "centos"**.
    - **Enable** the **Mark this variable mandatory** checkbox.  This will ensure that the end user enters a password, which is required since we did not provide default value.
    - Leave the other two checkboxes unselected.
 
@@ -228,9 +197,12 @@ Now that our blueprint is complete, take note of the buttons to the right of the
 
 - **Publish** - this allows us to request to publish the blueprint into the Marketplace.  Blueprints have a 1:1 mapping to a Project, meaning only other users who are members of our own Project will have the ability to launch this blueprint.  Publishing blueprints to the Marketplace allows an administrator to assign any number of Projects to the Marketplace blueprint, which enables self service for any number of end users desired.
 - **Download** - this option downloads the blueprint in a JSON format, which can be checked into source control, or uploaded into another Calm instance.
-- **Launch** - this launches our blueprint and deploys our application and/or infrastructur.
+- **Launch** - this launches our blueprint and deploys our application and/or infrastructure.
 
-Go ahead and click the **Launch** button.  On the launch page that appears, **Name** your application with your initials, OS type, and a unique number.  Click **Create**, where you'll be redirectly the application page.
+#. Go ahead and click the **Launch** button, and enter the following:
+
+    - **Name of the Application** - *initials*\ CentOS-IaaS
+    - **vm_password** - Nutanix/4u
 
 .. figure:: images/18_launch.png
     :align: center
@@ -238,6 +210,7 @@ Go ahead and click the **Launch** button.  On the launch page that appears, **Na
 
     Blueprint Launch
 
+#. Click **Create**, where you'll be redirectly the application page.
 
 Managing your Application
 +++++++++++++++++++++++++
@@ -256,7 +229,7 @@ Once your application is in a **Running** state, navigate around the five tabs i
 - The **Manage** tab allows you to run actions against the application / infrastructure.  This includes basic lifecycle (start, restart, stop, delete), NGT management (install, manage, uninstall), and App Update, which allows for editing of basic VM resources.
 - The **Metrics** tab gives in depth information about CPU, Memory, Storage, and Network utilization.
 - The **Recovery Points** tab lists the history of VM Snapshots, and allows the user to restore the VM to any of these points.
-- The **Audit** tab shows every action run against the application, the time and user that ran a given action, and in depth information on the results of that action, including script output. 
+- The **Audit** tab shows every action run against the application, the time and user that ran a given action, and in depth information on the results of that action, including script output.
 
 Next, view the common VM tasks available in the upper right corner of the UI:
 
@@ -274,7 +247,9 @@ Next, view the common VM tasks available in the upper right corner of the UI:
 
 Now that we're familiar with the application page layout, let's modify our application by adding additional memory, but let's do it in a way that we can recover from in case something goes wrong.
 
-#. Click the **Snapshot** button in the upper right, and in the pop-up that appears, change the name to **before-update-@@{calm_time}@@**, leave the rest as default, and click the blue **Save** button.
+#. Click the **Snapshot** button in the upper right, and enter the following in the pop-up that appears: change the name to:
+
+   - **Snapshot Name** - before-update-@@{calm_time}@@ (leave the rest as default)
 
    .. figure:: images/21_snapshot.png
        :align: center
@@ -282,11 +257,16 @@ Now that we're familiar with the application page layout, let's modify our appli
 
        Application Snapshot
 
+#. Click **Save**.
+
 #. Take note you're re-directed to the **Audit** tab.  Expand the **Snapshot Create** action to view the tasks of the snapshot.  Once complete, navigate to the **Recovery Points** tab, a validate that our new snapshot is listed.
 
-#. Next, click the **Launch Console** button in the upper right, and log in to your VM.  If you chose CentOS as your OS, the username will be **centos**, and for Windows it will be **Administrator**.  The password is what you specified during the blueprint launch.
+#. Next, click the **Launch Console** button in the upper right, and log in to your VM.
 
-#. To view the current memory on CentOS, run the command **free -h**.  If you're using Windows, open a **Command Prompt**, and run **systeminfo | findstr Memory**.  Take note of the current memory allocated to your VM.
+   - **Username** - centos
+   - **Password** - Nutanix/4u
+
+#. To view the current memory on CentOS, run the command **free -h**.   Take note of the current memory allocated to your VM.
 
    .. figure:: images/22_centos_memory_before.png
        :align: center
@@ -294,13 +274,9 @@ Now that we're familiar with the application page layout, let's modify our appli
 
        CentOS Memory - Before Update
 
-   .. figure:: images/23_windows_memory_before.png
-       :align: center
-       :alt: Windows Memory - Before Update
+#. Navigate back to the application page of Calm, and click the **Update** button in the upper right.  On the page that appears, increase the **Memory (GiB)** field by 2 GiB (for CentOS, 6 GiB).
 
-       Windows Memory - Before Update
-
-#. Navigate back to the application page of Calm, and click the **Update** button in the upper right.  On the page that appears, increase the **Memory (GiB)** field by 2 GiB (for CentOS it should now be 6 GiB, for Windows, 8 GiB).  Click the blue **Update** button in the lower left.
+#. Click the blue **Update** button in the lower left.
 
 #. Validate that the memory field has been increased by 2 GiB, and click **Confirm**.
 
@@ -309,12 +285,6 @@ Now that we're familiar with the application page layout, let's modify our appli
        :alt: CentOS Memory - Confirm Change
 
        CentOS Memory - Confirm Change
-
-   .. figure:: images/25_windows_confirm.png
-       :align: center
-       :alt: Windows Memory - Confirm Change
-
-       Windows Memory - Confirm Change
 
 #. In the **Audit** tab of Calm, wait for the **App Update** action to complete.
 
@@ -325,12 +295,6 @@ Now that we're familiar with the application page layout, let's modify our appli
        :alt: CentOS Memory - After Update
 
        CentOS Memory - After Update
-
-   .. figure:: images/27_windows_memory_after.png
-       :align: center
-       :alt: Windows Memory - After Update
-
-       Windows Memory - After Update
 
 If anything went wrong with the VM Update, navigate to the **Recovery Points** tab, click **Restore** on the **before-update** snapshot we took earlier, and click **Confirm** on the pop-up.
 
