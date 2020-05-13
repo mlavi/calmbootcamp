@@ -7,7 +7,7 @@
   :hidden:
 
   labsetup/labsetup
-  calm_iaas/calm_iaas
+
 
 .. toctree::
   :maxdepth: 2
@@ -15,6 +15,7 @@
   :name: _calm_linux_track
   :hidden:
 
+  calm_iaas_linux/calm_iaas_linux
   calm_linux/calm_linux
 
 .. toctree::
@@ -23,6 +24,7 @@
   :name: _calm_windows_track
   :hidden:
 
+  calm_iaas_windows/calm_iaas_windows
   calm_win/calm_win
 
 .. toctree::
