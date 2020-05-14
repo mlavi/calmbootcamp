@@ -197,7 +197,7 @@ Now that our blueprint is complete, take note of the buttons to the right of the
 
 #. Go ahead and click the **Launch** button, and enter the following:
 
-    - **Name of the Application** - *initials*\ Windows-IaaS
+    - **Name of the Application** - *initials*\ -Windows-IaaS
     - **vm_password** - Nutanix/4u
 
    .. figure:: images/18_launch.png
@@ -295,6 +295,151 @@ Now that we're familiar with the application page layout, let's modify our appli
    .. note::
 
       If anything went wrong with the VM Update, navigate to the **Recovery Points** tab, click **Restore** on the **before-update** snapshot we took earlier, and click **Confirm** on the pop-up.
+
+Adding your Blueprints to the Marketplace
++++++++++++++++++++++++++++++++++++++++++
+
+Now that we know we have a good blueprint, lets publish it to he Marketplace.
+
+Publishing the Blueprint
+........................
+
+#. Select |blueprints| **Blueprints** in the left hand toolbar to view and manage Calm blueprints.
+
+#. Click your *Initials*\ **-Windows-IaaS** blueprint.
+
+#. Click the **Publish** button, and enter the following:
+
+   - **Name** - *initials*\ _Windows_IaaS
+   - **Publish with secrets** - off
+   - **Initial Version** - 1.0.0
+   - **Description** - (Optional)
+
+   .. figure:: images/28_windows_publish_bp.png
+       :align: center
+       :alt: Windows Publish Blueprint
+
+       Windows Publish Blueprint
+
+#. Click **Submit for Approval**.
+
+   .. note::
+
+     Publish with Secrets: By default, the secret values from the blueprint are not preserved while publishing. As a result, during the launch of the marketplace item, the secret values will either be patched from the environment or the user will have to fill them in.
+
+     Set this flag if you do not want this behaviour and you would rather the secret values are preserved as is. *Credential passwords/keys and secret variables are considered secret values. While publishing with secrets, these values will be encrypted.*
+
+Approving Blueprints
+....................
+
+#. Select |mktmgr-icon| **Marketplace Manager** in the left hand toolbar to view and manage Marketplace Blueprints.
+
+#. You will see the list of Marketplace blueprints, and their versions listesd. Select **Approval Pending** at the top of the page.
+
+#. Click your *intials*\ **_CentOS_IaaS** blueprint.
+
+#. Review the available actions:
+
+   - **Approve** - Approves the Blueprint for publication to the Marketplace.
+   - **Reject** - Prevents  Blueprint from being launched or published in the Marketplace. The Blueprint will need to be submitted again after being rejected before it can be published.
+   - **Delete** - Deletes the blueprint submission to the Marketplace.
+   - **Launch** - Launches the Blueprint as an application, similar to launching from the Blueprint Editor.
+
+#. Review the available selections:
+
+   - **Category** - Allows you to update the Category for the new Marletplace blueprint.
+   - **Projects Shared With** - Allows you to make the Marketplace blueprint only available to a certain project.
+
+#. Click **Approve**.
+
+   .. figure:: images/29_windows_approve_bp.png
+       :align: center
+       :alt: Windows Approve Blueprint
+
+       Windows Approve Blueprint
+
+#. Select **Marketplace Blueprints** at the top of the page, and enter your *initials* in the search bar. You should see your blueprint listed now, with a Status of **Accepted**.
+
+   .. figure:: images/30_windows_marketplace_bp.png
+       :align: center
+       :alt: Windows Marketplace Blueprint
+
+       Windows Marketplace Blueprint
+
+Launching your Blueprint from the Marketplace
++++++++++++++++++++++++++++++++++++++++++++++
+
+Now that we have published our blueprint to the Marketplace, we need to make an update to our *initials*\ -Project.
+
+Configuring Project Environment
+...............................
+
+#. To launch a Blueprint directly from the Marketplace, we need to ensure our Project has all of the requisite environment details to satisfy the Blueprint.
+
+#. Select **Projects** from the lefthand menu.
+
+#. Select your *initials*\ -Project.
+
+#. Select the **Environment** tab.
+
+#. Under **Credential**, click :fa:`plus-circle` and enter the following:
+
+   - **Credential Name** - Administrator
+   - **Username** - Administrator
+   - **Secret** - Password
+   - **Password** - Nutanix/4u
+   - Click the **running man** icon above Password box to mark this variable as **runtime**.
+
+   .. figure:: images/32_windows_project_creds.png
+       :align: center
+       :alt: Windows Project Credential
+
+       Windows Project Credential
+
+#. Under **VM Configuration** expand **Windows**, and enter the following:
+
+   - select **NUTANIX**
+   - **VM Name** - vm-@@{calm_array_index}@@-@@{calm_time}@@ (Default)
+   - **vCPUs** - 4
+   - **Cores per vCPU** - 1
+   - **Memory** - 6GiB
+   - **Image** - Windows2016.qcow2
+   - **NICs** - Click the **blue plus**, then selecting **Primary** in the dropdown, and selecting the **Dynamic** radio button.
+   - **Check log-in upon create** - checked, and **Credential** - Administrator (Defined Above)
+
+   .. figure:: images/33_windows_project_vmconfig.png
+       :align: center
+       :alt: Windows Project VM Config
+
+       Windows Project VM Config
+
+#. Click **Save**.
+
+Launching the Blueprint from the Marketplace
+............................................
+
+#. Select |mktmgr-icon| **Marketplace Manager** in the left hand toolbar to view and manage Marketplace Blueprints.
+
+#. Enter your *initials* in the search bar, and you should see your blueprint listed.
+
+#. Select your *intials*\ **_Windows_IaaS** blueprint, and click **Launch** from the Marletplace.
+
+   .. figure:: images/31_windows_marketplace_launch_bp.png
+       :align: center
+       :alt: Windows Marketplace Launce Blueprint
+
+       Windows Marketplace Launch Blueprint
+
+#. Select your *initials*\ **-Project** from the **Projects** dropdown.
+
+#. Click **Launch**
+
+#. Entrer the Following info, and click **Create**.
+
+   - **Name of the Application** - *initials*\ -Windows-IaaS-2
+   - **vm_password** - Nutanix/4u
+
+#. Monitor the provisioning of the Blueprint until complete.
 
 Takeaways
 +++++++++
