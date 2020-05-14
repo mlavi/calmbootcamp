@@ -15,8 +15,9 @@
   :name: _calm_linux_track
   :hidden:
 
-  calm_iaas_linux/calm_iaas_linux
-  calm_linux/calm_linux
+  calm_linux_track/calm_iaas_linux/calm_iaas_linux
+  calm_linux_track/calm_linux_app/calm_linux_app
+  calm_linux_track/calm_day2_linux/calm_day2_linux
 
 .. toctree::
   :maxdepth: 2
@@ -24,8 +25,9 @@
   :name: _calm_windows_track
   :hidden:
 
-  calm_iaas_windows/calm_iaas_windows
-  calm_win/calm_win
+  calm_windows_track/calm_iaas_windows/calm_iaas_windows
+  calm_windows_track/calm_windows_app/calm_windows_app
+  calm_windows_track/calm_day2_windows/calm_day2_windows
 
 .. toctree::
   :maxdepth: 2
@@ -33,7 +35,6 @@
   :name: _additional_calm_labs
   :hidden:
 
-  calm_day2/calm_day2
   calm_escript/calm_escript
   calm_dsl/calm_dsl
   calm_marketplace/calm_marketplace
