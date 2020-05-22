@@ -1,4 +1,4 @@
-.. _calm_day2:
+.. _calm_win_day2:
 
 ---------------------------------
 Calm: Day 2 Operations

@@ -686,13 +686,13 @@ What are the key things you should know about **Nutanix Calm**?
 
 - Users can quickly provision entire application stacks for production or testing for repeatable results without time lost to manual configuration.
 
-- Interested in using Calm for more app lifecycle operations? Check out the :ref:`calm_day2`!
+- Interested in using Calm for more app lifecycle operations? Check out the :ref:`calm_linux_day2`!
 
 
 .. |proj-icon| image:: ../images/projects_icon.png
 .. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
 .. |mkt-icon| image:: ../images/marketplace_icon.png
 .. |bp-icon| image:: ../images/blueprints_icon.png
-.. |blueprints| image:: images/blueprints.png
+.. |blueprints| image:: /images/blueprints.png
 .. |applications| image:: images/blueprints.png
 .. |projects| image:: images/projects.png
