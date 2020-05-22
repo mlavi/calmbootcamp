@@ -1,0 +1,5 @@
+---------------------------
+HCE Getting Started, Part 1
+---------------------------
+
+Welcome to the HCE, from included udacity/_hce_getting_started.txt

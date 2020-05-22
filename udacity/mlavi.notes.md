@@ -1,3 +1,18 @@
+# Next steps:
+- git fetch --verbose upstream && git merge upstream/master
+- make clean && sphinx-build -c udacity/ .  \_build
+- git checkout master && git merge [topic_branch]
+- git checkout -b jncox-master master &&
+  git pull git://github.com/jncox/calmbootcamp.git master
+  git checkout master && git merge --no-ff jncox-master
+  git push origin master
+- ChrisR include/conditional
+https://github.com/nutanixdev/dev-setup-lab-devmktg/blob/master/contents/master_linux.rst
+That file shows includes for RST (they're in the includes/ folder)
+https://sublime-and-sphinx-guide.readthedocs.io/en/latest/conditions.html
+-t audience, apparently
+- .Rmd to PPT
+
 # Hands On Workshops: How To
 
 - Suggestions from [How to contribute to Nutanix Workshops](https://nutanix.handsonworkshops.com/workshops/32805e93-e67f-46b4-9700-a7eb78db4c21/view/)
@@ -42,30 +57,28 @@
 - https://www.sphinx-doc.org/en/master/usage/configuration.html
 - https://docs.python-guide.org/dev/virtualenvs/
 
-
 ## Execute
 
 - Setup:
 
-      # git forked upstream https://github.com/jncox/calmbootcamp
+      # forked upstream https://github.com/jncox/calmbootcamp
       ghq clone mlavi/calmbootcamp
-      ghq-look calmbootcamp
-      pipenv--three install sphinx sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
-      git checkout -B hybridcloudeng
+      gcd calmbootcamp
+      pipenv --three install sphinx sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
+
+      #git checkout -B hybridcloudeng
+      git remote add upstream git@github.com:jncox/calmbootcamp.git &&
+      git remote --verbose show
 
 - Author:
     ```
-    ghq-look calmbootcamp
-    git checkout hybridcloudeng
-    pipenv shell
-
-    sphinx-build . _build
-    URL=_build/index.html ; firefox $URL || brave-browser $URL ; echo $URL
-
+    gcd calmbootcamp && pipenv shell
     sphinx-build . _build && firefox $_/index.html || brave-browser $_/index.html
 
     ```
 - [_build/index.html](./_build/index.html)
+
+## Appendix
 
 - cd calm_marketplace/images; for i in `ls 510*png`; do `git mv $i 5.10/${i:3}` ; done
 - pipenv install --dev watchdog
@@ -84,9 +97,5 @@
 
     watchmedo shell-command --wait --recursive --ignore-patterns='_build' --patterns='*rst' \
     --command='clear; date; _FI=${watch_src_path}; echo "-- $_FI" ; make clean && make html && firefox file:`pwd`/_build/html/${_FI%%rst}html' &
-
-# Content Bugs
-#. ncox: calm_day2/calm_day2.rst:19: WARNING: undefined label: taskman (if the link has no caption the label must precede a section header)
-#. ncox: calm_marketplace/calm_marketplace.rst:219: WARNING: image file not readable: calm_marketplace/images/5.10/marketplace_p2_12.png
 
 # Content Warnings
