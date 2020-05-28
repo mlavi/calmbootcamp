@@ -1,6 +1,30 @@
+# Demo
+
+calmbootcamp && make clean &&
+
 # Next steps:
 - git fetch --verbose upstream && git merge upstream/master
 - make clean && sphinx-build -c udacity/ .  \_build
+- git submodule add git@github.com:pfalcon/sphinx_selective_exclude.git modules/sphinx_selective_exclude
+  - sys.path.append(os.path.abspath('./exts'))
+  - python setup.py install
+
+Exception occurred:
+  File "/mnt/491960e6-1217-4657-9762-aaa1417b2ab8/data/users/mark/.local/share/virtualenvs/calmbootcamp-42pyG20N/lib/python3.7/site-packages/sphinx/util/tags.py", line 68, in eval_condition
+    raise ValueError('chunk after expression')
+ValueError: chunk after expression
+
+Means you did not add a blank line after an ::only [tag]
+
+
+- pipenv install --dev watchdog
+ watchmedo shell-command --wait --recursive --ignore-patterns='\_build' \
+  --patterns='\*rst' --command='clear; date; \_FI=${watch_src_path}; echo "-- $_FI" ; make clean && sphinx-build  . _build' &
+
+  watchmedo shell-command --wait --recursive \
+    --ignore-patterns='_build' --patterns='*rst' --command='modules/bs.sh'
+
+  - sudo apt install python-watchdog
 - git checkout master && git merge [topic_branch]
 - git checkout -b jncox-master master &&
   git pull git://github.com/jncox/calmbootcamp.git master
@@ -30,15 +54,27 @@ https://sublime-and-sphinx-guide.readthedocs.io/en/latest/conditions.html
 
 ## Atom Plugins
 
-- git-plus
 - git-log
 - tree-view-git-branch
 - tree-view-git-status
 - language-sphinx
 - RESEARCH:
-  - Sphinx-Preview
-  - https://hub.docker.com/r/dldl/sphinx-server/tags
-  - https://github.com/dldl/sphinx-server
+  - [Sphinx-Preview](https://github.com/dldl/sphinx-preview)
+    - because markdown-preview-enhanced doesn't handle RST
+    - Requires docker and apm install browser-plus
+      - https://hub.docker.com/r/dldl/sphinx-server/tags
+      - https://github.com/dldl/sphinx-server
+        - docker exec -it sphinx-preview-57b300260204 /bin/sh
+        - /web # make html
+    - ghq-clone git@github.com:dldl/sphinx-server.git
+      - https://github.com/dldl/sphinx-server/blob/master/Dockerfile
+        - FROM python:3.8.0-alpine3.10
+        - docker run -it -v "$(pwd)":/web -u $(id -u):$(id -g) \
+        --user=root --name=mark-sphinx python:3.8.0-alpine3.10 /bin/sh
+        - docker stop mark-sphinx && docker rm -v mark-sphinx
+        - docker ps
+        - docker pull alpine:3.10
+- git-plus: uninstalled
 
 ## OS Packages
 
@@ -64,7 +100,8 @@ https://sublime-and-sphinx-guide.readthedocs.io/en/latest/conditions.html
       # forked upstream https://github.com/jncox/calmbootcamp
       ghq clone mlavi/calmbootcamp
       gcd calmbootcamp
-      pipenv --three install sphinx sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
+      pipenv --three install sphinx watchdog \
+      sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
 
       #git checkout -B hybridcloudeng
       git remote add upstream git@github.com:jncox/calmbootcamp.git &&

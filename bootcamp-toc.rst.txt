@@ -1,0 +1,68 @@
+.. toctree::
+  :maxdepth: 2
+  :caption: Calm
+  :name: _calm
+  :hidden:
+
+  labsetup/labsetup
+
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Calm with Linux Track
+  :name: _calm_linux_track
+  :hidden:
+
+  calm_linux_track/calm_iaas_linux/calm_iaas_linux
+  calm_linux_track/calm_linux_app/calm_linux_app
+  calm_linux_track/calm_day2_linux/calm_day2_linux
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Calm with Windows Track
+  :name: _calm_windows_track
+  :hidden:
+
+  calm_windows_track/calm_iaas_windows/calm_iaas_windows
+  calm_windows_track/calm_windows_app/calm_windows_app
+  calm_windows_track/calm_day2_windows/calm_day2_windows
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Additional Calm Labs
+  :name: _additional_calm_labs
+  :hidden:
+
+  calm_escript/calm_escript
+  calm_dsl/calm_dsl
+  calm_marketplace/calm_marketplace
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Optional Labs
+  :name: _optional_labs
+  :hidden:
+
+  flow_assign_categories_in_calm/flow_assign_categories_in_calm
+
+.. only:: hce
+
+  .. toctree::
+    :maxdepth: 2
+    :caption: Udacity-HCE
+    :name: _what_is
+    :hidden:
+
+    what_is_calm/what_is_calm
+    taskman/taskman
+    appendix/basics
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Appendix
+  :name: _appendix
+  :hidden:
+
+  appendix/glossary
+  tools_vms/windows_tools_vm
+  tools_vms/linux_tools_vm

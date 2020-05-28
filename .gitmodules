@@ -1,0 +1,3 @@
+[submodule "modules/sphinx_selective_exclude"]
+	path = modules/sphinx_selective_exclude
+	url = git@github.com:pfalcon/sphinx_selective_exclude.git

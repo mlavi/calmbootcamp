@@ -33,9 +33,12 @@ import sphinx_fontawesome
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.todo',
-    'sphinx.ext.ifconfig',
-    'sphinxcontrib.fulltoc',
-    'sphinx_fontawesome']
+              'sphinx.ext.ifconfig',
+              'sphinxcontrib.fulltoc',
+              'sphinx_selective_exclude.eager_only',
+              'sphinx_selective_exclude.search_auto_exclude',
+              'sphinx_selective_exclude.modindex_exclude',
+              'sphinx_fontawesome']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -129,10 +132,10 @@ html_theme_options = {
     #    (name, "http://example.com", True) # arbitrary absolute url
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
-    #'navbar_links': [
+    # 'navbar_links': [
     #    ("Examples", "examples"),
     #    ("Link", "http://example.com", True),
-    #],
+    # ],
 
     # Render the next and previous page links in navbar. (Default: true)
     'navbar_sidebarrel': False,
@@ -172,7 +175,7 @@ html_theme_options = {
     #
     # Options are nothing (default) or the name of a valid theme
     # such as "cosmo" or "sandstone".
-    #'bootswatch_theme': "united",
+    # 'bootswatch_theme': "united",
 
     # Choose Bootstrap version.
     # Values: "3" (default) or "2" (in quotes)
