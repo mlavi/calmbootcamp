@@ -1,14 +1,7 @@
-# Demo
-
-calmbootcamp && make clean &&
-
 # Next steps:
 - git fetch --verbose upstream && git merge upstream/master
-- make clean && sphinx-build -c udacity/ .  \_build
-- git submodule add git@github.com:pfalcon/sphinx_selective_exclude.git modules/sphinx_selective_exclude
-  - sys.path.append(os.path.abspath('./exts'))
-  - python setup.py install
 
+Notes:
 Exception occurred:
   File "/mnt/491960e6-1217-4657-9762-aaa1417b2ab8/data/users/mark/.local/share/virtualenvs/calmbootcamp-42pyG20N/lib/python3.7/site-packages/sphinx/util/tags.py", line 68, in eval_condition
     raise ValueError('chunk after expression')
@@ -16,15 +9,6 @@ ValueError: chunk after expression
 
 Means you did not add a blank line after an ::only [tag]
 
-
-- pipenv install --dev watchdog
- watchmedo shell-command --wait --recursive --ignore-patterns='\_build' \
-  --patterns='\*rst' --command='clear; date; \_FI=${watch_src_path}; echo "-- $_FI" ; make clean && sphinx-build  . _build' &
-
-  watchmedo shell-command --wait --recursive \
-    --ignore-patterns='_build' --patterns='*rst' --command='modules/bs.sh'
-
-  - sudo apt install python-watchdog
 - git checkout master && git merge [topic_branch]
 - git checkout -b jncox-master master &&
   git pull git://github.com/jncox/calmbootcamp.git master
@@ -95,21 +79,28 @@ https://sublime-and-sphinx-guide.readthedocs.io/en/latest/conditions.html
 
 ## Execute
 
+alias calmbootcamp='ghq-cd calmbootcamp && git fetch --verbose upstream && git merge upstream/master && pipenv shell'
+
 - Setup:
 
       # forked upstream https://github.com/jncox/calmbootcamp
-      ghq clone mlavi/calmbootcamp
-      gcd calmbootcamp
-      pipenv --three install sphinx watchdog \
-      sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
+      ghq clone mlavi/calmbootcamp && gcd calmbootcamp
+      pipenv --three install watchdog sphinx \
+        sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
 
-      #git checkout -B hybridcloudeng
+      git submodule add git@github.com:pfalcon/sphinx_selective_exclude.git \
+        modules/sphinx_selective_exclude && cd $\_/ && python setup.py install
+
       git remote add upstream git@github.com:jncox/calmbootcamp.git &&
-      git remote --verbose show
+        git remote --verbose show
 
 - Author:
     ```
     gcd calmbootcamp && pipenv shell
+
+    watchmedo shell-command --wait --recursive --ignore-patterns='_build' \
+      --patterns='*rst' --command='modules/build.sh ${watch_src_path}'
+
     sphinx-build . _build && firefox $_/index.html || brave-browser $_/index.html
 
     ```
