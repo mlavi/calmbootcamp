@@ -6,11 +6,10 @@ CLEAN='make clean'
 #CLEAN=true # OVERRIDE: blank or =true for skip
 VARIANT='-c udacity/'
 VARIANT= # OVERRIDE: blank for standard bootcamp
-REPO=$(basename $(git rev-parse --show-toplevel))
 
 launch
 
-ghq-cd ${REPO}
+cd $(git rev-parse --show-toplevel)
 clear
 log "${1}|${CLEAN}|${VARIANT}"
 ${CLEAN} && sphinx-build ${VARIANT} . _build
