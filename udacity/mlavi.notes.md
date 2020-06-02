@@ -1,3 +1,32 @@
+## Execute
+
+alias calmbootcamp='ghq-cd calmbootcamp && git fetch --verbose upstream && git merge upstream/master && pipenv shell'
+
+- Setup:
+
+      # forked upstream https://github.com/jncox/calmbootcamp
+      ghq clone mlavi/calmbootcamp && gcd calmbootcamp
+      pipenv --three install watchdog sphinx \
+        sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
+
+      git submodule add git@github.com:pfalcon/sphinx_selective_exclude.git \
+        modules/sphinx_selective_exclude && cd $\_/ && python setup.py install
+
+      git remote add upstream git@github.com:jncox/calmbootcamp.git &&
+        git remote --verbose show
+
+- Author:
+    ```
+    gcd calmbootcamp && pipenv shell
+
+    watchmedo shell-command --wait --recursive --ignore-patterns='_build' \
+      --patterns='*rst' --command='modules/build.sh ${watch_src_path}'
+
+    sphinx-build . _build && firefox $_/index.html || brave-browser $_/index.html
+
+    ```
+- [_build/index.html](./_build/index.html)
+
 # Next steps:
 - Linuxbrew Python-3.8 upgrade has broken pipenv 2020.5.28:
   - https://github.com/pypa/pipenv/issues/4204
@@ -84,53 +113,11 @@ https://sublime-and-sphinx-guide.readthedocs.io/en/latest/conditions.html
 - https://www.sphinx-doc.org/en/master/usage/configuration.html
 - https://docs.python-guide.org/dev/virtualenvs/
 
-## Execute
-
-alias calmbootcamp='ghq-cd calmbootcamp && git fetch --verbose upstream && git merge upstream/master && pipenv shell'
-
-- Setup:
-
-      # forked upstream https://github.com/jncox/calmbootcamp
-      ghq clone mlavi/calmbootcamp && gcd calmbootcamp
-      pipenv --three install watchdog sphinx \
-        sphinxcontrib-fulltoc sphinx-bootstrap-theme sphinx_fontawesome
-
-      git submodule add git@github.com:pfalcon/sphinx_selective_exclude.git \
-        modules/sphinx_selective_exclude && cd $\_/ && python setup.py install
-
-      git remote add upstream git@github.com:jncox/calmbootcamp.git &&
-        git remote --verbose show
-
-- Author:
-    ```
-    gcd calmbootcamp && pipenv shell
-
-    watchmedo shell-command --wait --recursive --ignore-patterns='_build' \
-      --patterns='*rst' --command='modules/build.sh ${watch_src_path}'
-
-    sphinx-build . _build && firefox $_/index.html || brave-browser $_/index.html
-
-    ```
-- [_build/index.html](./_build/index.html)
-
 ## Appendix
 
 - cd calm_marketplace/images; for i in `ls 510*png`; do `git mv $i 5.10/${i:3}` ; done
 - pipenv install --dev watchdog
   - https://github.com/gorakhargosh/watchdog
-
-        watchmedo shell-command --pattern='Vagrantfile;*rb' --command='vagrant provision; echo' --recursive
-
-        PAGE=x watchmedo shell-command --pattern='*.md' --command='landslide --relative --embed --quiet $PAGE.md --destination $PAGE.html' --recursive &
-
-        set PAGE filename ; watchmedo shell-command --pattern='*.md' --command='landslide --relative --embed --quiet $PAGE.md \
-         --destination $PAGE.html' --recursive &
-
-        watchmedo shell-command --pattern="*.md" --command="landslide --relative --embed --quiet devops-demystified.md --destination devops-demystified.html" &
   - `watchmedo shell-command --help`
-  -
-
-    watchmedo shell-command --wait --recursive --ignore-patterns='_build' --patterns='*rst' \
-    --command='clear; date; _FI=${watch_src_path}; echo "-- $_FI" ; make clean && make html && firefox file:`pwd`/_build/html/${_FI%%rst}html' &
 
 # Content Warnings

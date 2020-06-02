@@ -6,7 +6,7 @@ CLEAN='make clean'
 #CLEAN=true # OVERRIDE: blank or =true for skip
 VARIANT='-c udacity/'
 VARIANT= # OVERRIDE: blank for standard bootcamp
-REPO=calmbootcamp
+REPO=$(basename $(git rev-parse --show-toplevel))
 
 launch
 
