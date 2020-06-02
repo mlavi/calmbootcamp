@@ -1,4 +1,11 @@
 # Next steps:
+- Linuxbrew Python-3.8 upgrade has broken pipenv 2020.5.28:
+  - https://github.com/pypa/pipenv/issues/4204
+  - https://github.com/Homebrew/linuxbrew-core/issues/20474
+- Fall back to:
+  - https://pipenv.pypa.io/en/latest/install/#pragmatic-installation-of-pipenv
+  - pip3 install --user pipenv
+  - PATH=$(python -m site --user-base)/bin:${PATH}
 - git fetch --verbose upstream && git merge upstream/master
 
 Notes:

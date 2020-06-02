@@ -50,7 +50,7 @@ templates_path = ['../_templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'udacity'
 
 # General information about the project.
 project = u'Udacity Hybrid Cloud Engineer Nanodegree: Course 2-4'
