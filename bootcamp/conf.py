@@ -35,10 +35,13 @@ import sphinx_fontawesome
 extensions = ['sphinx.ext.todo',
               'sphinx.ext.ifconfig',
               'sphinxcontrib.fulltoc',
+              'sphinx_selective_exclude.eager_only',
+              'sphinx_selective_exclude.search_auto_exclude',
+              'sphinx_selective_exclude.modindex_exclude',
               'sphinx_fontawesome']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['../_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -47,7 +50,9 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'bootcamp'
+nitpicky = True
+tags.add('bootcamp')
 
 # General information about the project.
 project = u'Nutanix Calm Bootcamp'
@@ -94,9 +99,9 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
 # Path should be relative to the ``_static`` files directory.
 
-html_logo = '_static/NutanixWorkshops.svg'
+html_logo = '../_static/NutanixWorkshops.svg'
 # https://s3.amazonaws.com/handsonworkshops.prod.media/a/a/logo/nutanix-workshops.svg
-html_favicon = '_static/favicon.ico'
+html_favicon = '../_static/favicon.ico'
 # https://s3.amazonaws.com/handsonworkshops.prod.media/a/a/logo/nutanix-favicon.ico
 html_title = ""
 
@@ -184,7 +189,7 @@ html_sidebars = {'**': ['localtoc.html']}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['../_static']
 
 # -- Options for HTMLHelp output ------------------------------------------
 

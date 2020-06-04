@@ -25,26 +25,19 @@ alias calmbootcamp='ghq-cd calmbootcamp && git fetch --verbose upstream && git m
     sphinx-build . _build && firefox $_/index.html || brave-browser $_/index.html
 
     ```
-- [_build/index.html](./_build/index.html)
+  - Notes:
+    If you see the following, you did not add a blank line after `::only` [tag]
+    Exception occurred:
+    ValueError: chunk after expression
+  - [_build/index.html](./_build/index.html)
 
 # Next steps:
-- Linuxbrew Python-3.8 upgrade has broken pipenv 2020.5.28:
-  - https://github.com/pypa/pipenv/issues/4204
-  - https://github.com/Homebrew/linuxbrew-core/issues/20474
-- Fall back to:
-  - https://pipenv.pypa.io/en/latest/install/#pragmatic-installation-of-pipenv
-  - pip3 install --user pipenv
-  - PATH=$(python -m site --user-base)/bin:${PATH}
 - git fetch --verbose upstream && git merge upstream/master
+- Feedback loop via LiveReload
+  - http://livereload.com/browser/script-tag/
+  - bundle &&
 
-Notes:
-Exception occurred:
-  File "/mnt/491960e6-1217-4657-9762-aaa1417b2ab8/data/users/mark/.local/share/virtualenvs/calmbootcamp-42pyG20N/lib/python3.7/site-packages/sphinx/util/tags.py", line 68, in eval_condition
-    raise ValueError('chunk after expression')
-ValueError: chunk after expression
-
-Means you did not add a blank line after an ::only [tag]
-
+# Research
 - git checkout master && git merge [topic_branch]
 - git checkout -b jncox-master master &&
   git pull git://github.com/jncox/calmbootcamp.git master
@@ -119,5 +112,12 @@ https://sublime-and-sphinx-guide.readthedocs.io/en/latest/conditions.html
 - pipenv install --dev watchdog
   - https://github.com/gorakhargosh/watchdog
   - `watchmedo shell-command --help`
+- FIXED: Linuxbrew Python-3.8 upgrade has broken pipenv 2020.5.28:
+  - https://github.com/pypa/pipenv/issues/4204
+  - https://github.com/Homebrew/linuxbrew-core/issues/20474
+  - Fall back to:
+    - https://pipenv.pypa.io/en/latest/install/#pragmatic-installation-of-pipenv
+    - pip3 install --user pipenv
+    - PATH=$(python -m site --user-base)/bin:${PATH}
 
 # Content Warnings

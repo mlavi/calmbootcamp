@@ -15,6 +15,12 @@ help:
 clean:
 	rm --recursive --force --verbose $(BUILDDIR) && mkdir $(BUILDDIR) || true
 
+bootcamp: Makefile
+	modules/build.sh bootcamp "$(BUILDDIR)"
+
+udacity: Makefile
+	modules/build.sh udacity "$(BUILDDIR)"
+
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new

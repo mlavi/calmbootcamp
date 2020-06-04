@@ -21,10 +21,10 @@ function log() {
   local _hold
   local _logfile
 
-  if ((${#LOGFILE} < 5)); then
-    _logfile=$(basename $(git rev-parse --show-toplevel)).log
-  else
+  if ((${#LOGFILE} > 5)); then
     _logfile=${LOGFILE}
+  else
+    _logfile=$(basename $(git rev-parse --show-toplevel)).log
   fi
 
   _caller=$(echo -n "$(caller 0 | awk '{print $2}')")
