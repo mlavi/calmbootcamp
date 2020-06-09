@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<test attr="value">first</test>
-<![CDATA[
+<test attr="value"># Hello World!</test>
+<test2><![CDATA[
    # Hello, World!
    This is markdown with a [blog link](http://mlavi.github.io/about/).
-]]>
+]]></test2>
