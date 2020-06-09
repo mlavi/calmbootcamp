@@ -4,7 +4,8 @@ _destination_format=markdown
 _destination_suffix=md
 _pandoc_options='--wrap=none'
 
-for _file in {'Udacity Nanodegree Hybrid Cloud Engineer.docx','Udacity Nanodegree Hybrid Cloud Engineer.odt'}; do
+#for _file in {'Udacity Nanodegree Hybrid Cloud Engineer.docx','Udacity Nanodegree Hybrid Cloud Engineer.odt'}; do
+for _file in 'Udacity Nanodegree Hybrid Cloud Engineer.odt'; do
 
   _file_base=$(echo "${_file}" | awk -F. '{print $1}')
   _file_suffix=$(echo "${_file}" | awk -F. '{print $2}')

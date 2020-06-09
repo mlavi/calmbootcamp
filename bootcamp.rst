@@ -11,6 +11,15 @@
 
   Howdy and welcome to the HCE, from /index.rst combined sections!
 
+.. only:: bootcamp
+
+  --------------------------------
+  Bootcamp Getting Started: Part 2
+  --------------------------------
+
+  Howdy and welcome to the bootcamp, from /bootcamp.rst inline only tag!
+
+
 .. only:: not hce
 
   ---------------

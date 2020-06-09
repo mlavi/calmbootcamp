@@ -12,7 +12,7 @@ function launch() {
 }
 
 function finish() {
-  log "${0}|${SECONDS}|ran for ${SECONDS} seconds."
+  log "${0}|${SECONDS}|executed in ${SECONDS} seconds."
   echo
 }
 
