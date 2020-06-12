@@ -20,7 +20,7 @@ alias calmbootcamp='ghq-cd calmbootcamp && git fetch --verbose upstream && git m
     gcd calmbootcamp && pipenv shell
 
     watchmedo shell-command --wait --recursive --ignore-patterns='_build' \
-      --patterns='*rst' --command='modules/build.sh ${watch_src_path}'
+      --patterns='*rst' --command='modules/build.sh ${watch_src_path}' &
 
     sphinx-build . _build && firefox $_/index.html || brave-browser $_/index.html
 

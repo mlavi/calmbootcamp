@@ -19,15 +19,21 @@ This is markdown with a [blog link](http://mlavi.github.io/about/).
     or (empty line)
     [comment]: # (comment)
     </li>
-    <li>Convoluted process could be:
+    <li><pre>Convoluted process could be:
       - separate RST out into files per atom (right now they are in pages)
       - for each file: use pandoc to change RST to MD
-      - build a course 2 HTML file, containing a large list with a <pre> around each MD snippet for each atom
+      - for each Udacity course, for each lesson:
+        - build a course X, lesson Y HTML file
+          - for each atom
+        - containing a large list with a <pre> around each markdown snippet
+        - one list item (with padding items) for each atom
+        - git commit CourseX-LessonY.html and push
       - importHTML in Google sheet:course2, Column E1?
         - example: <code>=IMPORTHTML("https://raw.githubusercontent.com/mlavi/calmbootcamp/master/udacity/snippet3.html", "list", 1)</code>
       - If we change any RST, rebuild and commit the HTML to git
         - Google sheet:courseX, refresh the importHTML execution
-    </li>
+    </pre></li>
+    <li><a href="https://docs.google.com/spreadsheets/d/1K5rItDQxaty-xTeQPswWngC_R-VohMx6Yhb6YnOQP8g/edit#gid=951230210">G.sheet:course2outline:L0tab:$F1</a>
     </ol>
   </body>
 </html>

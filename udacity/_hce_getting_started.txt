@@ -3,3 +3,33 @@ HCE Getting Started, Part 1
 ---------------------------
 
 Welcome to the HCE, from included udacity/_hce_getting_started.txt
+
+Hybrid Cloud Engineer Nanodegree
+
+- Course 1: Modern Private Cloud
+  - Objectives:
+    - 40% of ECA, filtered to simulations
+  - Project:
+    - Configure HCI VMs that stay up despite infrastructure failures?
+    - Trojan horse: monolithic LAMP VM for taste to course 2+?
+- Course 2: Private Cloud Automation
+  - Objectives
+    - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
+    - Achieve self-service VM IaaS with a Calm blueprint published in the marketplace
+    - Achieve self-service PaaS for a three tier web application based on LAMP stack
+    - Achieve self-service SaaS for life cycle action on 3TWA
+  - Project: LAMP variant blueprint with AHV VMs and one SaaS action
+- Course 3: Hybrid Cloud Automation
+  - Objectives
+    - Justify public cloud use with security, lock-in, and global load balancing considerations
+    - Learn just enough about AWS to add to Calm settings: provider and a project
+    - Clone and localize web tier on AWS, rehost database on public cloud
+    - Understand multiple Hybrid Cloud resource management
+  - Project: LAMP variant blueprint, hybrid web tier on AHV+AWS, DB on AWS as VMs
+- Course 4: Hybrid Cloud DevOps
+  - Objectives
+    - Justify the evolution to programmatic blueprints and DevOps values
+    - Learn how to use the Calm DSL SDK
+    - Learn just enough Python to re-create Project 3
+    - Implement CI/CD of a DSL blueprint
+  - Project: Project 3 variant with Calm DSL
