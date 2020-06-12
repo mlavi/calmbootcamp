@@ -11,25 +11,25 @@ Hybrid Cloud Engineer Nanodegree
     - 40% of ECA, filtered to simulations
   - Project:
     - Configure HCI VMs that stay up despite infrastructure failures?
-    - Trojan horse: monolithic LAMP VM for taste to course 2+?
+    - Trojan horse: monolithic LAMP VM for taste of course 2+ scenarios?
 - Course 2: Private Cloud Automation
   - Objectives
     - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
-    - Achieve self-service VM IaaS with a Calm blueprint published in the marketplace
+    - Achieve self-service AHV VM IaaS with a Calm blueprint published in the marketplace
     - Achieve self-service PaaS for a three tier web application based on LAMP stack
     - Achieve self-service SaaS for life cycle action on 3TWA
   - Project: LAMP variant blueprint with AHV VMs and one SaaS action
 - Course 3: Hybrid Cloud Automation
   - Objectives
     - Justify public cloud use with security, lock-in, and global load balancing considerations
-    - Learn just enough about AWS to add to Calm settings: provider and a project
-    - Clone and localize web tier on AWS, rehost database on public cloud
-    - Understand multiple Hybrid Cloud resource management
+    - Learn just enough AWS to add to Calm settings: provider and a project
+    - Configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
+    - Understand multiple Hybrid Cloud resource management with Beam
   - Project: LAMP variant blueprint, hybrid web tier on AHV+AWS, DB on AWS as VMs
 - Course 4: Hybrid Cloud DevOps
   - Objectives
-    - Justify the evolution to programmatic blueprints and DevOps values
-    - Learn how to use the Calm DSL SDK
-    - Learn just enough Python to re-create Project 3
-    - Implement CI/CD of a DSL blueprint
+    - Justify the evolution to programmatic blueprints, CI/CD, and DevOps values
+    - Learn just enough git and Calm DSL SDK to decompile a JSON blueprint and place under pre-commit CI/CD
+    - Learn just enough Python and Calm DSL to re-create Course 2 AHV VM IaaS (from boilerplate, scratch?)
+    - Learn just enough Python and Calm DSL to re-create Project 3 (from boilerplate, scratch?)
   - Project: Project 3 variant with Calm DSL
