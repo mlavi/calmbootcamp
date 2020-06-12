@@ -6,30 +6,37 @@ Welcome to the HCE, from included udacity/_hce_getting_started.txt
 
 Hybrid Cloud Engineer Nanodegree
 
+Notes:
+- Objectives answer "Student will be able to" and "Student will learn just enough to"
+- Artificially constraining objectives to 4 helps focus outcomes and lesson scope
+- Course 4 has two re-create objectives, with TBD:
+  - source: TBD, from decompiled JSON, boilerplate, or scratch?
+  - each could also be slightly extended with new use in the DSL.
+
 - Course 1: Modern Private Cloud
   - Objectives:
     - 40% of ECA, filtered to simulations
-  - Project:
-    - Configure HCI VMs that stay up despite infrastructure failures?
+  - Project (owned by Wes):
+    - Configure HCI VM uptime surviving infrastructure failures?
     - Trojan horse: monolithic LAMP VM for taste of course 2+ scenarios?
 - Course 2: Private Cloud Automation
-  - Objectives
+  - Objectives:
     - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
-    - Achieve self-service AHV VM IaaS with a Calm blueprint published in the marketplace
+    - Achieve self-service IaaS with a Calm blueprint published to the marketplace
     - Achieve self-service PaaS for a three tier web application based on LAMP stack
-    - Achieve self-service SaaS for life cycle action on 3TWA
-  - Project: LAMP variant blueprint with AHV VMs and one SaaS action
+    - Achieve self-service SaaS for life cycle action on a three tier web app blueprint
+  - Project: Three tier web app on LAMP stack variant blueprint with AHV VMs and one SaaS action
 - Course 3: Hybrid Cloud Automation
-  - Objectives
+  - Objectives:
     - Justify public cloud use with security, lock-in, and global load balancing considerations
-    - Learn just enough AWS to add to Calm settings: provider and a project
+    - Learn just enough AWS free-tier to add to Calm settings: provider and a project
     - Configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
     - Understand multiple Hybrid Cloud resource management with Beam
   - Project: LAMP variant blueprint, hybrid web tier on AHV+AWS, DB on AWS as VMs
 - Course 4: Hybrid Cloud DevOps
-  - Objectives
+  - Objectives:
     - Justify the evolution to programmatic blueprints, CI/CD, and DevOps values
-    - Learn just enough git and Calm DSL SDK to decompile a JSON blueprint and place under pre-commit CI/CD
-    - Learn just enough Python and Calm DSL to re-create Course 2 AHV VM IaaS (from boilerplate, scratch?)
-    - Learn just enough Python and Calm DSL to re-create Project 3 (from boilerplate, scratch?)
+    - Repurpose any Calm JSON blueprint with Calm DSL SDK decompilation and place under git pre-commit CI/CD
+    - Re-create Course 2 private cloud IaaS (source: TBD) under CI/CD
+    - Re-create Project 3 hybrid cloud SaaS (source: TBD) under CI/CD
   - Project: Project 3 variant with Calm DSL
