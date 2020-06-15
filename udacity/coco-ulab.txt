@@ -1,0 +1,48 @@
+Josh and Ken meetings:
+- Ask the business: can we reuse Udacity content?
+
+
+
+
+- Mark: Review GSO Calm bootcamp materials
+- Course 2 project, outline with learning objectives
+- Course 2 sheet importHTML, HTML build script
+- Course 2-4 architecture
+- Course 4 uLab instructions/reqs
+- Course 3 project, outline
+- Course 4 project, outline
+
+
+
+https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0
+
+https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1018602/concepts/1035870
++ add concept
+Add Jyupter
+Save all changes
+
+publish, then view terminal
+
+save all changes
+view in classroom
+
++, add guide notebook
+Create guide content
+
+Save in editor
+Save all changes
+
+Look in classroom
+Menu > get all content, reset data
+
+Content creator > choose a layout,
+Content creator > configure classroom toolbars
+Save all changes
+
+Will will share some docs
+Iterate to work up to a good classroom preview
+
+Share reqs.txt with Will
+Ubuntu-16.04, typically has a recent git client, requirements.txt for pipenv
+
+Eventually: Attach a disk: python to /data

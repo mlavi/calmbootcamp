@@ -22,7 +22,7 @@ function html_header() {
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Course ${COURSE}.sheet:L${LESSON}.tab:\$F1.cell</title>
+  <title>Course ${COURSE}.sheet:L${LESSON}.tab:\$F2.cell</title>
 </head>
 <body>
   <ol>
