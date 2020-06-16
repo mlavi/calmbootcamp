@@ -18,7 +18,7 @@ function concepts() {
       1)
         atom && _out+="${OUT}"
         atom "Meet Your Instructor: Mark Lavi" && _out+="${OUT}"
-        atom && _out+="${OUT}"
+        atom "http://mlavi.github.io/img/gollum-lego-hobbit-lord-of-the-rings.jpg" && _out+="${OUT}"
         atom "$(cat udacity/course/${COURSE}/${LESSON}/meet.md)" && _out+="${OUT}"
         atom '' 'noEoL' && _out+="${OUT}"
         ;;
