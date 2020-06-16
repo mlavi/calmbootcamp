@@ -37,13 +37,18 @@ function concepts() {
 }
 
 function atom() {
-  local _out="    <li><pre>${1}</pre></li>"
+  local _message='blank'
+  local _return="\n"
+
+  if [[ -n ${1} ]]; then
+    _message="${1}"
+  fi
 
   if [[ -n ${2} ]]; then
-    OUT=${_out}
-  else
-    OUT="${_out}\n"
+    _return=
   fi
+
+  OUT="    <li><pre>${_message}</pre></li>${_return}"
 }
 # ____
 cd $(git rev-parse --show-toplevel)
