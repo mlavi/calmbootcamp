@@ -1,6 +1,17 @@
 ---------------------------
 HCE Getting Started, Part 1
 ---------------------------
+Tasks:
+  - Course 2 project, outline with learning objectives, content
+    - Mark: Review GSO Calm bootcamp materials
+    - Mark+Josh: start mapping content into outline, adjust importHTML
+  - Course 3 project, outline, content
+  - Course 4 project, outline, content
+- Engineering:
+  - Course 2 sheet importHTML, HTML build script
+  - Course 2-4 architecture
+  - Project automatic evaluation, cluster config capture
+  - Course 4 uLab instructions/requirements
 
 Welcome to the HCE, from included udacity/_hce_getting_started.txt
 

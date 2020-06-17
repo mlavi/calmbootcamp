@@ -2,6 +2,8 @@
 
 _destination_format=markdown
 _destination_suffix=md
+#_destination_format=rst
+#_destination_suffix=rst
 _pandoc_options='--wrap=none'
 
 #for _file in {'Udacity Nanodegree Hybrid Cloud Engineer.docx','Udacity Nanodegree Hybrid Cloud Engineer.odt'}; do
