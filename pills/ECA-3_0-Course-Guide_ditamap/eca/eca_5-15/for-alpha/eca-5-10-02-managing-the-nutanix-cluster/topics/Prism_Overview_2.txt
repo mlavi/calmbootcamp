@@ -1,15 +1,12 @@
 ::: {.body .conbody}
 ![](media/pe.PNG){.image width="600" height="300"}
 
-Nutanix Prism is an end-to-end management solution for an AHV
+Nutanix Prism Element is an end-to-end management solution for an AHV
 virtualized datacenter.
 
 Nutanix Prism provides central access to configure, monitor, and manage
 virtual environments in a simple and elegant way. Prism offers
 simplicity by combining several aspects of datacenter management into a
-single, easy-to-use solution. Using innovative machine learning
-technology, Prism can mine large volumes of system data easily and
-quickly and generate actionable insights for optimizing all aspects of
-virtual infrastructure management.
+single, easy-to-use solution. 
 :::
 :::

@@ -3,7 +3,7 @@
 ![](media/pc.png){.image width="636" height="436"}
 :::
 
-Prism Central allows you to monitor and manage all Nutanix clusters from
+Prism Central is a virtual machine that allows you to monitor and manage multiple Nutanix clusters from
 a single GUI:
 
 -   Single sign-on for all registered clusters
@@ -19,5 +19,15 @@ a single GUI:
     corrective actions.
 
 -   Centrally configure individual clusters.
+
+Additionally, you can subscribe to an upgraded license (Prism Pro) for Prism Central, which grants additional features such as:
+
+-	Customizable Dashboards- You can create or modify existing dashboards to monitor specific metrics or virtual machines.
+
+-	Capacity behavior trends- Analyzes the trends of VMs and clusters. This feature will also make recommendations on improperly sized VMs; including bullies, under-provisiioned, and over-provisioned.
+
+-	Scheduled Reporting.
+
+-	Centralized Upgrades.
 :::
 :::
