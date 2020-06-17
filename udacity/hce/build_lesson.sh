@@ -15,7 +15,7 @@ function concepts() {
     _out='' # reset
 
     case ${_concept} in
-      1)
+      2)
         atom && _out+="${OUT}"
         atom "Meet Your Instructor: Mark Lavi" && _out+="${OUT}"
         atom "http://mlavi.github.io/img/gollum-lego-hobbit-lord-of-the-rings.jpg" && _out+="${OUT}"
@@ -25,6 +25,13 @@ function concepts() {
       4)
         atom && _out+="${OUT}"
         atom "Concept ${_concept}" && _out+="${OUT}"
+        atom '' 'noEoL' && _out+="${OUT}"
+        ;;
+      1)
+        atom && _out+="${OUT}"
+        atom "$(cat pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-02-managing-the-nutanix-cluster/topics/Prism_Overview_2.txt)" && _out+="${OUT}"
+        atom && _out+="${OUT}"
+        atom "$(cat pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html.md)" && _out+="${OUT}"
         atom '' 'noEoL' && _out+="${OUT}"
         ;;
       *)
