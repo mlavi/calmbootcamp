@@ -1,33 +1,5 @@
 []{#anchor}[*Udacity Nanodegree: Hybrid Cloud Engineer*](https://confluence.eng.nutanix.com:8443/display/DVM/Udacity+Nanodegree%3A+Hybrid+Cloud+Engineer)
 
-[]{#anchor-1}Last updated: 2020-06-04
-
-[]{#anchor-2}Course 1: Modern Private Cloud Infrastructure
-
--   Nanodegree introduction: the role of the Hybrid Cloud Engineer
-
-    -   Lesson 1-8: cut down ECA with quizzes
-
--   Labs and Exercises:
-
-    -   HCI Introduction
-
-    -   Management and Operations
-
-    -   Networking
-
-    -   Security
-
-    -   VM Management
-
-    -   Deployment Scenarios
-
-    -   Data Protection
-
--   Review of Private Cloud
-
-[]{#anchor-3}Course 1 Project Proposal Document
-
 [*Private Cloud HCI*](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#heading=h.n8a6s96m0oy)
 
 Course scenarios to explore with team:
@@ -601,10 +573,3 @@ Lesson 5:
 8.  Review: Automation Drives Hybrid Cloud Applications
 
 9.  Project 4: Hybrid Cloud 3-Tier Web Application
-
-    -   Calm Python DSL blueprint: Load Balancer + hybrid Web-tier (on AHV+GCP)+ database via CoCo environment setup with [*https://github.com/nutanix/calm-dsl/*](https://github.com/nutanix/calm-dsl/)
-
-```{=html}
-<!-- -->
-```
-1.  Nanodegree fictional company scenario for each course projects and Capstone: on-demand hybrid cloud application deployment and management with fiscal and security governance

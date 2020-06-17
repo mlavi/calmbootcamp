@@ -7,11 +7,11 @@ Tasks:
     - Mark+Josh: start mapping content into outline, adjust importHTML
   - Course 3 project, outline, content
   - Course 4 project, outline, content
-- Engineering:
+- Engineering with Chris:
   - Course 2 sheet importHTML, HTML build script
   - Course 2-4 architecture
   - Project automatic evaluation, cluster config capture
-  - Course 4 uLab instructions/requirements
+  - Course 4 uLab instructions/requirements, see [./coco-ulab.txt](coco-ulab.txt)
 
 Welcome to the HCE, from included udacity/_hce_getting_started.txt
 

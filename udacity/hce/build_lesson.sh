@@ -2,7 +2,7 @@
 
 COURSE=2
 LESSON=0
-FILESPEC=udacity/course/${COURSE}/${LESSON}/lesson.html
+FILESPEC=udacity/hce/${COURSE}/${LESSON}/lesson.html
 
 function concepts() {
   local _concept
@@ -19,7 +19,7 @@ function concepts() {
         atom && _out+="${OUT}"
         atom "Meet Your Instructor: Mark Lavi" && _out+="${OUT}"
         atom "http://mlavi.github.io/img/gollum-lego-hobbit-lord-of-the-rings.jpg" && _out+="${OUT}"
-        atom "$(cat udacity/course/${COURSE}/${LESSON}/meet.md)" && _out+="${OUT}"
+        atom "$(cat udacity/hce/${COURSE}/${LESSON}/meet.md)" && _out+="${OUT}"
         atom '' 'noEoL' && _out+="${OUT}"
         ;;
       4)
