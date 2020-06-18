@@ -1,19 +1,41 @@
 ---------------------------
 HCE Getting Started, Part 1
 ---------------------------
+
+Welcome to the HCE, from included udacity/_hce_getting_started.txt
+
 Tasks:
+  - Course 1 project review for Wes
+  - Sahil hybrid cloud resource management request
   - Course 2 project, outline with learning objectives, content
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
-    - Mark+Josh: start mapping content into outline, adjust importHTML
+    - Mark+Josh: start mapping content into outline, adjust importHTML and G.Sheet
+    - Map outline lessons to G.Sheet lesson tabs for each concept+atom
   - Course 3 project, outline, content
   - Course 4 project, outline, content
 - Engineering with Chris:
   - Course 2 sheet importHTML, HTML build script
   - Course 2-4 architecture
+    - Cap on projects?
+    - Spec with Wes?
+    - Clean up/purge UserVMs
   - Project automatic evaluation, cluster config capture
   - Course 4 uLab instructions/requirements, see [./coco-ulab.txt](coco-ulab.txt)
 
-Welcome to the HCE, from included udacity/_hce_getting_started.txt
+Education content export:
+- Source HTML5 download from LMS topic
+  - URL captured in course outline
+- Add HTML and PNG file assets
+  - Uncompress into repo, preserving original directory structure
+- Pandoc HTML to Markdown conversion
+  - Add markdown files
+- Build script: add file references as atoms
+  - Build lesson HTML file
+- Commit everything, push, and refresh G.Sheet importHTML for the lesson tab
+  - Change importHTML list index # to force refresh: change to 2 and then back to 1.
+- Next steps:
+  - Enhance the markdown for Udacity
+  - OPTIONAL: convert to RST and let bootcamp include if desired
 
 Hybrid Cloud Engineer Nanodegree
 
