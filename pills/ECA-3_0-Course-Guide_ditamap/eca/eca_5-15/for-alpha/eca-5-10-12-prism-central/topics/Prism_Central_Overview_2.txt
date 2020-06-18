@@ -29,5 +29,7 @@ Additionally, you can subscribe to an upgraded license (Prism Pro) for Prism Cen
 -	Scheduled Reporting.
 
 -	Centralized Upgrades.
+
+Prism Central is also a prerequisite for many of the additional products in the Nutanix ecosystem such as Calm, Flow, and Leap. 
 :::
 :::
