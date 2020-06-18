@@ -1,1 +1,30 @@
-
+::: {.body .conbody}
+1. Number of VMs
+	-	Production:
+		-	Database:	1
+		-	Application:	1
+		-	Web:	1
+2. Sizing Requirements:
+	-	Database:
+		-	OS: Windows
+		-	CPU:
+			-	Core:	1
+			-	vCPU:	1
+		-	RAM: 4GB		
+	-	Application:
+		-	OS: Linux
+		-	CPU:
+			-	Core:	1
+			-	vCPU:	1
+		-	RAM: 4GB	
+	-	Web:
+		-	OS: Linux
+		-	CPU:
+			-	Core:	1
+			-	vCPU:	1
+		-	RAM: 4GB
+3. Configuration Requirements
+	-	NTP: pool.ntp.org
+	-	DNS: 8.8.8.8
+	
+:::

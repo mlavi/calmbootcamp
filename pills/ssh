@@ -5,7 +5,7 @@
 	-	To accomodate security best-practices, along with the ease of key authentication, please adhere to the guidelines below.
 
 2. Requirements:
-	-	Passphraseless secuirty key
+	-	Passphraseless security key
 	-	Use a cloud-init enabled Linux VM image (this should be a disk image, not an ISO)
 
 3. Implementation
