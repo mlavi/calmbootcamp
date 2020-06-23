@@ -40,3 +40,8 @@ Thumbs.db
 ###############
 _build
 build
+
+# Some more #
+.~lock*
+*.swp
+

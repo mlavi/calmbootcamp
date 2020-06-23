@@ -4,8 +4,8 @@ HCE Getting Started, Part 1
 
 Welcome to the HCE, from included udacity/_hce_getting_started.txt
 
+---
 Tasks:
-  - Course 1 project review for Wes
   - Sahil hybrid cloud resource management request
   - Course 2 project, outline with learning objectives, content
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
@@ -13,15 +13,16 @@ Tasks:
     - Map outline lessons to G.Sheet lesson tabs for each concept+atom
   - Course 3 project, outline, content
   - Course 4 project, outline, content
-- Engineering with Chris:
+- Engineering:
+  - Course 1 Project: Wes
+    - [Project Proposal](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#)
   - Course 2 sheet importHTML, HTML build script
   - Course 2-4 architecture
-    - Cap on projects?
-    - Spec with Wes?
-    - Clean up/purge UserVMs
+    - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR:
+      - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-taking-backup-and-restoring-calm-data-t.html
   - Project automatic evaluation, cluster config capture
   - Course 4 uLab instructions/requirements, see [./coco-ulab.txt](coco-ulab.txt)
-
+---
 Education content export:
 - Source HTML5 download from LMS topic
   - URL captured in course outline
@@ -36,7 +37,7 @@ Education content export:
 - Next steps:
   - Enhance the markdown for Udacity
   - OPTIONAL: convert to RST and let bootcamp include if desired
-
+---
 Hybrid Cloud Engineer Nanodegree
 
 Notes:
@@ -53,11 +54,7 @@ Notes:
     - Configure HCI VM uptime surviving infrastructure failures?
     - Trojan horse: monolithic LAMP VM for taste of course 2+ scenarios?
 - Course 2: Private Cloud Automation
-  - Objectives:
-    - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
-    - Achieve self-service IaaS with a Calm blueprint published to the marketplace
-    - Achieve self-service PaaS for a three tier web application based on LAMP stack
-    - Achieve self-service SaaS for life cycle action on a three tier web app blueprint
+  - Objectives: (see [2/lesson_learning_objectives](hce/2/lesson_learning_objectives.md) for more detail)
   - Project: Three tier web app on LAMP stack variant blueprint with AHV VMs and one SaaS action
 - Course 3: Hybrid Cloud Automation
   - Objectives:
@@ -73,3 +70,4 @@ Notes:
     - Re-create Course 2 private cloud IaaS (source: TBD) under CI/CD
     - Re-create Project 3 hybrid cloud SaaS (source: TBD) under CI/CD
   - Project: Project 3 variant with Calm DSL
+---
