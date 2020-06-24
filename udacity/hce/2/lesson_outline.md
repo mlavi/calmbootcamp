@@ -89,8 +89,7 @@ Student will be able to (SWBAT):
 
         -   Identity management
 
-        -   PC concept: RBAC: Role Based Access Control
-        [pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html]
+        -   PC concept: [RBAC: Role Based Access Control](pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html)
 
         -   PC concept: Categories
 
