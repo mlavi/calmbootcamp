@@ -44,15 +44,16 @@ Student will be able to (SWBAT):
 []{#anchor-5}Course 2 Learning Objectives
 Student will be able to (SWBAT):
 
-1.  Model business governance requirements with projects for role based access controls resource quotas, and show back costs to delegate resource management for applications.
-3.  Create, execute, and publish an application blueprint to enable delegated self-service, on-demand, automated private cloud workloads and life cycle operations.
+1. Model business governance requirements with projects for role based access controls resource quotas, and show back costs to delegate resource management for applications.
+3. Create, execute, and publish an application blueprint to enable delegated self-service, on-demand, automated private cloud workloads and life cycle operations.
 
 []{#anchor-6}Course 2 Project Proposal Document
 
 [*Private cloud automation: three tier web app*](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit)
 
-1.  What are the exercises that lead to the Course 2 Project?
-2.  Solution set and grading rubric
+1. What are the exercises that lead to the Course 2 Project?
+2. Solution set and grading rubric
+
 ---
 []{#anchor-7}Course 2 Outline
 
