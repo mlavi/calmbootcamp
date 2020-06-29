@@ -3,7 +3,7 @@ HCE Getting Started, Part 1
 ---------------------------
 
 Welcome to the HCE, from included udacity/_hce_getting_started.txt
-
+thackerk
 ---
 Tasks:
   - Sahil hybrid cloud resource management request
@@ -18,7 +18,11 @@ Tasks:
     - [Project Proposal](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#)
   - Course 2 sheet importHTML, HTML build script
   - Course 2-4 architecture
-    - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR:
+    - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR
+      - Work in reverse: Dashboard
+        - # of students (all tie cumulative, high-water mark)
+        - # of active students (cumulative for this month, high-water mark)
+        - # of Calm instances (current vs. all time high water mark for the month)
       - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-taking-backup-and-restoring-calm-data-t.html
   - Project automatic evaluation, cluster config capture
   - Course 4 uLab instructions/requirements, see [./coco-ulab.txt](coco-ulab.txt)
