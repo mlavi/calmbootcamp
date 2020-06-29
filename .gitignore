@@ -44,4 +44,5 @@ build
 # Some more #
 .~lock*
 *.swp
+.vscode/*
 udacity/hce/1
