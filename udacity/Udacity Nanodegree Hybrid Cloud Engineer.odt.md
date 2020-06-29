@@ -22,7 +22,7 @@ Course scenarios to explore with team:
 
     -   TBD: Walkthrough, Exercise, Quiz?
 
-    -   Reference: Nutanix.dev
+    -   Reference: Nutanix.dev (Hello Ken!)
 
 2.  Lesson 4: scale up the monolith?
 
