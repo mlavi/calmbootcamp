@@ -8,15 +8,19 @@ Welcome to the HCE, from included udacity/_hce_getting_started.txt
 Tasks:
   - Sahil hybrid cloud resource management request
   - Course 2 project, outline with learning objectives, content
+    - Mark: 1 page web app for project, example
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
     - Mark+Josh: start mapping content into outline, adjust importHTML and G.Sheet
     - Map outline lessons to G.Sheet lesson tabs for each concept+atom
-  - Course 3 project, outline, content
-  - Course 4 project, outline, content
-- Engineering:
+  - Course 3 project, outline, content, quizzes, slides
+- Engineering: Wes, Chris, Mark
   - Course 1 Project: Wes
+    - Course scenarios to explore with team:
+      - Multi-tenancy, idle education on-prem clusters, reducing project infra requirements for cost optimization
   - Course 2 sheet importHTML, HTML build script
-  - Course 2-4 architecture
+  - Course 2: uLab SSH pill/keygen exercise to student workspace?
+  - Project 2+3 evaluation tool: Chris suggests Calm DSL blueprint decompile
+  - Course 1-4 architecture
     - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR
       - Work in reverse: Dashboard
         - # of students (all tie cumulative, high-water mark)
