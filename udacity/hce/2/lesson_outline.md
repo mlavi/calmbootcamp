@@ -1,3 +1,9 @@
+\[ [*Nutanix Course 2 Folder*](https://drive.google.com/drive/folders/1Jqs7WTepEufzm4l4a4XgoqwBIsJIYe1u) \|\| [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm) \]
+
+- Objectives: (see [2/lesson_learning_objectives](2/lesson_learning_objectives.md) for more detail)
+- [Project Proposal](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit) = Private cloud automation: three tier web app
+- [Project Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit)
+
 # Course 2 Outline: Private Cloud Automation
 
 Student will be able to (SWBAT):

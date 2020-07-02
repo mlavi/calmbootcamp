@@ -2,9 +2,10 @@
 
 [*Private Cloud HCI*](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#heading=h.n8a6s96m0oy)
 
+[Project 1 Proposal](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#)
 Course scenarios to explore with team:
 
--   Multitenancy
+-   Multi-tenancy
 -   Using idle education on-prem clusters
 -   Reducing project infra requirements for cost optimization
 

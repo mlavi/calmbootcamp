@@ -15,7 +15,6 @@ Tasks:
   - Course 4 project, outline, content
 - Engineering:
   - Course 1 Project: Wes
-    - [Project Proposal](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#)
   - Course 2 sheet importHTML, HTML build script
   - Course 2-4 architecture
     - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR
