@@ -6,6 +6,7 @@ Welcome to the HCE, from included udacity/_hce_getting_started.txt
 
 ---
 Tasks:
+  - Chris.R: get Smartsheet access, https://app.smartsheet.com/sheets/jpc6R53QvXWV83hw65CWfqWphC2QmV2PQPwXfFx1
   - Sahil hybrid cloud resource management request
   - Course 2 project, outline with learning objectives, content
     - Mark: 1 page web app for project, example
