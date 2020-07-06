@@ -1,115 +1,48 @@
-\[ [*Nutanix Course 2 Folder*](https://drive.google.com/drive/folders/1Jqs7WTepEufzm4l4a4XgoqwBIsJIYe1u) \|\| [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm) \]
-
-- Objectives: (see [2/lesson_learning_objectives](2/lesson_learning_objectives.md) for more detail)
+[*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm):
 - [Project Proposal](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit) = Private cloud automation: three tier web app
 - [Project Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit)
 
+---
+
 # Course 2 Outline: Private Cloud Automation
+Objectives: (see [2/lesson_learning_objectives](2/lesson_learning_objectives.md)
 
-Student will be able to (SWBAT):
-
-- Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
-  - Lesson 1: Managing multiple cluster and workload resources
-  - Learning Objectives:
-    1. Understand the difference between Prism Element and Prism Central and capacity plan enabling Prism Central and Calm automation.
-    2. Manage VMs and disk images with categories.
-    3. Model business governance requirements using identity management and role based access controls with project resource quotas and provider show back costs.
-    4. Configure a project environment for a basic Linux VM with cloud-init and SSH key credentials
-- Achieve self-service IaaS with a Calm blueprint published to the marketplace
-  - Lesson 2: Calm automation for VM life cycle management
-  - Learning Objectives:
-    1. Understand Calm automation and orchestration benefits
-    2. Publish a marketplace blueprint for customer self-service, on-demand VM IaaS workloads.
-    3. Create a single VM blueprint with cloud-init credentials
-    4. Complete a deployment, audit, and deprovision for VM IaaS
-- Achieve self-service PaaS for a two tier web application based on LAMP stack
-  - Lesson 3: Calm automation for web application life cycle management
-  - Learning Objectives:
-    1. Understand multiple service blueprint life cycle: development, test, clone, publish.
-    2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM leveraging the Task Library.
-    3. Configure workload capacity choice with blueprint application profiles
-    4. Configure a simple, one page web PHP application in the document root.
-  - Lesson 4: Calm orchestration for database application life cycle management
-  - Learning Objectives:
-    1. Augment a web server blueprint to add a database server on a Linux VM.
-    2. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
-    3. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
-    4. Update the web application to read and write to the database.
-- Achieve self-service SaaS for life cycle action on a three tier web app blueprint
-  - Lesson 5: Calm automation for three tier web application life cycle management
-  - Learning Objectives:
-    1. Clone and augment the two-tier web app blueprint to orchestrate a load balancer on a Linux VM.
-    2. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
-    3. Publish and test the blueprint for SaaS self-service by scaling out and scaling in the web tier to observe fiscal effects.
-
----
-[]{#anchor-4}Course 2: On-Premise \"Private Cloud\" Automation
-
-\[ [*Nutanix Course 2 Folder*](https://drive.google.com/drive/folders/1Jqs7WTepEufzm4l4a4XgoqwBIsJIYe1u) \|\| [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm) \]
-
-[]{#anchor-5}Course 2 Learning Objectives
-Student will be able to (SWBAT):
-
-1. Model business governance requirements with projects for role based access controls resource quotas, and show back costs to delegate resource management for applications.
-3. Create, execute, and publish an application blueprint to enable delegated self-service, on-demand, automated private cloud workloads and life cycle operations.
-
-[]{#anchor-6}Course 2 Project Proposal Document
-
-[*Private cloud automation: three tier web app*](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit)
-
-1. What are the exercises that lead to the Course 2 Project?
-2. Solution set and grading rubric
-
----
-[]{#anchor-7}Course 2 Outline
+0.  Lesson 0: Welcome to Course 2
+  - Concept: Meet your instructor
+  - Concept: Course 2 overview:
+    - Multi-cluster, scale out control plane = a private cloud
+    - Automation is the key to self-service
+    - From VM IaaS monolith to the PaaS scalable web application to SaaS life cycle operations
 
 1.  Lesson 1: Managing multiple cluster and workload resources
-
-    -   Welcome to Course 2
-
-        -   ATOM: HEADER Meet your instructor : add link
-
-        -   Course 2 overview
-
-            -   Multi-cluster, scale out control plane = a private cloud
-
-            -   Automation is the key to self-service
-
-            -   From the monolith to the scalable web application
-
-    -   Concept: Prism Central
-
-        -   Prism Element control plane for a single Nutanix cluster
-        -   PC = Scale out control plane for multiple Nutanix clusters, cluster by hypervisor/hardware provider
-        -   Demo VIDEO: PC deployment sizing choices and discussion
-        -   Concept: warnings and alert logs for cluster resource management
-        -   Note that we will skip advanced PC workload management facilities: AIOps, sizer runway, etc.
-
-    -   Quiz L1Q1: PE vs PC
-
-        -   Review answer
-
-    -   Concept: Prism Central concepts for governance
-
-        -   Course 1 recap: Governance and business needs
-
-        -   Identity management
-
-        -   PC concept: [RBAC: Role Based Access Control](pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html)
-
-        -   PC concept: Categories
-
-        -   PC concept: Projects
-
-            -   Users and Roles: granular RBAC levels
-
-        -   PC concept: image management, categories, and clusters
-
-    -   Quiz L1Q2: Map business requirement scenario to PC concepts
-
-        -   Review answer
-
-    -   Lesson Review: we learned to do TBD
+    - Concept: Lesson 1 overview and objectives
+      - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
+    - Concept: Prism Central
+        - Understand the difference between Prism Element and Prism Central and capacity plan enabling Prism Central and Calm automation.
+        - Prism Element control plane for a single Nutanix cluster
+        - PC = Scale out control plane for multiple Nutanix clusters, cluster by hypervisor/hardware provider
+        - LAB/SIMULATION: PC deployment sizing choices and discussion
+        - Concept: warnings and alert logs for cluster resource management
+        - Note that we will skip advanced PC workload management facilities: AIOps, sizer runway, etc.
+    - Quiz L1Q1: PE vs PC
+        - Review answer
+    - Concept: Prism Central concepts for governance
+        - Concept: Course 1 recap: Governance and business needs: Model business governance requirements using identity management and role based access controls with project resource quotas and provider show back costs.
+        - Concept: ECA Pill? PC Identity management
+        - Concept: [PC RBAC: Role Based Access Control](pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html)
+        - Concept: ECA Pill? PC Categories:
+          - Manage VMs and disk images with categories.
+        - Concept: ECA Pill? PC Projects:
+            - Users and Roles: granular RBAC levels
+            - AHV resource quota: CPU, memory, storage
+        - Concept: ECA Pill? AHV VM Image Management, categories, and clusters
+        - LAB/SIMULATION: upload and categorize a CentOS 7 cloud image (see Course 2: Project Deliverables)
+        - LAB/SIMULATION: create a PC project with an AHV simple quota
+    - Quiz L1Q2: Map business requirement scenario to PC concepts
+        - Review answer
+    - Concept: [Calm enablement choices for capacity planning](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_enable/calm_enable/)
+    - LAB/SIMULATION: Calm enablement (abbreviated video?)
+    - Lesson 1 Review: we learned to do 1,2,3
 
 2.  Lesson 2: Calm automation for application lifecycle management
 
@@ -122,38 +55,34 @@ Student will be able to (SWBAT):
 
     -   Calm Overview: automation for application lifecycle management
 
-        -   Concept: Calm enablement choices for capacity planning
-
-        -   Demo: Calm enablement (abbreviated video)
-
-            -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](https://github.com/mlavi/calmbootcamp/blob/master/what_is_calm/what_is_calm.rst)
-
         -   Demo: Calm navigation, self-service applications on-demand under governance
+        -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
 
         -   Quiz: Calm automation does...
-
             -   infra only
-
             -   apps only
-
             -   both (correct)
-
             -   Review answer
 
-    -   Calm governance:
-
-        -   Calm concept: Calm \> Settings \> Providers
-
-            -   Show Back Costs
-
-        -   Calm concept: Projects
-
-            -   Extended from PC projects
-
-            -   Included Roles: RBAC levels of project admin, developer, consumer, operator
-
-            -   Quiz: match the role to privilege
-
+    - Concept: VM IaaS for self-service IT
+      - Most important first step for a private cloud
+      - Concept: Linux OS, CentOS 7 for a fast, license free base OS
+        - Discuss why Linux (vs Windows license)
+      - Concept: SSH keypairs for secure access to Linux VMs
+        - SSH key password background (vs static password)
+        - SSH Pill sources:
+        - https://mlavi.github.io/post/ssh-key-authentication/
+        - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
+        - SSH Lab: U-lab Ubuntu 16.04+?:
+          - Save udacity passphraseless keypair to student workspace?
+      - Concept: Cloud-init for basic, dynamic, secure configuration
+    - Concept: Calm governance:
+        - Concept: Calm \> Settings \> Providers
+            - Show Back Costs
+        - Concept: Calm \> Projects
+            - Extended from PC projects
+            - Included Roles: RBAC levels of project admin, developer, consumer, operator
+            - Quiz: match the role to privilege
                 a.  Review answer
 
             -   Walkthrough and Exercise: create your first project
@@ -168,14 +97,14 @@ Student will be able to (SWBAT):
 
                 a.  Provider Quotas
                 b.  Environments
+                - LAB/SIMULATION: Configure a project environment for a basic Linux VM with cloud-init and SSH key credentials
 
         -   Calm concept: Nutanix Marketplace
 
             -   Blueprint Publishing workflow
-
             -   Self service: Nutanix Marketplace
-
             -   Demo video: Project summary of my cluster
+            - LAB/SIMULATION: publish a blueprint to a student project
 
         -   First steps with Calm in Prism Central
 
@@ -183,7 +112,6 @@ Student will be able to (SWBAT):
 
                 a.  TBD: Things to look out for to troubleshoot problems on each step?
                 b.  Show troubleshooting web terminal?
-                c.  Discuss why Linux (vs Windows license), SSH key password background (vs static password)
 
             -   Exercise: deploy a workload on-prem for self service apps
 
@@ -200,6 +128,13 @@ Student will be able to (SWBAT):
         -   Calm overview, governance, self-service life cycle management of an existing blueprint with auditing
 
 3.  Lesson 3: Modeling application lifecycle with Calm blueprints
+- Achieve self-service IaaS with a Calm blueprint published to the marketplace
+  - Lesson 2: Calm automation for VM life cycle management
+  - Learning Objectives:
+    1. Understand Calm automation and orchestration benefits
+    2. Publish a marketplace blueprint for customer self-service, on-demand VM IaaS workloads.
+    3. Create a single VM blueprint with cloud-init credentials
+    4. Complete a deployment, audit, and deprovision for VM IaaS
 
     -   Learning objectives:
 
@@ -256,9 +191,6 @@ Student will be able to (SWBAT):
             -   [*Creating a Blueprint*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-a-blueprint)
 
             -   [*Creating Credentials*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-credentials)
-            - SSH Pill > sources:
-              - https://mlavi.github.io/post/ssh-key-authentication/
-              - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
 
             -   [*Defining Variables*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#defining-variables) (skip on web server)
 
@@ -313,6 +245,20 @@ Student will be able to (SWBAT):
 
 4.  Lesson 4: multi-tier web application (LAMP)
 
+- Achieve self-service PaaS for a two tier web application based on LAMP stack
+  - Lesson 3: Calm automation for web application life cycle management
+  - Learning Objectives:
+    1. Understand multiple service blueprint life cycle: development, test, clone, publish.
+    2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM leveraging the Task Library.
+    3. Configure workload capacity choice with blueprint application profiles
+    4. Configure a simple, one page web PHP application in the document root.
+  - Lesson 4: Calm orchestration for database application life cycle management
+  - Learning Objectives:
+    1. Augment a web server blueprint to add a database server on a Linux VM.
+    2. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
+    3. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
+    4. Update the web application to read and write to the database.
+
     -   Lesson learning objectives:
 
         -   Add a database and load balancer to the blueprint to manage a three tier web application lifecycle and variable population
@@ -365,38 +311,29 @@ Student will be able to (SWBAT):
         -   Walkthrough
         -   Exercise: [*Adding dependencies*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-dependencies)
 
-Lesson 5:
-
-1.  -   Calm concept: scale-in and scale-out web tier
-
+1. Lesson 5: Calm automation for three tier web application life cycle management
+  - Concept: Lesson 5 Overview
+    - Achieve self-service SaaS for life cycle action on a three tier web app blueprint
+  - Concept: Lesson 5 Learning Objectives:
+    1. Clone and augment the two-tier web app blueprint to orchestrate a load balancer on a Linux VM.
+    2. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
+    3. Publish and test the blueprint for SaaS self-service by scaling out and scaling in the web tier to observe fiscal effects.
+  - Calm concept: scale-in and scale-out web tier
         -   Walkthrough
-
         -   Exercise: [*Scaling Out*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_day2_linux/calm_day2_linux.rst#scaling-out)
-
             -   Add web tier actions: scale in and scale out
-
             -   Add load balancer task, orchestrate dependencies
-
             -   Test deployment by launching blueprint
-
             -   Post deployment action: scale out
-
             -   Audit: Observe web tier population +1
-
             -   Reload the load balancer to observe new node in rotation
-
             -   Post deployment action: scale in
-
             -   Audit: Observe web tier population +1
-
             -   Reload the load balancer to observe new node no longer in rotation
-
             -   Delete application
-
         -   Add web scale tasks to the Task Library from blueprint by cut and paste?
+    - Lesson 5 Review: we learned to test the deployment, scale the web tier in and out
 
-    -   Lesson Review: we learned to test the deployment, scale the web tier in and out
-
-2.  Lesson 5: Prism Central and Calm APIs for continuous ops?
+2.  Lesson 6: Prism Central and Calm APIs for continuous ops? (dropped)
 
 3.  Course 2 Review: Private Cloud Automation for self-service enterprise apps
