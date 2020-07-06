@@ -54,7 +54,7 @@ Objectives: (see [2/lesson_learning_objectives](2/lesson_learning_objectives.md)
         -   Complete a deployment, audit, and deprovision for application lifecycle management.
 
     -   Calm Overview: automation for application lifecycle management
-
+        - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
         -   Demo: Calm navigation, self-service applications on-demand under governance
         -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
 
