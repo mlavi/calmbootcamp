@@ -35,7 +35,15 @@ alias calmbootcamp='ghq-cd calmbootcamp && git fetch --verbose upstream && git m
 - git fetch --verbose upstream && git merge upstream/master
 - Feedback loop via LiveReload
   - http://livereload.com/browser/script-tag/
+    - http://livereload.com/editors/custom/
+    - http://livereload.com/about/alternatives/
+    - https://github.com/guard/guard-livereload
+      - https://github.com/guard/guard
+      - https://rubygems.org/search?query=guard-
   - bundle &&
+- https://github.com/yoloseem/awesome-sphinxdoc
+  - https://sphinxcontrib-fulltoc.readthedocs.io/en/latest/
+  - https://github.com/sphinx-contrib/libreoffice
 
 # Research
 - git checkout master && git merge [topic_branch]
