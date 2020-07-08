@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# derived from https://github.com/mlavi/stageworkshop/blob/master/scripts/lib.common.sh
+# derived from:
+# https://github.com/mlavi/stageworkshop/blob/master/scripts/lib.common.sh
+# https://github.com/mlavi/calmbootcamp/blob/master/modules/common.lib.sh
 
 function finish() {
   log "${0}|${SECONDS}|executed in ${SECONDS} seconds."
