@@ -59,10 +59,11 @@
     - Concept: VM IaaS for self-service IT
       - Most important first step for a private cloud
       - Concept: Linux OS, CentOS 7 for a fast, license free base OS
-        - Discuss why Linux (vs Windows license)
+        - Discuss why Linux (vs Windows license), rapid provisioning time, Docker container native
+        - Factoid: Microsoft Azure rapidly found over 50% of their workloads were Linux (need to find reference)
       - Concept: SSH keypairs for secure access to Linux VMs
         - SSH key password background (vs static password)
-        - SSH Pill sources:
+        - SSH Pill sources: ssh-keygen -m PEM -t rsa -f keyname -C comment
         - https://mlavi.github.io/post/ssh-key-authentication/
         - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
         - LAB/EXERCISE/SIMULATION: perhaps U-lab Ubuntu 16.04+?:
@@ -109,16 +110,68 @@
 
 3.  Lesson 3: Create and publish your first Calm blueprint to achieve self-service VM IaaS
     - Concept: Learning objectives:
-        3. Create a single-VM blueprint, then multi-VM web server blueprint using cloud-init and SSH credentials
-        2. Configuration and deployment of a web server with a sample PHP web application.
+        1. Create a single-VM blueprint, then multi-VM web server blueprint using cloud-init and SSH credentials
         2. Publish a marketplace blueprint for customer self-service, on-demand VM IaaS workloads.
         4. Test a deployment, audit, and deprovision for VM IaaS
-        5. Understand blueprint lifecycle: development, publish, clone.
-    - Concept: Calm single VM blueprint
-      - This is a wizard driven experience, which makes your introduction simpler
+        5. Understand blueprint lifecycle: development, launch, audit, publish, clone.
+        2. Configuration and deployment of a web server with a sample PHP web application.
+    - Concept: Calm Overview with the Marketplace
+      - Once logged into Prism Central, the marketplace provides end-user self-service to published blueprints, availability is determined by user's project(s) and their role.
+      - We'll demonstrate a basic blueprint life cycle by publishing a pre-seeded database blueprint to the marketplace and launching the blueprint with an application name 'Udacity-demo1'. Then we'll manage and delete 'Udacity-demo1' application of the database blueprint.
+        - i.e. An application is a blueprint deployment or instantiation.
+      - *Demo Video:*
+        - Calm > Marketplace Manager: publish a pre-seeded Marketplace MongoDB (single) blueprint
+          - specify a project containing a Linux environment
+        - Calm > Marketplace: launch blueprint
+          - choose your project
+          - name your application deployment: Udacity-demo1
+          - choose the AHV application profile, note that others are ghosted out because not part of the project
+          - examine the configuration tabs: VM, credential, etc.
+          - provide the credential private key and the INSTANCE_PUBLIC_KEY public key
+          - Launch, note that we are advanced to Calm > Applications > Udacity-demo1
+          - Review provisioning overview, Manage > Create view, then Audit tab > Create
+          - Calm Projects > Review project use to use VMs/cost consumption
+          - Turn down tasks and display/pop-out logs to show real-time progress
+            - Logs can be reviewed to troubleshoot problems and downloaded (with the download icon) for forensics
+          - Wait for Create action to complete, review the Services tab to show the VM properties
+          - Delete the application to complete the lifecycle.
+    - Concept: Calm Blueprint Overview
+      - The demo showed us the self-service aspect of consuming a blueprint from the marketplace.
+      - Blueprints model the life cycle of infrastructure, applications, governance, and operations.
+        - The simplest blueprints model:
+          - a pet VM for IaaS
+          - operations: create and delete actions
+          - governed by:
+            - provisioning with a single provider, set by the project upon blueprint creation
+            - static and run-time VM configuration
+        - The simplest blueprint life cycle: development (and troubleshooting), launch, manage, delete.
+        - We will expand on more blueprint concepts after the Single-VM blueprint exercise to build towards PaaS and SaaS-like models.
+      - Concept: (un)publish to Marketplace
+      - Concept: Delete a blueprint.
+      - Concept: Clone blueprint within a project.
+        - What is dropped inside the same project? Credentials + secrets.
+        - What is dropped outside the project? Potentially cluster, network, image.
+      - Concept: Download and Upload blueprints
+        - Blueprints are JSON format and recommended to store in source code control systems.
+        - Secrets and credentials are emptied when downloading a blueprint unless a password is provided to encrypt the blueprint and preserve these values.
+        - You can upload a JSON blueprint into Calm, there are many example blueprints at:
+          - https://github.com/nutanix/blueprints
+        - Blueprints can be also be made with Python using the Calm Domain Specific Language:
+          - This requires basic Python skills and outside the scope of this course, reference: https://github.com/nutanix/calm-dsl/
+      - Concept: Calm > Blueprint: directory, searching by: status and name
+        - Status: deleted is how you can reclaim blueprints in your projects
+      - Concept: Launch the blueprint
+        - Blueprints can launched from the single VM wizard, multi-VM blueprint editor, Calm > Blueprint, or Calm > Marketplace.
+          - Outside Calm, blueprints can be launched via API and the Calm DSL CLI.
+        - Launch requires us to name the application deployment
+          - One can review the static values and configure run-time values
+          - Click Launch button to be taken to Applications to manage the life cycle
+      - Concept: Audit and Delete the application deployment to complete the lifecycle.
+    - Concept: Calm Single-VM blueprint
+      - The Single-VM blueprint encapsulates the infrastructure and configuration of a VM on a project's enabled providers.
+      - This is a wizard driven experience, which makes VM IaaS simple, but with a smaller set of Calm capabilities than the multi-VM blueprint.
+      - All Calm blueprints are created in a project, requiring a Developer role or higher in the project.
       - We'll leverage the Project environment to cut down on copy and paste.
-      - We'll explore the GUI for the multi-VM blueprint later in the lesson.
-    - Concept: Calm Macros (Variables)
     - EXERCISE/LAB:
       - Navigate to blueprints > + Create Blueprint > Single VM Blueprint
       - Blueprint Settings, Step 1: name "singlevm-centos7", choose your student project, choose "VM Details >" button
@@ -127,7 +180,8 @@
         - Review everything
         - Choose "VM Configuration >" button
       - VM Configuration, Step 3:
-        - Review and keep everything, but set NIC 1 to dynamic IP (Calm 3.0 bug)
+        - Review and keep everything, but set NIC 1 to dynamic IP
+          - *TBD: Calm 3.0 bug?*
         - Choose "Advanced Options >" button
         - Review advance options
         - Note Actions (optional), we'll address all of these other optional features later in lesson
@@ -137,7 +191,7 @@
       - Choose the "App variables (0)" button, next to the "Save" button.
         - "+ Add Variable" button
         - Name: INSTANCE_PUBLIC_KEY (matches cloud-init macro from the student project environment)
-        - String, Value: paste your public key, (this may be redundant)
+        - String, Value: paste your public key, (Note: this is redundant, but this)
         - Show additional options: Mark this Variable mandatory
           - *TBD: Validate with RE?*
         - "Done" button
@@ -145,48 +199,95 @@
       - Note that estimated cost comes from provider settings.
       - Saving causes the model to be validated
       - *TBD: Things to look out for to troubleshoot problems?*
-    - Launch, test, and delete the application deployment
-    - Concept: Calm Blueprint authoring with the visual editor
+      - Launch the blueprint, name it: c2l3-single
+        - Launch requires us to name the application deployment
+        - One can review the static values and configure run-time values
+          - Populate the INSTANCE_PUBLIC_KEY variable
+          - Populate the credential private key
+          - Set the NIC VLAN for the VM(s)
+        - Click Launch button to be taken to Applications to manage the life cycle
+          - Review the overview, manage, audit, and then actions area.
+        - Review the Calm > Projects to see your resource consumption
+        - Return to Calm > Applications > c2l3-single overview and then delete the application.
+      - Review exercise: you managed your first application from creation to deletion with self-service
+      - Quiz: Calm blueprints
+          -   Substrate vs. service model bottoms up/top down?
+          -   Visio
+          -   TBD
+          -   Review answer
+
+    - Concept: Calm Multi-VM Blueprint development with the visual editor
         - The blueprint can represent the entire application life cycle model for IaaS/PaaS/SaaS
-        - Demo: create a blueprint, save and show troubleshooting tips
-    - Concept: Calm Services and Substrates
-    - Concept: Calm Run-time properties in default application profile
-  -   TBD: Walkthrough, Quiz
+        - Concept: Calm Services and Substrates
+        - Concept: Application Profiles
+          - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
+            - The default profile was used in the single-VM blueprint, but it is invisible to the user.
+            - The default profile can be renamed for a better description.
+          - Each application profile can use Calm macros for dynamic configuration inside actions and service properties.
+          - Additional application profiles provide the operator role (or higher) deployment choices.
+            - This increases blueprint reuse (of actions and governance) instead of making separate blueprints for each permutation of deployment.
+          - Example use of profile for operator choice:
+            - Recommended configurations, such as capacity size: small versus medium versus large resource consumption for different needs.
+            - Limited to full configuration delegation with run-time property overrides.
+            - Different infrastructure providers for a public, private, and/or hybrid deployment.
+            - Any combination of the above.
+        - Concept: Calm Macros Pill
+          - Calm Macros are variables using the @@{name}@@ syntax
+        - Concept: Calm Actions and Tasks
+          - The default application profile contains several actions.
+          - Actions are comprised of one or more tasks, which appear as grey ovals on a service.
+            - Tasks have a few types: Shell, Eval, HTTP, Pause.
+              - Concept: Shell Task Pill
+                - During multi-VM blueprint development, you can test a Shell task.
+              - Concept: HTTP Task Pill
+              - Concept: Eval Task Pill
+                - Eval is a shell task, but expects a final output format, which will update a specified Calm macro.
+              - Concept: Pause Task
+                - A pause in seconds to accommodate for operations to complete.
+            - Tasks are executed sequentially on each service.
+            - All services execute their actions and tasks in parallel unless a dependency is created to control orchestration, allowing operational control across the entire application.
+          - Let's review the actions, the simplest life cycle actions would be for IaaS:
+              - Create and Delete
+                - Create: invoked upon a blueprint launch, covers all services to allow orchestration, provisions and configures the service in the provider.
+                - Delete: deprovision the services with the provider.
+            - Start, Stop, and Restart:
+              - These actions are available to operate the entire deployment, but in the simplest Blueprints, these typically remain empty until populated with tasks.
+              - In addition, when the Create action finishes it will immediately call the Start action. Correspondingly, the Delete action will call and complete the Stop action before performing it's tasks.
+          - Calm can handle more complex PaaS and SaaS needs:
+            - additional Create stages: service pre-create and service package install
+            - additional Delete stages: service package uninstall and service post-delete.
+            - Scale-in and Scale-out: to change a service tier array's population
+            - Custom actions for ongoing maintenance and operations
+        - Quiz?
+        - Concept: Calm Task Library
+          - Tasks can be browsed and loaded from or saved to the task library, to promote reuse across blueprints.
+          - Tasks from the library are copied into blueprint, they do not update when the library changes, which keep the blueprints safe.
+          -   Quiz: why task library?
+              -   Cut down on typing and human error
+              -   Foster reuse
+              -   Scope?
+              -   TBD: Review answer
 
-            -   Walkthrough: Repurpose Calm bootcamp steps to perform "student see" for following exercise.
-
-                a.  TBD: Things to look out for to troubleshoot problems on each step?
-                b.  Show troubleshooting web terminal?
-
-            -   Exercise: deploy a workload on-prem for self service apps
-
-                a.  Amend your first project with an environment and save
-                b.  Publish LAMP blueprint under your project
-                c.  Choose LAMP blueprint in marketplace, configure launch
-                d.  Audit application deployment: LAMP
-                e.  Review project use
-                f.  Delete application
-                g.  Review exercise: you managed your first application from creation to deletion with self-service
-
-    -   Calm concept map: from DSL and Calm in Action, Calm Automation playlists?
-        -   Goals: make work reusable and modular (task library, settings, app profiles)
-
-    -   Calm concept: Actions and Tasks
-    -   Calm concept: Task Library
-
-        -   TBD: Walkthrough, Exercise: to add Web server install, web server start, web server stop, web server restart
-        -   Discuss: why do we skip web server uninstall?
-        -   Quiz: why task library?
-            -   Cut down on typing and human error
-            -   Foster reuse
-            -   Scope?
-            -   TBD: Review answer
-
-    - Quiz: Calm blueprints
-        -   Substrate vs. service model bottoms up/top down?
-        -   Visio
-        -   TBD
-        -   Review answer
+  - Calm Multi-VM web server blueprint
+      - Our goal is to deploy a workload on-prem for a self-service web server for developers.
+      - Apache web server pill:
+        - Why Apache? One of the oldest, but also most widely used web servers.
+          - Open source: so distributed with nearly Linux OS, and easy to install.
+        - For CentOS 7.6, we use:
+          - install "sudo yum install httpd"
+        - start and stop; restart:
+        - logs are located at /var/log/httpd/\*, use tail to review
+          - tail -n20; tail -f error.log &
+        - web server configuration under: /etc/apache2
+          - sudo a2ensite; a2enmod
+        - web docroot and home page: /var/www/html/index.html
+        - More resources to learn Apache: TBD
+      - Walkthrough/demo video:
+        a.  TBD: Things to look out for to troubleshoot problems on each step?
+        -   Exercise: deploy a workload on-prem for self service apps
+    Calm in Action, Calm Automation playlists?
+        - TBD: Walkthrough, Exercise: to add Web server install, web server start, web server stop, web server restart
+        - Discuss: why do we skip web server uninstall?
     - EXERCISE/LAB: Your first Calm multi-VM blueprint to make and save one web server Linux VM
         -   Learn and walkthrough, repurposed from [*https://github.com/mlavi/calmbootcamp/blob/master/calm\_linux\_track/calm\_linux\_app/calm\_linux\_app.rst*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst):
 
@@ -199,50 +300,21 @@
             -   [*Adding a Downloadable Image*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-a-downloadable-image)
 
             -   [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton with [*Creating the web server service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-web-server-service) detail
-
-        -   Exercise: Linux web server as a monolithic VM
-
-            -   to accomplish the following:
-
                 a.  Create blueprint \$STUDENTID-web in your default student project
                 b.  Create service1, rename to web 1, clone from environment, adjust properties
                 c.  Save and troubleshoot any validation issues
                 d.  Add install task
                 e.  Save and troubleshoot any validation issues
                 f.  Launch and Audit deployment
-
         -   Review exercise: you did your first push button automated web server lifecycle with a few clicks.
-
         -   Quiz: a new employee asks for a web server. What is the best answer to give them a repeatable, delegatable web server?
-
             -   Insure external people or groups are in a new project, then Blueprint Publish, Approve, Add project(s) and Publish to Marketplace
-
             -   Publish a web server blueprint to the default project in the marketplace.
-
             -   Add people or groups to my project
-
             -   Add people to in directory server groups
-
             -   All of the above steps are required
-
             -   Any of the above steps will suffice (correct)
-
-            -   Review answer
-
-    -   Blueprint lifecycle discussion
-
-        -   Clone blueprints inside Calm
-
-            -   What is dropped inside the same project? Credentials + secrets.
-
-            -   What is dropped outside the project? Potentially cluster, network, image.
-
-            -   What is dropped on export?
-
-        -   Blueprints are JSON
-
-        -   Download and Import blueprints (TBD: verify terms?)
-
+          -   Review answer
     -   Lesson Review: we learned to do TBD
 
 4.  Lesson 4: Calm automation for multi-tier web application life cycle management
@@ -263,22 +335,14 @@
         -   Configure delegatable scale-in and scale-out actions on a web application tier with orchestrated changes to the load balancer.
 
     -   Calm concept: Orchestration Dependencies
-
     -   Add the database service:
-
         -   Walkthrough: Refactor the monolith, reuse the tasks!
         -   Exercise:
-
             -   Complete the [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton
-
             -   Delete the mysql tasks
-
             -   Add MySQL service and tasks to actions
-
             -   Wire logical dependency
-
             -   Save and launch to test
-
             -   Review
 
         -   Review
