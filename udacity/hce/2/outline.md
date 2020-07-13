@@ -262,12 +262,11 @@
         - Concept: Calm Task Library
           - Tasks can be browsed and loaded from or saved to the task library, to promote reuse across blueprints.
           - Tasks from the library are copied into blueprint, they do not update when the library changes, which keep the blueprints safe.
-          -   Quiz: why task library?
-              -   Cut down on typing and human error
-              -   Foster reuse
-              -   Scope?
-              -   TBD: Review answer
-
+          - Quiz: why task library?
+              - Cut down on typing and human error
+              - Foster reuse
+              - Scope?
+              - TBD: Review answer
   - Calm Multi-VM web server blueprint
       - Our goal is to deploy a workload on-prem for a self-service web server for developers.
       - Apache web server pill:
@@ -290,16 +289,11 @@
         - Discuss: why do we skip web server uninstall?
     - EXERCISE/LAB: Your first Calm multi-VM blueprint to make and save one web server Linux VM
         -   Learn and walkthrough, repurposed from [*https://github.com/mlavi/calmbootcamp/blob/master/calm\_linux\_track/calm\_linux\_app/calm\_linux\_app.rst*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst):
-
             -   [*Creating a Blueprint*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-a-blueprint)
-
             -   [*Creating Credentials*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-credentials)
-
             -   [*Defining Variables*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#defining-variables) (skip on web server)
-
             -   [*Adding a Downloadable Image*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-a-downloadable-image)
-
-            -   [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton with [*Creating the web server service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-web-server-service) detail
+            - Use the [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton with [*Creating the web server service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-web-server-service) detail
                 a.  Create blueprint \$STUDENTID-web in your default student project
                 b.  Create service1, rename to web 1, clone from environment, adjust properties
                 c.  Save and troubleshoot any validation issues
@@ -316,7 +310,6 @@
             -   Any of the above steps will suffice (correct)
           -   Review answer
     -   Lesson Review: we learned to do TBD
-
 4.  Lesson 4: Calm automation for multi-tier web application life cycle management
 - Achieve self-service PaaS for a two tier web application based on LAMP stack
   - Learning Objectives:
