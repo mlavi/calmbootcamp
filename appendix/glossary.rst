@@ -129,4 +129,4 @@ Additional Resources
 ++++++++++++++++++++
 
 #. [Blog] `Calm Terminology <https://next.nutanix.com/blog-40/calm-terminology-actions-and-dependencies-33852>`_ `[Source] <https://github.com/MichaelHaigh/calm-blueprints/blob/master/DependencyTaskExample/README.md>`_
-#. `Nutanix Calm Admin Operations Guide: Major Components <https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v297:nuc-nucalm-major-components-c.html>`_
+#. `Nutanix Calm Admin Operations Guide: Major Components <https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0:nuc-nucalm-major-components-c.html>`_
