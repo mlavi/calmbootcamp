@@ -14,7 +14,7 @@ Insure added to each lesson introduction:
 - [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm):
   - [Project Proposal](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit) = Private cloud automation: three tier web app
   - [Project Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit)
-
+  - Outline G.sheet and Lesson G.Docs
 ---
 0.  Lesson 0: Welcome to Course 2
   - Concept: Meet your instructor
@@ -48,7 +48,7 @@ Insure added to each lesson introduction:
             - AHV resource quota: CPU, memory, storage
         - Concept: ECA Pill? AHV VM Image Management, categories, and clusters
         - LAB/SIMULATION: upload and categorize a CentOS 7 cloud image (see Course 2: Project Deliverables)
-        - LAB/SIMULATION: create a PC project with an AHV simple quota
+        - LAB/SIMULATION: create a PC project (not Calm project) with an AHV simple quota
     - Quiz L1Q2: Map business requirement scenario to PC concepts
         - Review answer
     - Concept: [Calm enablement choices for capacity planning](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_enable/calm_enable/)
@@ -106,7 +106,8 @@ Insure added to each lesson introduction:
         - Includes Calm Roles: RBAC levels of project admin, developer, consumer, operator (slide)
     - Quiz: match the role to privilege
         a.  Review answer
-    - LAB/SIMULATION: create your first project
+    - LAB/SIMULATION: create your first Calm (not PC) project.
+      - Simulation is safer versus pre-create $STUDENTID-C2L2-demo project with $STUDENTID as a Project Admin to configure remaining properties.
         a.  Create project \$STUDENTID-project
         b.  Add yourself as a project administrator
         c.  Add AHV cluster, do not use quotas.
@@ -458,7 +459,7 @@ Insure added to each lesson introduction:
     - logs are located at /var/log/\*, use tail to review
       - tail -n20; tail -f error.log &
     - configuration under: /etc/
-    - More resources to learn HAProxy: TBD
+    - More resources to learn HAProxy: http://www.haproxy.org/
   - Concept: Design the Load Balancer tier
     - Walkthrough/demo: Add the load balancer service
     - EXERCISE: Add the load balancer service
@@ -480,3 +481,6 @@ Insure added to each lesson introduction:
         - Eval can be a shell task, but expects a final output format, which will update a specified Calm macro.
       - Concept: Pause Task
         - A pause in seconds to accommodate for operations to complete.
+  - Concept: Actions versus service actions
+    - What happens when you clone an app profile, scope?
+  - Concept: Blueprint optimization: operation/task dependencies
