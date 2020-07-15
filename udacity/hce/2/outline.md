@@ -4,6 +4,10 @@ Insure added to each lesson introduction:
 - Overview: heading/video/summary
 - Big Picture: heading/video/summary
 - Developing your Inspiration: heading/video/summary
+- L5 refactor:
+  - learn web scale, exercise
+  - learn database, exercise
+  - learn load balancer, exercise
 
 # Course 2 Outline: Private Cloud Automation
 - Objectives: [2/lesson_learning_objectives](2/lesson_learning_objectives.md)
@@ -57,6 +61,8 @@ Insure added to each lesson introduction:
       - Publish blueprints to the marketplace for customer self-service, on-demand application workloads.
       - Complete a deployment, audit, and deprovision for for VM IaaS
     - Concept: Calm Overview: automation for application lifecycle management
+      - Big Picture: intro, text summary, image, vocab, links/references
+      - Developing your Inspiration:
         - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
         -   Demo: Calm navigation, self-service applications on-demand under governance
         -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
@@ -110,6 +116,7 @@ Insure added to each lesson introduction:
             a.  Provider Quotas
             b.  Environments
               - Add SSH credential: superuser, upload your SSH passphraseless private key
+                - L2 reuse your SSH key from your workspace
               - Add Nutanix tab, skip Windows, turn down Linux VM config:
               - Keep name, 1/1/1
               - cloud-init with @@{superuser.publickey}@@ and @@{INSTANCE_PUBLIC_KEY}@@
@@ -132,6 +139,8 @@ Insure added to each lesson introduction:
         1. Create a single-VM blueprint using cloud-init and SSH credentials
         2. Publish a marketplace blueprint for customer self-service, on-demand VM IaaS workloads.
         3. Test a deployment, audit, and deprovision for VM IaaS
+      - Big Picture: intro, text summary, image, vocab, links/references
+      - Developing your Inspiration:
     - Concept: Calm Overview with the Marketplace
       - Once logged into Prism Central, the marketplace provides end-user self-service to published blueprints, availability is determined by user's project(s) and their role.
       - We'll demonstrate a basic blueprint life cycle by publishing a pre-seeded database blueprint to the marketplace and launching the blueprint with an application name 'Udacity-demo1'. Then we'll manage and delete 'Udacity-demo1' application of the database blueprint.
@@ -225,16 +234,49 @@ Insure added to each lesson introduction:
 
 - Lesson 4
   - Concept: Learning objectives:
+    1. Understand multiple service blueprint life cycle: development, launch, audit, publish, clone.
+    2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM leveraging the Task Library.
     2. Configuration and deployment of a web server with a sample PHP web application, from the LAMP stack.
+    - Big Picture: intro, text summary, image, vocab, links/references
+    - Developing your Inspiration:
+  - Concept: Calm Blueprint Life cycle: Clone blueprint within a project.
+    - What is dropped inside the same project? Credentials + secrets.
+    - What is dropped outside the project? Potentially cluster, network, image.
+  - Concept: Calm Blueprint Life cycle: Download and Upload blueprints
+    - Blueprints are JSON format and recommended to store in source code control systems.
+    - Secrets and credentials are emptied when downloading a blueprint unless a password is provided to encrypt the blueprint and preserve these values.
+    - You can upload a JSON blueprint into Calm, there are many example blueprints at:
+      - https://github.com/nutanix/blueprints
+    - Blueprints can be also be made with Python using the Calm Domain Specific Language:
+      - This requires basic Python skills and outside the scope of this course, reference: https://github.com/nutanix/calm-dsl/
   - Concept: Calm Multi-VM Blueprint development with the visual editor
     - After completing the simplest single-VM IaaS blueprint, we'll configure capabilities for multiple VMs, infrastructure providers, and operations the blueprint to can represent the entire application life cycle model, to address PaaS and SaaS use cases. These multiple requirements of infrastructure, application, operations, and governance are contained in the blueprint for highly automated and reusable workloads.
   - Concept: Calm Services and Substrates
     - Substrates map from Calm > Settings > Providers that are further configured in a Project, potentially with resource allow lists and quotas.
+    - Properties of a VM are static unless you delegate runtime property and/or set as a macro.
     - In course 2, we'll focus on VM services from the AHV provider, and in course 3, we'll add a public cloud provider for VM services to accomplish a hybrid cloud deployment.
     - References:
       - [Calm Glossary](../../../appendix/glossary.rst) when needed for students
       - *Calm in Action, Calm Automation playlists?*
       - [Service Documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-service-introduction-c.html)
+  - Concept: Calm Macros Pill
+    - Calm Macros are variables using the @@{name}@@ syntax, they allow dynamic configuration of values during blueprint execution.
+    - Macros can be used in Service properties and in Tasks
+    - Add references:
+      - [Calm Glossary](../../../appendix/glossary.rst)
+      - *Calm in Action, Calm Automation playlists?*
+      - [Reference Documentation with more detail](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-macros-overview-c.html)
+  - Concept: Walthrough/demo of C2L4-Lab1
+    - We are recreating single VM IaaS blueprint in two stages to progressively introduce advanced Calm concepts.
+  - Exercise/Lab: C2L4-Lab1
+    - Create a new blueprint in your student project, name it: C2L4-VM
+    - Add your SSH credential to superuser
+    - Add an AHV VM, clone from project environment, check cloud-init, allow CPU to be changed at launch, set NIC
+    - Add a category, Env:Development
+    - Save blueprint, troubleshoot any validation problems.
+    - Launch blueprint, verify SSH key works via web terminal, delete application.
+    - Save your blueprint to the workspace.
+    - Clone your blueprint to C2L4-Web, we'll use the clone for the start of the next exercise.
   - Concept: Application Profiles Pill
     - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
       - The default profile was used in the single-VM blueprint, but it was invisible to the user.
@@ -248,13 +290,6 @@ Insure added to each lesson introduction:
       - Any combination of the above.
       - Add reference: [Calm Glossary](../../../appendix/glossary.rst) when needed for students
       - *Calm in Action, Calm Automation playlists?*
-  - Concept: Calm Macros Pill
-    - Calm Macros are variables using the @@{name}@@ syntax, they allow dynamic configuration of values during blueprint execution.
-    - Macros can be used in Service properties and in Tasks
-    - Add references:
-      - [Calm Glossary](../../../appendix/glossary.rst)
-      - *Calm in Action, Calm Automation playlists?*
-      - [Reference Documentation with more detail](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-macros-overview-c.html)
   - Concept: Calm Actions1
     - The default application profile contains several actions.
     - Actions are comprised of one or more tasks, which appear as gray ovals on a service.
@@ -280,7 +315,7 @@ Insure added to each lesson introduction:
       - Foster reuse
       - Scope?
       - TBD: Review answer
-  - Concept: Calm Multi-VM web server blueprint
+  - Concept: Calm Multi-VM web server blueprint: Part 2
       - Our goal is to deploy a workload on-prem for a self-service web server for developers.
       - One of the most popular web server stack is LAMP.
       - We already know L, we will address A and P in this lesson.
@@ -299,23 +334,12 @@ Insure added to each lesson introduction:
       - sudo a2ensite; a2enmod
     - web docroot and home page: /var/www/html/index.html
     - More resources to learn Apache: TBD
-  - Concept: PHP programming language pill
-    - A open-source, relatively easy to learn language, and database friendly drivers make it a good choice for the LAMP stack
-    - Warning: all programming on the Internet must also encompasses security design, outside of this scope
-    - For performance, we will install PHP for use inside the Apache web server.
-    - For CentOS 7, we use:
-      - install "sudo yum install php7"
-    - start and stop; restart:
-    - web server configuration under: /etc/apache2
-      - sudo a2ensite; a2enmod
-    - web docroot and home page: /var/www/html/index.php
-    - More resources to learn PHP: TBD
-  - Walkthrough/demo video:
-    a.  TBD: Things to look out for to troubleshoot problems on each step?
-  - EXERCISE/LAB: Your first Calm multi-VM blueprint to make and save one web server Linux VM
-    - TBD: Walkthrough, Exercise: to add Web server install, web server start, web server stop, web server restart
+  - Walkthrough/demo video of C2L4-Lab2:
+    - TBD: Things to look out for to troubleshoot problems on each step?
+    - add Web server install, web server start, web server stop, web server restart
     - Discuss: why do we skip web server uninstall?
-    -   Learn and walkthrough, repurposed from [*https://github.com/mlavi/calmbootcamp/blob/master/calm\_linux\_track/calm\_linux\_app/calm\_linux\_app.rst*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst):
+  - EXERCISE/LAB C2L4-Lab2: Calm multi-VM blueprint web server Linux VM
+    - Learn and walkthrough, repurposed from [*https://github.com/mlavi/calmbootcamp/blob/master/calm\_linux\_track/calm\_linux\_app/calm\_linux\_app.rst*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst):
           -   [*Creating a Blueprint*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-a-blueprint)
           -   [*Creating Credentials*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-credentials)
           -   [*Defining Variables*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#defining-variables) (skip on web server)
@@ -341,32 +365,20 @@ Insure added to each lesson introduction:
 5. Lesson 5: Calm automation for three tier web application with life cycle management
 - Achieve self-service PaaS for a two tier web application based on LAMP stack
   - Concept: Learning objectives:
-    1. Understand multiple service blueprint life cycle: development, launch, audit, publish, clone.
-    2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM leveraging the Task Library.
     3. Configure workload capacity choice with blueprint application profiles
     4. Configure a simple, one page web PHP application in the document root.
     5. Augment a web server blueprint to add a database server on a Linux VM.
     6. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
     7. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
     8. Update the web application to read and write to the database.
-  - Concept: Lesson 5 Learning Objectives:
     1. Clone and augment the two-tier web app blueprint to orchestrate a load balancer on a Linux VM.
     2. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
     3. Publish and test the blueprint for SaaS self-service by scaling out and scaling in the web tier to observe fiscal effects.
     -   Add a database and load balancer to the blueprint to manage a three tier web application lifecycle and variable population
     -   Configure delegatable scale-in and scale-out actions on a web application tier with orchestrated changes to the load balancer.
-  - Concept: Lesson 5 Overview
+    - Big Picture: intro, text summary, image, vocab, links/references
+    - Developing your Inspiration:
     - Achieve self-service SaaS for life cycle action on a three tier web app blueprint
-  - Concept: Calm Blueprint Life cycle: Clone blueprint within a project.
-    - What is dropped inside the same project? Credentials + secrets.
-    - What is dropped outside the project? Potentially cluster, network, image.
-  - Concept: Calm Blueprint Life cycle: Download and Upload blueprints
-    - Blueprints are JSON format and recommended to store in source code control systems.
-    - Secrets and credentials are emptied when downloading a blueprint unless a password is provided to encrypt the blueprint and preserve these values.
-    - You can upload a JSON blueprint into Calm, there are many example blueprints at:
-      - https://github.com/nutanix/blueprints
-    - Blueprints can be also be made with Python using the Calm Domain Specific Language:
-      - This requires basic Python skills and outside the scope of this course, reference: https://github.com/nutanix/calm-dsl/
   - Concept: Calm Actions3
     - Calm can handle more complex PaaS and SaaS needs:
       - Additional Create stages: service pre-create and service package install
@@ -380,6 +392,17 @@ Insure added to each lesson introduction:
       - References:
         - [Calm Glossary](../../../appendix/glossary.rst) when needed for students
         - [Documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-dependencies-overview-c.html)
+    - Concept: PHP programming language pill (can be moved up to C2L4?)
+      - A open-source, relatively easy to learn language, and database friendly drivers make it a good choice for the LAMP stack
+      - Warning: all programming on the Internet must also encompasses security design, outside of this scope
+      - For performance, we will install PHP for use inside the Apache web server.
+      - For CentOS 7, we use:
+        - install "sudo yum install php7"
+      - start and stop; restart:
+      - web server configuration under: /etc/apache2
+        - sudo a2ensite; a2enmod
+      - web docroot and home page: /var/www/html/index.php
+      - More resources to learn PHP: TBD
     - Concept: Database Pill
       - Why MySQL/MariaDB: a leading relational database, the typical M in LAMP stack.
       - Databases manage collections of data with RBAC
