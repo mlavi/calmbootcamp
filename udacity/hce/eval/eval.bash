@@ -119,25 +119,26 @@ calm decompile bp --file "$BP_FULL" > /tmp/null 2>&1
 COMPILE_RESULT=$?
 if [ ! "$COMPILE_RESULT" == "0" ]
 then
-	echo "$ERROR_PREFIX The specified blueprint cannot be decompiled.  Please check the blueprint syntax."
+	echo "$ERROR_PREFIX The specified blueprint cannot be decompiled.  Please ensure the blueprint contains valid JSON."
+	exit
 else
 	echo "$OK_PREFIX Blueprint decompiled successfully.  Continuing."
 fi
 
-echo ""
-echo "$INFO_PREFIX Starting evaluation."
-echo ""
-
 # read the evaluation criteria from the supplied evaluation file
 JSON_CRITERIA="`cat ${CRITERIA_FILE}`"
+
+echo ""
+echo "$INFO_PREFIX Starting evaluation of $BP_FULL."
+echo ""
 
 # go over each of the criteria keys in the evaluation file
 # compare each key's 'expected' value to that key's value in the student's JSON blueprint
 for row in $(echo "${JSON_CRITERIA}" | jq -r '.criteria[] | @base64')
 do
-        KEY=`echo ${row} | base64 --decode | jq -r '.key'`
-	DESCRIPTION=`echo ${row} | base64 --decode | jq -r '.description'`
-	EXPECTED_VALUE=`echo ${row} | base64 --decode | jq -r '.expected'`
+        KEY=`echo ${row} | base64 -d | jq -r '.key'`
+	DESCRIPTION=`echo ${row} | base64 -d | jq -r '.description'`
+	EXPECTED_VALUE=`echo ${row} | base64 -d | jq -r '.expected'`
 	KEY_VALUE=`cat "$BP_FULL" | jq -r "$KEY | length"`
 	# do the comparison
 	if [ "$EXPECTED_VALUE" == "$KEY_VALUE" ]
@@ -149,7 +150,7 @@ do
 done
 
 echo ""
-echo "$INFO_PREFIX Evaluation completed.  Please see results above."
+echo "$INFO_PREFIX Evaluation of $BP_FULL completed.  Please see results above."
 echo ""
 
 # cleanup
