@@ -155,7 +155,6 @@ echo ""
 
 # cleanup
 echo "$INFO_PREFIX Cleaning up."
-# rm "/tmp/$BLUEPRINT.json"
 
 echo "$OK_PREFIX Evaluation completed."
 echo ""
