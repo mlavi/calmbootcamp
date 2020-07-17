@@ -14,7 +14,7 @@ Insure added to each lesson introduction:
 - [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm):
   - [Project Proposal](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit) = Private cloud automation: three tier web app
   - [Project Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit)
-  - Outline G.sheet and Lesson G.Docs
+  - Course Outline G.sheet and Lesson G.Docs
 ---
 0.  Lesson 0: Welcome to Course 2
   - Concept: Meet your instructor
@@ -122,7 +122,7 @@ Insure added to each lesson introduction:
               - Keep name, 1/1/1
               - cloud-init with @@{superuser.publickey}@@ and @@{INSTANCE_PUBLIC_KEY}@@
                 - These are Calm macros, we'll discuss in detail later in the lesson.
-              - Disk, clone from img service, Centos 7 (preloaded on cluster), bootable
+              - Disk, clone from img service, CentOS 7 (preloaded on cluster), bootable
               - NIC 1: VLAN, Dynamic IP
               - Check login with superuser credential
               - Save
@@ -132,6 +132,10 @@ Insure added to each lesson introduction:
         -   Self service: Nutanix Marketplace
         -   Demo video: Project summary of my cluster
     - LAB/EXERCISE: publish a marketplace blueprint to a student project, launch blueprint, audit application, delete application
+    - *Concept: Best practices for Blueprint standards:
+      - Reference: PracDev Template - Nutanix Calm Design.docx ask Stephane.B and Jesse Gonzalez for permission to quote or reference!
+      - Review that we introduce macro pill sooner
+      - Parcel out to each section: credential*
     - Concept: Review lesson learnings:
         -   Calm overview, governance, self-service life cycle management of an existing blueprint with auditing
 
@@ -252,9 +256,21 @@ Insure added to each lesson introduction:
       - This requires basic Python skills and outside the scope of this course, reference: https://github.com/nutanix/calm-dsl/
   - Concept: Calm Multi-VM Blueprint development with the visual editor
     - After completing the simplest single-VM IaaS blueprint, we'll configure capabilities for multiple VMs, infrastructure providers, and operations the blueprint to can represent the entire application life cycle model, to address PaaS and SaaS use cases. These multiple requirements of infrastructure, application, operations, and governance are contained in the blueprint for highly automated and reusable workloads.
+    - Blueprint name best practice: lowercase, use dashes not spaces for descriptive word limiters.
+    - Upload/download and save to revision control.
+    - Use the Markdown in the description to document:
+      - authors
+      - version
+      - assumptions/hard-coded pets
+      - run-time inputs for launch: defaults, etc.
+      - document custom actions
+      - URL/repo link for more documentation
   - Concept: Calm Services and Substrates
     - Substrates map from Calm > Settings > Providers that are further configured in a Project, potentially with resource allow lists and quotas.
     - Properties of a VM are static unless you delegate runtime property and/or set as a macro.
+    - Service name best practice: InterCap/Pascal convention/CamelCase: no spaces. e.g.: Mysql or DbMySql
+    - VM name best practice: typically an IT naming convention, which also implies hostname and DNS/service discovery, but in lieu of any standard, use service best name practice and append a service type suffix: Vm (this will lay the groundwork for K8s pods in the future), e.g.: MysqlVm
+    - Credential name best practice: lowercase, no spaces. Ideal for name to represent the function, role, or facility used. e.g.: domain_admin, local_admin, dba, webteam, web, backups
     - In course 2, we'll focus on VM services from the AHV provider, and in course 3, we'll add a public cloud provider for VM services to accomplish a hybrid cloud deployment.
     - References:
       - [Calm Glossary](../../../appendix/glossary.rst) when needed for students
@@ -263,6 +279,8 @@ Insure added to each lesson introduction:
   - Concept: Calm Macros Pill
     - Calm Macros are variables using the @@{name}@@ syntax, they allow dynamic configuration of values during blueprint execution.
     - Macros can be used in Service properties and in Tasks
+    - Macros are global, but can be defined in the application profile and on a service
+    - Macros best practice: lowercase, use _ to delimit descriptive words.
     - Add references:
       - [Calm Glossary](../../../appendix/glossary.rst)
       - *Calm in Action, Calm Automation playlists?*
@@ -284,6 +302,14 @@ Insure added to each lesson introduction:
       - If needed, the default profile can be renamed for a better description for operators.
     - Additional application profiles provide the operator role (or higher) deployment choices when using an application deployment.
       - This increases blueprint reuse (of actions and governance) instead of making separate blueprints for each permutation of deployment.
+      - Use application profiles to reduce the amount of delegated run-time properties: less choice reduces complexity and increases productivity: less is more!
+    - Application Profile best practice: make this as simple and user-friendly as possible, use nouns that reflect the audience use case/jargon. Capitalized noun, ideally without spaces. Make application profiles a set of mutually exclusive choices. Avoid pets when possible! e.g.:
+      - Production, Staging, UserAcceptanceTesting, Test, QualityAssurance, Development, ContinousIntegration
+      - Public, Private, Hybrid
+      - AHV, AWS, Azure, GCP, ESX, K8s
+      - DataCenter1, BranchOffice9, Colo3, DisasterRecoveryWest, DisasterRecoveryCentral
+      - Small, Medium, Large, Jumbo
+      - Titanium, Gold, Silver, Bronze
     - Example use of profile for operator choice:
       - Recommended configurations, such as capacity size: small versus medium versus large resource consumption for different needs.
       - Limited to full configuration delegation with run-time property overrides.
@@ -298,7 +324,7 @@ Insure added to each lesson introduction:
       - Tasks are executed sequentially on each service.
       - All services execute their actions and tasks in parallel unless a dependency is created to control orchestration, allowing operational control across the entire application.
       - Let's review the actions, the simplest life cycle actions would be for IaaS:
-        - Create and Delete
+        - Create and Delete:
           - Create: invoked upon a blueprint launch, covers all services to allow orchestration, provisions and configures the service in the provider.
           - Delete: deprovision the services with the provider.
         - Start, Stop, and Restart:
@@ -364,17 +390,12 @@ Insure added to each lesson introduction:
   - Concept: Lesson 4 Review: we learned to do TBD
 
 5. Lesson 5: Calm automation for three tier web application with life cycle management
-- Achieve self-service PaaS for a two tier web application based on LAMP stack
   - Concept: Learning objectives:
-    3. Configure workload capacity choice with blueprint application profiles
-    4. Configure a simple, one page web PHP application in the document root.
-    5. Augment a web server blueprint to add a database server on a Linux VM.
-    6. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
-    7. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
-    8. Update the web application to read and write to the database.
-    1. Clone and augment the two-tier web app blueprint to orchestrate a load balancer on a Linux VM.
-    2. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
-    3. Publish and test the blueprint for SaaS self-service by scaling out and scaling in the web tier to observe fiscal effects.
+    1. Achieve self-service SaaS for a three tier web application based on LAMP stack
+    2. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
+    3. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
+    4. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
+    5. Configure workload capacity choice with blueprint application profiles
     -   Add a database and load balancer to the blueprint to manage a three tier web application lifecycle and variable population
     -   Configure delegatable scale-in and scale-out actions on a web application tier with orchestrated changes to the load balancer.
     - Big Picture: intro, text summary, image, vocab, links/references
@@ -411,10 +432,10 @@ Insure added to each lesson introduction:
       - clustering, transactions, replication, D/R, indexes, joins, and NoSQL databases are advanced design and management topics outside of this pill
       - Database install, start/stop, logs
     - Concept: SQL statement Pill, just enough to:
-      - create the root user
+      - update the root user, create a web application user
       - create a table
       - grant privs on table
-      - update a password
+      - update a password on the web application user
     - LAB/EXERCISE: Add the database service:
         -   Walkthrough: Refactor the monolith, reuse the tasks!
         -   Exercise:
@@ -425,29 +446,12 @@ Insure added to each lesson introduction:
             -   Save and launch to test
             -   Review
         -   Review
-
+    - LAB/EXERCISE: Add a database password change custom action
+      - Walkthrough steps
+      - Exercise steps
   -   Concept: Orchestration dependencies across services
       -   Walkthrough
       -   Exercise: [*Adding dependencies*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-dependencies)
-  - Calm concept: scale-in and scale-out web tier
-    - Walkthrough/demo: add scale-in and scale-out web tier
-    - Exercise: [*Scaling Out*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_day2_linux/calm_day2_linux.rst#scaling-out)
-        -   Add web tier actions: scale in and scale out
-        -   Add load balancer task, orchestrate dependencies
-        -   Test deployment by launching blueprint
-        -   Post deployment action: scale out
-        -   Audit: Observe web tier population +1
-        -   Reload the load balancer to observe new node in rotation
-        -   Post deployment action: scale in
-        -   Audit: Observe web tier population +1
-        -   Reload the load balancer to observe new node no longer in rotation
-        -   Delete application
-    -   Add web scale tasks to the Task Library from blueprint by cut and paste?
-    -   Quiz: why is scalability important?
-        -   Single point of failure
-        -   How much time saved?
-        -   TBD
-        -   Review answer
   - Concept: Load Balancer Pill
     - Load balancing allows us to remove pets for failure while also scaling out performance.
     - We will design the load balancer to distribute web requests across a web-tier of servers.
@@ -462,10 +466,41 @@ Insure added to each lesson introduction:
     - More resources to learn HAProxy: http://www.haproxy.org/
   - Concept: Design the Load Balancer tier
     - Walkthrough/demo: Add the load balancer service
-    - EXERCISE: Add the load balancer service
+    - LAB/EXERCISE: Add the load balancer service
         - [*Creating the load balancer service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-load-balancer-service)
         - Add tasks to the library?
         - TBD: can they be pre-made, are they global or scoped to project?
+  - Concept: Calm scale-in and scale-out web service
+    - Walkthrough/demo:
+      - add scale-in and scale-out web tier
+      - add orchestrated task on load balancer server: update configuration
+      - save blueprint and test
+    - Exercise:
+        -   Add web tier actions: scale in and scale out [*Scaling Out*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_day2_linux/calm_day2_linux.rst#scaling-out)
+        -   Add load balancer task, orchestrate dependencies
+        -   Test deployment by launching blueprint
+        -   Post deployment action: scale out
+        -   Audit: Observe web tier population +1
+        -   Reload the load balancer to observe new node in rotation
+        -   Post deployment action: scale in
+        -   Audit: Observe web tier population -1
+        -   Reload the load balancer to observe new node no longer in rotation
+        -   Delete application
+    -   Add web scale tasks to the Task Library from blueprint by cut and paste?
+    -   Quiz: why is scalability important?
+        -   Single point of failure
+        -   How much time saved?
+        -   TBD
+        -   Review answer
+  - Concept: Multiple application profiles
+    - Walkthrough:
+      - Rename default application profile to: Small (remember best practices)
+      - Clone Small application profile, rename to Medium
+      - Localize medium application profile services, change the VMs to:
+        - DB = 2vCPU, 2GB RAM
+        - Web = 2vCPU
+    - Exercise
+      - Reproduce the above.
   - Lesson 5 Review: we learned to test the deployment, scale the web tier in and out
 
 6. Course 2 Review: Private Cloud Automation for self-service enterprise apps
@@ -484,3 +519,4 @@ Insure added to each lesson introduction:
   - Concept: Actions versus service actions
     - What happens when you clone an app profile, scope?
   - Concept: Blueprint optimization: operation/task dependencies
+- AWS foundation: EC2+VPC
