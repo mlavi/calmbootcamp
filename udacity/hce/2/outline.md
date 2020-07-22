@@ -81,6 +81,7 @@
       - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
       - LAB/EXERCISE/SIMULATION: perhaps U-lab Ubuntu 16.04+?:
         - *TBD: Create and save "udacity" SSH passphrase-less key pair to student workspace?*
+        - Windows desktop exercise
     - Concept: Cloud-init for basic, dynamic, secure configuration
       - cloud-init is YAML, space is critical
       - trouble shooting can be difficult and implementations can vary by OS version

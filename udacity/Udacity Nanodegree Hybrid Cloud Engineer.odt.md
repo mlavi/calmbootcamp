@@ -2,6 +2,10 @@
 
 [Nanodegree Course Outline](https://docs.google.com/document/d/1YR6dTsMn6xF0kXmrq-AiP4kSHgLvnvCKEUVozcXLLuE/edit)
 ---
+Videos 3-5 minutes
+Blueprint into/concept (importance/components)
+C2:L0,L5
+---
 Tasks:
   - Chris.R: get Smartsheet access, https://app.smartsheet.com/sheets/jpc6R53QvXWV83hw65CWfqWphC2QmV2PQPwXfFx1
   - Sahil hybrid cloud resource management request
