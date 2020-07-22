@@ -1,13 +1,3 @@
-Goal: 10-15 min lab/exercise, ideal to have 3 per lesson.
-intro, text summary, image, vocab, links/references, quiz, exercise
-Insure added to each lesson introduction:
-- Overview: heading/video/summary
-- Big Picture: heading/video/summary
-- Developing your Inspiration: heading/video/summary
-- L5 refactor:
-  - learn web scale, exercise
-  - learn database, exercise
-  - learn load balancer, exercise
 
 # Course 2 Outline: Private Cloud Automation
 - Objectives: [2/lesson_learning_objectives](2/lesson_learning_objectives.md)
@@ -17,183 +7,184 @@ Insure added to each lesson introduction:
   - Course Outline G.sheet and Lesson G.Docs
 ---
 0.  Lesson 0: Welcome to Course 2
-  - Concept: Meet your instructor
+  - Concept: Meet your instructor: Mark Lavi
+    - https://docs.google.com/document/d/1nBgHS6b201Z3g11suFH8DZYjH9T94flFgOwqPmgl7gs/edit#heading=h.yafbfdzd3lst
   - Concept: Course 2 overview:
     - Multi-cluster, scale out control plane = a private cloud
     - Automation is the key to self-service
     - From VM IaaS monolith to the PaaS scalable web application to SaaS life cycle operations
 
 1.  Lesson 1: Managing multiple cluster and workload resources
-    - Concept: Lesson 1 overview and objectives
-      - Big Picture: intro, text summary, image, vocab, links/references
-      - Developing your Inspiration:
-      - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
-    - Concept: Prism Central
-      - Understand the difference between Prism Element and Prism Central and capacity plan enabling Prism Central and Calm automation.
-      - Prism Element control plane for a single Nutanix cluster
-      - PC = Scale out control plane for multiple Nutanix clusters, cluster by hypervisor/hardware provider
-      - LAB/SIMULATION: PC deployment sizing choices and discussion
-      - Concept: warnings and alert logs for cluster resource management
-      - Note that we will skip advanced PC workload management facilities: AIOps, sizer runway, etc.
-    - Quiz L1Q1: PE vs PC
+  - Concept: Lesson 1 overview and objectives
+    - Big Picture: intro, text summary, image, vocab, links/references
+    - Developing your Inspiration:
+    - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
+  - Concept: Prism Central
+    - Identify the difference between Prism Element and Prism Central and capacity plan enabling Prism Central and Calm automation.
+    - Prism Element control plane for a single Nutanix cluster
+    - PC = Scale out control plane for multiple Nutanix clusters, cluster by hypervisor/hardware provider
+    - SIMULATION/LAB: PC deployment sizing choices and discussion
+    - Concept: warnings and alert logs for cluster resource management
+    - Note that we will skip advanced PC workload management facilities: AIOps, sizer runway, etc.
+  - Quiz L1Q1: PE vs PC
+    - Review answer
+  - Concept: Prism Central concepts for governance
+      - Concept: Course 1 recap: Governance and business needs: Model business governance requirements using identity management and role based access controls with project resource quotas and provider show back costs.
+      - Concept: ECA Pill? PC Identity management
+      - Concept: [PC RBAC: Role Based Access Control](pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html)
+      - Concept: ECA Pill? PC Categories:
+        - Manage VMs and disk images with categories.
+      - Concept: ECA Pill? PC Projects:
+          - Users and Roles: granular RBAC levels
+          - AHV resource quota: CPU, memory, storage
+      - Concept: ECA Pill? AHV VM Image Management, categories, and clusters
+      - SIMULATION/LAB: upload and categorize a CentOS 7 cloud image (see Course 2: Project Deliverables)
+      - SIMULATION/LAB: create a PC project (not Calm project) with an AHV simple quota
+  - Quiz L1Q2: Map business requirement scenario to PC concepts
       - Review answer
-    - Concept: Prism Central concepts for governance
-        - Concept: Course 1 recap: Governance and business needs: Model business governance requirements using identity management and role based access controls with project resource quotas and provider show back costs.
-        - Concept: ECA Pill? PC Identity management
-        - Concept: [PC RBAC: Role Based Access Control](pills/ECA-3_0-Course-Guide_ditamap/eca/eca_5-15/for-alpha/eca-5-10-12-prism-central/topics/Prism_Central_Overview_2.html)
-        - Concept: ECA Pill? PC Categories:
-          - Manage VMs and disk images with categories.
-        - Concept: ECA Pill? PC Projects:
-            - Users and Roles: granular RBAC levels
-            - AHV resource quota: CPU, memory, storage
-        - Concept: ECA Pill? AHV VM Image Management, categories, and clusters
-        - LAB/SIMULATION: upload and categorize a CentOS 7 cloud image (see Course 2: Project Deliverables)
-        - LAB/SIMULATION: create a PC project (not Calm project) with an AHV simple quota
-    - Quiz L1Q2: Map business requirement scenario to PC concepts
-        - Review answer
-    - Concept: [Calm enablement choices for capacity planning](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_enable/calm_enable/)
-    - LAB/SIMULATION: Calm enablement (abbreviated video?)
-    - Lesson 1 Review: we learned to do 1,2,3
+  - Concept: [Calm enablement choices for capacity planning](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_enable/calm_enable/)
+  - SIMULATION/LAB: Calm enablement (abbreviated video?)
+  - Lesson 1 Review: we learned to do 1,2,3
 
-2.  Lesson 2: Calm automation for application lifecycle management
-    - Concept: Lesson Learning Objectives:
-      - Understand Calm automation and orchestration benefits
-      - Publish blueprints to the marketplace for customer self-service, on-demand application workloads.
-      - Complete a deployment, audit, and deprovision for for VM IaaS
-    - Concept: Calm Overview: automation for application lifecycle management
-      - Big Picture: intro, text summary, image, vocab, links/references
-      - Developing your Inspiration:
-        - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
-        -   Demo: Calm navigation, self-service applications on-demand under governance
-        -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
-    - Quiz: Calm automation does...
-        -   infra only
-        -   apps only
-        -   both (correct)
-        -   Review answer
-    - Concept: VM IaaS for self-service IT
-      - Most important first step for a private cloud
-      - Concept: Linux OS, CentOS 7 for a fast, license free base OS
-        - Discuss why Linux (vs Windows license), rapid provisioning time, Docker container native
-        - Factoid: Microsoft Azure rapidly found over 50% of their workloads were Linux (need to find reference)
-        - I edited down answers from these sources:
-          - https://en.wikipedia.org/wiki/Linux
-          - What is Linux? https://www.kernel.org/linux.html
-          - https://en.wikipedia.org/wiki/CentOS
-          - https://wiki.centos.org/FAQ/General#What_is_CentOS_Linux.3F
-        - Linux is a family of open source Unix-like operating systems based on the Linux kernel, first released in 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution, which include the kernel and supporting system software and libraries, many of which are provided by the GNU Project. Linux has the largest installed base of all general-purpose operating systems, it is the kernel of Android and Chrome OS for mobile phones, tablets, and laptops. Linux is the leading operating system on servers (over 96.4% of the top 1 million web servers' operating systems are Linux) and is the only OS used on TOP500 supercomputers. Linux also runs on embedded systems, which includes routers, smart home technology, televisions, automobiles.
-        - CentOS, from Community Enterprise Operating System is a Linux distribution that provides a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL) and uses open source licensing.
-      - Concept: SSH keypairs for secure access to Linux VMs
-        - SSH key password background (vs static password)
-        - SSH Pill sources: ssh-keygen -m PEM -t rsa -f keyname -C comment
-        - https://mlavi.github.io/post/ssh-key-authentication/
-        - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
-        - LAB/EXERCISE/SIMULATION: perhaps U-lab Ubuntu 16.04+?:
-          - *TBD: Create and save "udacity" SSH passphrase-less key pair to student workspace?*
-      - Concept: Cloud-init for basic, dynamic, secure configuration
-        - cloud-init is YAML, space is critical
-        - trouble shooting can be difficult and implementations can vary by OS version
-        - Calm can also provision a Windows VMs with SysPrep, the analog to cloud-init.
-    - Concept: Calm governance consists of providers, projects, RBAC, and the Marketplace workflow publishing process
-    - Concept: Calm \> Settings \> Providers
-        - When PC is deployed on AHV, the host cluster is automatically configured out of the box.
-        - Optional: Show Back Costs for VM vCPU, memory, storage dimensions
-        - Calm Providers can add multiple clouds and hypervisors, just requires credentials and network access from Calm+PC.
-        - Calm Providers can also use Kubernetes, but we'll use the AHV VM provider in course 2.
-        - In course 3, we will add a public cloud provider to accomplish a hybrid cloud application deployment.
-    - Concept: Calm \> Projects
-        - Extended from PC projects
-        - Includes Calm Roles: RBAC levels of project admin, developer, consumer, operator (slide)
-    - Quiz: match the role to privilege
-        a.  Review answer
-    - LAB/SIMULATION: create your first Calm (not PC) project.
-      - Simulation is safer versus pre-create $STUDENTID-C2L2-demo project with $STUDENTID as a Project Admin to configure remaining properties.
-        a.  Create project \$STUDENTID-project
-        b.  Add yourself as a project administrator
-        c.  Add AHV cluster, do not use quotas.
-        d.  Save and confirm your project
-        e.  Review exercise: you created a project for governance
-    - Concept: Calm Projects, part 2
-            a.  Provider Quotas
-            b.  Environments
-              - Add SSH credential: superuser, upload your SSH passphraseless private key
-                - L2 reuse your SSH key from your workspace
-              - Add Nutanix tab, skip Windows, turn down Linux VM config:
-              - Keep name, 1/1/1
-              - cloud-init with @@{superuser.publickey}@@ and @@{INSTANCE_PUBLIC_KEY}@@
-                - These are Calm macros, we'll discuss in detail later in the lesson.
-              - Disk, clone from img service, CentOS 7 (preloaded on cluster), bootable
-              - NIC 1: VLAN, Dynamic IP
-              - Check login with superuser credential
-              - Save
-    - LAB/SIMULATION: Configure a project environment for a basic Linux VM with cloud-init and SSH key credentials
-    - Concept: Nutanix Marketplace
-        -   Blueprint Publishing workflow
-        -   Self service: Nutanix Marketplace
-        -   Demo video: Project summary of my cluster
-    - LAB/EXERCISE: publish a marketplace blueprint to a student project, launch blueprint, audit application, delete application
-    - *Concept: Best practices for Blueprint standards:
-      - Reference: PracDev Template - Nutanix Calm Design.docx ask Stephane.B and Jesse Gonzalez for permission to quote or reference!
-      - Review that we introduce macro pill sooner
-      - Parcel out to each section: credential*
-    - Concept: Review lesson learnings:
-        -   Calm overview, governance, self-service life cycle management of an existing blueprint with auditing
+2. Lesson 2: Calm automation for application lifecycle management
+  - Concept: Lesson Learning Objectives:
+    - Identify Calm automation and orchestration benefits
+    - Publish pre-seeded blueprints to the marketplace for customer self-service, on-demand VM IaaS workloads.
+    - Complete a deployment, audit, and deprovision for for VM IaaS
+  - Concept: Calm Overview: automation for application lifecycle management
+    - Big Picture: intro, text summary, image, vocab, links/references
+    - Developing your Inspiration:
+      - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
+      -   Demo: Calm navigation, self-service applications on-demand under governance
+      -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
+  - Quiz: Calm automation does...
+      -   infra only
+      -   apps only
+      -   both (correct)
+      -   Review answer
+  - Concept: VM IaaS for self-service IT
+    - Most important first step for a private cloud
+    - Concept: Linux OS, CentOS 7 for a fast, license free base OS
+      - Discuss why Linux (vs Windows license), rapid provisioning time, Docker container native
+      - Factoid: Microsoft Azure rapidly found over 50% of their workloads were Linux (need to find reference)
+      - I edited down answers from these sources:
+        - https://en.wikipedia.org/wiki/Linux
+        - What is Linux? https://www.kernel.org/linux.html
+        - https://en.wikipedia.org/wiki/CentOS
+        - https://wiki.centos.org/FAQ/General#What_is_CentOS_Linux.3F
+      - Linux is a family of open source Unix-like operating systems based on the Linux kernel, first released in 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution, which include the kernel and supporting system software and libraries, many of which are provided by the GNU Project. Linux has the largest installed base of all general-purpose operating systems, it is the kernel of Android and Chrome OS for mobile phones, tablets, and laptops. Linux is the leading operating system on servers (over 96.4% of the top 1 million web servers' operating systems are Linux) and is the only OS used on TOP500 supercomputers. Linux also runs on embedded systems, which includes routers, smart home technology, televisions, automobiles.
+      - CentOS, from Community Enterprise Operating System is a Linux distribution that provides a free, community-supported computing platform functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL) and uses open source licensing.
+    - Concept: SSH keypairs for secure access to Linux VMs
+      - SSH key password background (vs static password)
+      - SSH Pill sources: ssh-keygen -m PEM -t rsa -f keyname -C comment
+      - https://mlavi.github.io/post/ssh-key-authentication/
+      - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
+      - LAB/EXERCISE/SIMULATION: perhaps U-lab Ubuntu 16.04+?:
+        - *TBD: Create and save "udacity" SSH passphrase-less key pair to student workspace?*
+    - Concept: Cloud-init for basic, dynamic, secure configuration
+      - cloud-init is YAML, space is critical
+      - trouble shooting can be difficult and implementations can vary by OS version
+      - Calm can also provision a Windows VMs with SysPrep, the analog to cloud-init.
+  - Concept: Calm governance consists of providers, projects, RBAC, and the Marketplace workflow publishing process
+  - Concept: Calm \> Settings \> Providers
+      - When PC is deployed on AHV, the host cluster is automatically configured out of the box.
+      - Optional: Show Back Costs for VM vCPU, memory, storage dimensions
+      - Calm Providers can add multiple clouds and hypervisors, just requires credentials and network access from Calm+PC.
+      - Calm Providers can also use Kubernetes, but we'll use the AHV VM provider in course 2.
+      - In course 3, we will add a public cloud provider to accomplish a hybrid cloud application deployment.
+  - Concept: Calm \> Projects
+      - Extended from PC projects
+      - Includes Calm Roles: RBAC levels of project admin, developer, consumer, operator (slide)
+  - Quiz: match the role to privilege
+      a.  Review answer
+  - LAB/SIMULATION: create your first Calm (not PC) project.
+    - Simulation is safer versus pre-create $STUDENTID-C2L2-demo project with $STUDENTID as a Project Admin to configure remaining properties.
+      a.  Create project \$STUDENTID-project
+      b.  Add yourself as a project administrator
+      c.  Add AHV cluster, do not use quotas.
+      d.  Save and confirm your project
+      e.  Review exercise: you created a project for governance
+  - Concept: Calm Projects, part 2
+          a.  Provider Quotas
+          b.  Environments
+            - Add SSH credential: superuser, upload your SSH passphraseless private key
+              - L2 reuse your SSH key from your workspace
+            - Add Nutanix tab, skip Windows, turn down Linux VM config:
+            - Keep name, 1/1/1
+            - cloud-init with @@{superuser.publickey}@@ and @@{INSTANCE_PUBLIC_KEY}@@
+              - These are Calm macros, we'll discuss in detail later in the lesson.
+            - Disk, clone from img service, CentOS 7 (preloaded on cluster), bootable
+            - NIC 1: VLAN, Dynamic IP
+            - Check login with superuser credential
+            - Save
+  - LAB/SIMULATION: Configure a project environment for a basic Linux VM with cloud-init and SSH key credentials
+  - Concept: Nutanix Marketplace
+      -   Blueprint Publishing workflow
+      -   Self service: Nutanix Marketplace
+      -   Demo video: Project summary of my cluster
+  - LAB/EXERCISE: publish a marketplace blueprint to a student project, launch blueprint, audit application, delete application
+  - *Concept: Best practices for Blueprint standards:
+    - Reference: PracDev Template - Nutanix Calm Design.docx ask Stephane.B and Jesse Gonzalez for permission to quote or reference!
+    - Review that we introduce macro pill sooner
+    - Parcel out to each section: credential*
+  - Concept: Review lesson learnings:
+      -   Calm overview, governance, self-service life cycle management of an existing blueprint with auditing
 
-3.  Lesson 3: Create and publish your first Calm blueprint to achieve self-service VM IaaS
-    - Concept: Learning objectives:
-        1. Create a single-VM blueprint using cloud-init and SSH credentials
-        2. Publish a marketplace blueprint for customer self-service, on-demand VM IaaS workloads.
-        3. Test a deployment, audit, and deprovision for VM IaaS
-      - Big Picture: intro, text summary, image, vocab, links/references
-      - Developing your Inspiration:
-    - Concept: Calm Overview with the Marketplace
-      - Once logged into Prism Central, the marketplace provides end-user self-service to published blueprints, availability is determined by user's project(s) and their role.
-      - We'll demonstrate a basic blueprint life cycle by publishing a pre-seeded database blueprint to the marketplace and launching the blueprint with an application name 'Udacity-demo1'. Then we'll manage and delete 'Udacity-demo1' application of the database blueprint.
-        - i.e. An application is a blueprint deployment or instantiation.
-      - *Demo Video:*
-        - Calm > Marketplace Manager: publish a pre-seeded Marketplace MongoDB (single) blueprint
-          - specify a project containing a Linux environment
-        - Calm > Marketplace: launch blueprint
-          - choose your project
-          - name your application deployment: Udacity-demo1
-          - choose the AHV application profile, note that others are ghosted out because not part of the project
-          - examine the configuration tabs: VM, credential, etc.
-          - provide the credential private key and the INSTANCE_PUBLIC_KEY public key
-          - Launch, note that we are advanced to Calm > Applications > Udacity-demo1
-          - Review provisioning overview, Manage > Create view, then Audit tab > Create
-          - Calm Projects > Review project use to use VMs/cost consumption
-          - Turn down tasks and display/pop-out logs to show real-time progress
-            - Logs can be reviewed to troubleshoot problems and downloaded (with the download icon) for forensics
-          - Wait for Create action to complete, review the Services tab to show the VM properties
-          - Delete the application to complete the lifecycle.
-    - Concept: Calm Blueprint Overview
-      - The demo showed us the self-service aspect of consuming a blueprint from the marketplace.
-      - Blueprints model the life cycle of infrastructure, applications, governance, and operations.
-        - The simplest blueprints model:
-          - a pet VM for IaaS
-          - operations: create and delete actions
-          - governed by:
-            - provisioning with a single provider, set by the project upon blueprint creation
-            - static and run-time VM configuration
-        - The simplest blueprint life cycle: development (and troubleshooting), launch, manage, delete.
-        - We will expand on more blueprint concepts after the Single-VM blueprint exercise to build towards PaaS and SaaS-like models.
-      - Concept: (un)publish to Marketplace
-      - Concept: Delete a blueprint.
-      - Concept: Calm > Blueprint: directory, searching by: status and name
-        - Status: deleted is how you can reclaim blueprints in your projects
-      - Concept: Launch the blueprint
-        - Blueprints can launched from the single VM wizard, multi-VM blueprint editor, Calm > Blueprint, or Calm > Marketplace.
-          - Outside Calm, blueprints can be launched via API and the Calm DSL CLI.
-        - Launch requires us to name the application deployment
-          - One can review the static values and configure run-time values
-          - Click Launch button to be taken to Applications to manage the life cycle
-      - Concept: Audit and Delete the application deployment to complete the lifecycle.
-    - Concept: Calm Single-VM blueprint
-      - The Single-VM blueprint encapsulates the infrastructure and configuration of a VM on a project's enabled providers.
-      - This is a wizard driven experience, which makes VM IaaS simple, but with a smaller set of Calm capabilities than the multi-VM blueprint.
-      - All Calm blueprints are created in a project, requiring a Developer role or higher in the project.
-      - We'll leverage the Project environment to cut down on copy and paste.
-    - EXERCISE/LAB:
+3.  Lesson 3: Create and publish your first Calm single-VM blueprint to achieve self-service VM IaaS
+  - Concept: Learning objectives:
+      1. Create a single-VM blueprint using cloud-init and SSH credentials
+      2. Publish a marketplace blueprint for customer self-service, on-demand VM IaaS workloads.
+      3. Test a deployment, audit, and deprovision for VM IaaS
+    - Big Picture: intro, text summary, image, vocab, links/references
+    - Developing your Inspiration:
+  - Concept: Calm Overview with the Marketplace
+    - Once logged into Prism Central, the marketplace provides end-user self-service to published blueprints, availability is determined by user's project(s) and their role.
+    - We'll demonstrate a basic blueprint life cycle by publishing a pre-seeded database blueprint to the marketplace and launching the blueprint with an application name 'Udacity-demo1'. Then we'll manage and delete 'Udacity-demo1' application of the database blueprint.
+      - i.e. An application is a blueprint deployment or instantiation.
+    - *Demo Video:*
+      - Calm > Marketplace Manager: publish a pre-seeded Marketplace MongoDB (single) blueprint
+        - specify a project containing a Linux environment
+      - Calm > Marketplace: launch blueprint
+        - choose your project
+        - name your application deployment: Udacity-demo1
+        - choose the AHV application profile, note that others are ghosted out because not part of the project
+        - examine the configuration tabs: VM, credential, etc.
+        - provide the credential private key and the INSTANCE_PUBLIC_KEY public key
+        - Launch, note that we are advanced to Calm > Applications > Udacity-demo1
+        - Review provisioning overview, Manage > Create view, then Audit tab > Create
+        - Calm Projects > Review project use to use VMs/cost consumption
+        - Turn down tasks and display/pop-out logs to show real-time progress
+          - Logs can be reviewed to troubleshoot problems and downloaded (with the download icon) for forensics
+        - Wait for Create action to complete, review the Services tab to show the VM properties
+        - Delete the application to complete the lifecycle.
+  - Concept: Calm Blueprint Overview
+    - The demo showed us the self-service aspect of consuming a blueprint from the marketplace.
+    - Blueprints model the life cycle of infrastructure, applications, governance, and operations.
+      - The simplest blueprints model:
+        - a pet VM for IaaS
+        - operations: create and delete actions
+        - governed by:
+          - provisioning with a single provider, set by the project upon blueprint creation
+          - static and run-time VM configuration
+      - The simplest blueprint life cycle: development (and troubleshooting), launch, manage, delete.
+      - We will expand on more blueprint concepts after the Single-VM blueprint exercise to build towards PaaS and SaaS-like models.
+    - Concept: (un)publish to Marketplace
+    - Concept: Delete a blueprint.
+    - Concept: Calm > Blueprint: directory, searching by: status and name
+      - Status: deleted is how you can reclaim blueprints in your projects
+    - Concept: Launch the blueprint
+      - Blueprints can launched from the single VM wizard, multi-VM blueprint editor, Calm > Blueprint, or Calm > Marketplace.
+        - Outside Calm, blueprints can be launched via API and the Calm DSL CLI.
+      - Launch requires us to name the application deployment
+        - One can review the static values and configure run-time values
+        - Click Launch button to be taken to Applications to manage the life cycle
+    - Concept: Audit and Delete the application deployment to complete the lifecycle.
+  - Concept: Calm Single-VM blueprint
+    - The Single-VM blueprint encapsulates the infrastructure and configuration of a VM on a project's enabled providers.
+    - This is a wizard driven experience, which makes VM IaaS simple, but with a smaller set of Calm capabilities than the multi-VM blueprint.
+    - All Calm blueprints are created in a project, requiring a Developer role or higher in the project.
+    - We'll leverage the Project environment to cut down on copy and paste.
+  - EXERCISE/LAB:
       - Navigate to blueprints > + Create Blueprint > Single VM Blueprint
       - Blueprint Settings, Step 1: name "singlevm-centos7", choose your student project, choose "VM Details >" button
       - VM Details, Step 2:
@@ -239,7 +230,7 @@ Insure added to each lesson introduction:
 
 - Lesson 4
   - Concept: Learning objectives:
-    1. Understand multiple service blueprint life cycle: development, launch, audit, publish, clone.
+    1. Identify multiple service blueprint life cycle: development, launch, audit, publish, clone.
     2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM leveraging the Task Library.
     2. Configuration and deployment of a web server with a sample PHP web application, from the LAMP stack.
     - Big Picture: intro, text summary, image, vocab, links/references
@@ -378,15 +369,15 @@ Insure added to each lesson introduction:
               d.  Add install task
               e.  Save and troubleshoot any validation issues
               f.  Launch and Audit deployment
-      -   Review exercise: you did your first push button automated web server lifecycle with a few clicks.
-      -   Quiz: a new employee asks for a web server. What is the best answer to give them a repeatable, delegatable web server?
-          -   Insure external people or groups are in a new project, then Blueprint Publish, Approve, Add project(s) and Publish to Marketplace
-          -   Publish a web server blueprint to the default project in the marketplace.
-          -   Add people or groups to my project
-          -   Add people to in directory server groups
-          -   All of the above steps are required
-          -   Any of the above steps will suffice (correct)
-        -   Review answer
+    -   Review exercise: you did your first push button automated web server lifecycle with a few clicks.
+  - Quiz: a new employee asks for a web server. What is the best answer to give them a repeatable, delegatable web server?
+        -   Insure external people or groups are in a new project, then Blueprint Publish, Approve, Add project(s) and Publish to Marketplace
+        -   Publish a web server blueprint to the default project in the marketplace.
+        -   Add people or groups to my project
+        -   Add people to in directory server groups
+        -   All of the above steps are required
+        -   Any of the above steps will suffice (correct)
+      -   Review answer
   - Concept: Lesson 4 Review: we learned to do TBD
 
 5. Lesson 5: Calm automation for three tier web application with life cycle management
@@ -407,74 +398,74 @@ Insure added to each lesson introduction:
       - Additional Delete stages: service package uninstall and service post-delete.
       - Scale-in and Scale-out: to change a service tier array's population
       - Custom actions for ongoing maintenance and operations
-    - Concept: Calm Orchestration Pill
-      - Each application profile can use Calm macros for dynamic configuration inside actions and service properties.
-      - Calm Macros will automatically create dependency arcs between services when saving a blueprint.
-      - Logical service dependencies can be made with white arrows to order services.
-      - References:
-        - [Calm Glossary](../../../appendix/glossary.rst) when needed for students
-        - [Documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-dependencies-overview-c.html)
-    - Concept: PHP programming language pill (can be moved up to C2L4?)
-      - A open-source, relatively easy to learn language, and database friendly drivers make it a good choice for the LAMP stack
-      - Warning: all programming on the Internet must also encompasses security design, outside of this scope
-      - For performance, we will install PHP for use inside the Apache web server.
-      - For CentOS 7, we use:
-        - install "sudo yum install php7"
-      - start and stop; restart:
-      - web server configuration under: /etc/apache2
-        - sudo a2ensite; a2enmod
-      - web docroot and home page: /var/www/html/index.php
-      - More resources to learn PHP: TBD
-    - Concept: Database Pill
-      - Why MySQL/MariaDB: a leading relational database, the typical M in LAMP stack.
-      - Databases manage collections of data with RBAC
-      - Data is organized in tables accessed via SQL statements
-      - clustering, transactions, replication, D/R, indexes, joins, and NoSQL databases are advanced design and management topics outside of this pill
-      - Database install, start/stop, logs
-    - Concept: SQL statement Pill, just enough to:
-      - update the root user, create a web application user
-      - create a table
-      - grant privs on table
-      - update a password on the web application user
-    - LAB/EXERCISE: Add the database service:
-        -   Walkthrough: Refactor the monolith, reuse the tasks!
-        -   Exercise:
-            -   Complete the [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton
-            -   Delete the mysql tasks
-            -   Add MySQL service and tasks to actions
-            -   Wire logical dependency
-            -   Save and launch to test
-            -   Review
-        -   Review
-    - LAB/EXERCISE: Add a database password change custom action
-      - Walkthrough steps
-      - Exercise steps
-  -   Concept: Orchestration dependencies across services
+  - Concept: Calm Orchestration Pill
+    - Each application profile can use Calm macros for dynamic configuration inside actions and service properties.
+    - Calm Macros will automatically create dependency arcs between services when saving a blueprint.
+    - Logical service dependencies can be made with white arrows to order services.
+    - References:
+      - [Calm Glossary](../../../appendix/glossary.rst) when needed for students
+      - [Documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-dependencies-overview-c.html)
+  - Concept: PHP programming language pill (can be moved up to C2L4?)
+    - A open-source, relatively easy to learn language, and database friendly drivers make it a good choice for the LAMP stack
+    - Warning: all programming on the Internet must also encompasses security design, outside of this scope
+    - For performance, we will install PHP for use inside the Apache web server.
+    - For CentOS 7, we use:
+      - install "sudo yum install php7"
+    - start and stop; restart:
+    - web server configuration under: /etc/apache2
+      - sudo a2ensite; a2enmod
+    - web docroot and home page: /var/www/html/index.php
+    - More resources to learn PHP: TBD
+  - Concept: Database Pill
+    - Why MySQL/MariaDB: a leading relational database, the typical M in LAMP stack.
+    - Databases manage collections of data with RBAC
+    - Data is organized in tables accessed via SQL statements
+    - clustering, transactions, replication, D/R, indexes, joins, and NoSQL databases are advanced design and management topics outside of this pill
+    - Database install, start/stop, logs
+  - Concept: SQL statement Pill, just enough to:
+    - update the root user, create a web application user
+    - create a table
+    - grant privs on table
+    - update a password on the web application user
+  - LAB/EXERCISE: Add the database service:
+      -   Walkthrough/demo: Refactor the monolith, reuse the tasks!
+      -   Exercise:
+          -   Complete the [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton
+          -   Delete the mysql tasks
+          -   Add MySQL service and tasks to actions
+          -   Wire logical dependency
+          -   Save and launch to test
+          -   Review
+      -   Review
+  - LAB/EXERCISE: Add a database password change custom action
+    - Walkthrough steps
+    - Exercise steps
+    - Concept: Orchestration dependencies across services
       -   Walkthrough
       -   Exercise: [*Adding dependencies*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-dependencies)
-  - Concept: Load Balancer Pill
-    - Load balancing allows us to remove pets for failure while also scaling out performance.
-    - We will design the load balancer to distribute web requests across a web-tier of servers.
-    - Why HAProxy? Opensource and very flexible.
-    - Alternatives include F5, etc.
-    - For CentOS 7, we use:
-      - install "sudo yum install haproxy"
-    - start and stop; restart:
-    - logs are located at /var/log/\*, use tail to review
-      - tail -n20; tail -f error.log &
-    - configuration under: /etc/
-    - More resources to learn HAProxy: http://www.haproxy.org/
-  - Concept: Design the Load Balancer tier
-    - Walkthrough/demo: Add the load balancer service
-    - LAB/EXERCISE: Add the load balancer service
-        - [*Creating the load balancer service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-load-balancer-service)
-        - Add tasks to the library?
-        - TBD: can they be pre-made, are they global or scoped to project?
-  - Concept: Calm scale-in and scale-out web service
-    - Walkthrough/demo:
-      - add scale-in and scale-out web tier
-      - add orchestrated task on load balancer server: update configuration
-      - save blueprint and test
+    - Concept: Load Balancer Pill
+      - Load balancing allows us to remove pets for failure while also scaling out performance.
+      - We will design the load balancer to distribute web requests across a web-tier of servers.
+      - Why HAProxy? Opensource and very flexible.
+      - Alternatives include F5, etc.
+      - For CentOS 7, we use:
+        - install "sudo yum install haproxy"
+      - start and stop; restart:
+      - logs are located at /var/log/\*, use tail to review
+        - tail -n20; tail -f error.log &
+      - configuration under: /etc/
+      - More resources to learn HAProxy: http://www.haproxy.org/
+    - Concept: Design the Load Balancer tier
+      - Walkthrough/demo: Add the load balancer service
+      - LAB/EXERCISE: Add the load balancer service
+          - [*Creating the load balancer service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-load-balancer-service)
+          - Add tasks to the library?
+          - TBD: can they be pre-made, are they global or scoped to project?
+    - Concept: Calm scale-in and scale-out web service
+      - Walkthrough/demo:
+        - add scale-in and scale-out web tier
+        - add orchestrated task on load balancer server: update configuration
+        - save blueprint and test
     - Exercise:
         -   Add web tier actions: scale in and scale out [*Scaling Out*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_day2_linux/calm_day2_linux.rst#scaling-out)
         -   Add load balancer task, orchestrate dependencies
@@ -486,22 +477,22 @@ Insure added to each lesson introduction:
         -   Audit: Observe web tier population -1
         -   Reload the load balancer to observe new node no longer in rotation
         -   Delete application
-    -   Add web scale tasks to the Task Library from blueprint by cut and paste?
+        -   Add web scale tasks to the Task Library from blueprint by cut and paste?
     -   Quiz: why is scalability important?
         -   Single point of failure
         -   How much time saved?
         -   TBD
         -   Review answer
-  - Concept: Multiple application profiles
-    - Walkthrough:
-      - Rename default application profile to: Small (remember best practices)
-      - Clone Small application profile, rename to Medium
-      - Localize medium application profile services, change the VMs to:
-        - DB = 2vCPU, 2GB RAM
-        - Web = 2vCPU
-    - Exercise
-      - Reproduce the above.
-  - Lesson 5 Review: we learned to test the deployment, scale the web tier in and out
+    - Concept: Multiple application profiles
+      - Walkthrough:
+        - Rename default application profile to: Small (remember best practices)
+        - Clone Small application profile, rename to Medium
+        - Localize medium application profile services, change the VMs to:
+          - DB = 2vCPU, 2GB RAM
+          - Web = 2vCPU
+      - Exercise
+        - Reproduce the above.
+  - Concept: Lesson 5 Review: we learned to test the deployment, scale the web tier in and out
 
 6. Course 2 Review: Private Cloud Automation for self-service enterprise apps
 7. Project 2

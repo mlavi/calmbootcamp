@@ -1,220 +1,89 @@
 []{#anchor}[*Udacity Nanodegree: Hybrid Cloud Engineer*](https://confluence.eng.nutanix.com:8443/display/DVM/Udacity+Nanodegree%3A+Hybrid+Cloud+Engineer)
 
-[*Private Cloud HCI*](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#heading=h.n8a6s96m0oy)
-
-[Project 1 Proposal](https://docs.google.com/document/d/1yAkJBdx9oyoYcfNVPx1sA3h_7fHa1BXRyWB9QzdItks/edit#)
-Course scenarios to explore with team:
-
--   Multi-tenancy
--   Using idle education on-prem clusters
--   Reducing project infra requirements for cost optimization
-
-[]{#anchor-4}Course 2: On-Premise \"Private Cloud\" Automation
-
-\[ [*Nutanix Course 2 Folder*](https://drive.google.com/drive/folders/1Jqs7WTepEufzm4l4a4XgoqwBIsJIYe1u) \|\| [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm) \]
-
-- Objectives: (see [2/lesson_learning_objectives](2/lesson_learning_objectives.md) for more detail)
-
-[]{#anchor-8}Course 3: Public and Hybrid Cloud Management
-
-1.  Learning about Prism Central APIs
-
-    -   Nutanix REST explorer/OpenAPI/Swagger
-
-    -   TBD: Walkthrough, Exercise, Quiz?
-
-    -   Reference: Nutanix.dev (Hello Ken!)
-
-2.  Lesson 4: scale up the monolith?
-
-    -   Lesson learning objectives:
-
-    -   Add MySQL DB tasks to library, add to monolith
-
-    -   Sidebar:
-
-        -   Scale up memory, vCPU with X-Play?
-        -   Protecting AHV VM workloads with microsegmentation with Flow policies
-
-    -   Lesson Review: we learned to do TBD
-
-3.  Calm concept: Application Profiles
-
-    -   Lesson learning objective: Configure an application profile to accommodate additional deployment scenarios.
-
-    -   Less is more: the problem with delegating everything
-
-    -   Deployment permutations: T-Shirt sizing
-
-    -   A preview of course 3: a blueprint is inherently hybrid
-
-    -   Your second Calm blueprint application profile!
-
-        -   Walkthrough: Repurpose Calm bootcamp steps to perform "monkey see" walkthrough for following exercise.
-
-        -   Exercise: Your first Calm blueprint: Linux web server as a monolithic VM
-
-            1.  Create blueprint \$STUDENTID-web in your default student project
-
-            2.  Create service1, rename to web 1, clone from environment, adjust properties
-
-            3.  Save and troubleshoot any validation issues
-
-            4.  Add install task
-
-            5.  Save and troubleshoot any validation issues
-
-            6.  Launch and Audit deployment
-
-            7.  Review exercise
-
-        -   Quiz: what steps would be required to make a blueprint hybrid with a new provider?
-
-            1.  Settings \> Provider \> Add New, Save, Verify\
-                > Projects \> \$STUDENTID: Add Provider,\
-                > Blueprint \> Edit \$blueprint, Select or Create App Profile, Add services from new provider, Save (correct)
-
-            2.  TBD
-
-            3.  Review answer
-
-4.  Public Cloud overview
-
-    -   How to evaluate tradeoffs for SaaS/PaaS versus IaaS
-
-5.  Public cloud concepts (will probably only be one provider, not two):
-
-    -   AWS concepts:
-
-        -   Free tier
-        -   EC2 Regions and Availability Zones
-        -   AMI
-        -   Security Groups
-        -   IAM
-        -   VPC
-        -   Elastic IP
-
-    -   Azure concepts:
-
-    -   GCP concepts:
-
-        -   Projects
-        -   App Engine
-        -   etc.
-
-6.  Demonstrate second public cloud steps
-
-7.  Global Load Balancing
-
-    -   When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
-
-8.  Labs and Exercises:
-
-    -   Lab: deploy off-prem to a public cloud
-
-        -   Provision AWS free tier
-        -   Create an IAM account
-        -   Create a VPC and security groups
-        -   Set up Calm \> Settings \> Provider for AWS
-        -   Create a new project: hybrid
-        -   Add AWS+AHV providers to hybrid project
-        -   Configure environments for AWS+AHV
-        -   Publish LAMP blueprint to hybrid project
-        -   Deploy LAMP to AHV
-        -   Deploy LAMP to AWS
-
-    -   Lab: clone and modify LAMP
-
-        -   Hybrid deployment to AHV+AWS
-        -   Add global load balancing via AWS App balancer or HAProxy
-        -   Scale in and out AWS, AHV
-        -   Deploy and test a hybrid deployment, scale AWS and AHV independently
-        -   Trigger scale in or out via webhook API
-
-    -   Repeat for Azure, GCP, Xi?
-
-9.  ~~Lesson : Windows automation?~~
-
-    -   ~~Analog overview~~
-
-    -   ~~Lesson Review: we learned to do TBD~~
-
-10. Enterprise Cloud Management (e.g. Beam)
-
-    -   Cost management: spending models and remediation
-
-    -   Security and compliance: reporting and remediation
-
-11. Review: hybrid cloud design and management
-
-12. Project: extend Course 3 project to a public cloud for a hybrid web tier with global load balancing.
-
-[]{#anchor-9}Course 4: Hybrid Cloud Application Design and Infrastructure as Code
-
-1.  Introduction: Concepts and Strategies for Hybrid Cloud Design
-
-    -   Infrastructure Providers
-
-    -   [*The Fallacy of Lift and Shift:*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.wnz1xm87cwau) from cloud first to cloud smart
-
-    -   Pets vs Livestock
-
-    -   DevOps
-
-    -   Enterprise Clouds
-
-2.  Automation Maturity
-
-    -   [*Stages 5, 6, and 9 from Pets to Cattle*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.yu6iubxzh9kf)
-
-        i.  [*Synthesis with Scripting:\
-            Push Button Environments*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.yu6iubxzh9kf)
-        ii. [*Configuration Management:\
-            Shell Scripting on Steroids*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.qugvf7s44yrd)
-        iii. [*Enterprise, Hybrid, and Multicloud Deployments*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.b2spuugwnuy2)
-
-3.  Advanced Automation Topics (labs out of scope?)
-
-    -   Immutable infrastructure and build artifact overview
-
-    -   Continuous Integration, Delivery, and Deployment overview
-
-    -   Continuous Operations overview
-
-4.  Lesson X: Global Load Balancing between infrastructure providers
-
-    -   When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy
-
-5.  Lesson X: Hybrid Cloud Management
-
-    -   Fiscal compliance: showback, metadata, reserved instances
-
-    -   Security compliance
-
-6.  Introduction/Setup your Python DSL environment
-
-7.  Labs and exercises:
-
-    -   Lab 1: Monolithic Linux VM
-
-        i.  Exercise 1: create your own VM
-
-    -   Lab 2: Cloud-init and shell script configuration
-
-        i.  Exercise 2: create your own single VM app (a different web server, NGinX?) and do a test deployment
-
-    -   Lab 3: Multi-service VM blueprint with orchestration dependencies
-
-        i.  Exercise 3: create your own multi-service blueprint with different web server from Exercise 2 and do a test deployment
-
-    -   Lab 4: Scale-in/out web tier action
-
-        i.  Exercise 4: reuse your web server from Exercise 2 with a different minimum and maximum population and test
-
-    -   Lab 5: Multi-cloud VM blueprint of web tier
-
-        i.  Exercise 5: reuse your web server from Exercise 2 with a different minimum and maximum population and test
-
-8.  Review: Automation Drives Hybrid Cloud Applications
-
-9.  Project 4: Hybrid Cloud 3-Tier Web Application
+[Nanodegree Course Outline](https://docs.google.com/document/d/1YR6dTsMn6xF0kXmrq-AiP4kSHgLvnvCKEUVozcXLLuE/edit)
+---
+Tasks:
+  - Chris.R: get Smartsheet access, https://app.smartsheet.com/sheets/jpc6R53QvXWV83hw65CWfqWphC2QmV2PQPwXfFx1
+  - Sahil hybrid cloud resource management request
+  - Course 2 project, outline with learning objectives, content
+    - Mark: Web application acceptance test needs to be provided in solution blueprint and externalized.
+    - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
+- Engineering: Wes, Chris, Mark
+  - Course 1 Project: Wes
+    - Course scenarios to explore: Multi-tenancy, idle education on-prem clusters, reducing project infra requirements for cost optimization
+  - Course 2: uLab SSH pill/keygen exercise to student workspace? see [./coco-ulab.txt](coco-ulab.txt)
+  - Course 2+ architecture
+    - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR
+      - Work in reverse: Dashboard
+        - # of students (all tie cumulative, high-water mark)
+        - # of active students (cumulative for this month, high-water mark)
+        - # of Calm instances (current vs. all time high water mark for the month)
+      - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-taking-backup-and-restoring-calm-data-t.html
+  - Project automatic evaluation, cluster config capture
+  - Course 4 uLab instructions/requirements,
+---
+Hybrid Cloud Engineer Nanodegree
+
+Notes:
+- Objectives answer "Student will be able to" and "Student will learn just enough to"
+- Artificially constraining objectives to 4 helps focus outcomes and lesson scope
+- Course 4 has two re-create objectives, with TBD:
+  - source: TBD, from decompiled JSON, boilerplate, or scratch?
+  - each could also be slightly extended with new use in the DSL.
+
+- Course 1: Modern Private Cloud
+  - Objectives:
+    - 40% of ECA, filtered to simulations
+  - Project (owned by Wes):
+    - Configure HCI VM uptime surviving infrastructure failures?
+    - Trojan horse: monolithic LAMP VM for taste of course 2+ scenarios?
+- Course 2: Private Cloud Automation
+  - Objectives: (see [2/lesson_learning_objectives](hce/2/lesson_learning_objectives.md) for more detail)
+  - Project: Three tier web app on LAMP stack variant blueprint with AHV VMs and one SaaS action
+- Course 3: Hybrid Cloud Automation
+  - Objectives:
+    - Justify public cloud use with security, lock-in, and global load balancing considerations
+    - Learn just enough AWS free-tier to add to Calm settings: provider and a project
+    - Configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
+    - Understand multiple Hybrid Cloud resource management with Beam
+  - Project: LAMP variant blueprint, hybrid web tier on AHV+AWS, DB on AWS as VMs
+- Course 4: Hybrid Cloud DevOps
+  - Objectives:
+    - Justify the evolution to programmatic blueprints, CI/CD, and DevOps values
+    - Repurpose any Calm JSON blueprint with Calm DSL SDK decompilation and place under git pre-commit CI/CD
+    - Re-create Course 2 private cloud IaaS (source: TBD) under CI/CD
+    - Re-create Project 3 hybrid cloud SaaS (source: TBD) under CI/CD
+  - Project: Project 3 variant with Calm DSL
+
+---
+Goal: 10-15 min lab/exercise, ideal to have 3 per lesson.
+intro, text summary, image, vocab, links/references, quiz, exercise
+Insure added to each lesson introduction:
+- Overview: heading/video/summary
+- Big Picture: heading/video/summary
+- Developing your Inspiration: heading/video/summary
+- Add Quiz feedback
+- L1, L3 big picture: what would happen if we didn't have it?
+- L5 refactor/sources:
+  - learn web scale, exercise
+  - learn database, exercise
+  - learn load balancer, exercise
+- This week:
+  - C2L1-2 draft review, quiz? slides? labs?
+  - Build
+  - 27th? [C3 LO](3/lesson_learning_objectives.md), P3 Proposal+Deliverables, Outline
+
+#Udacity next steps, ordered with any priority and deadline first:
+- Optional, due your EoD: Technical review of Course 2:
+  1. [Lesson 1](https://docs.google.com/document/d/1lP5gmNRha9QEa_5z7LC342FHZKF3_8ItndGmWaXUCy8/edit#heading=h.ra72982c88h9)
+  2. [Lesson 2](https://docs.google.com/document/d/13hgVPWSRiyC4GsSP7q5DqzLV57Y-fVn1uZa4Gwg9-5A/edit)
+  3. [PPTs for L1+L2](https://drive.google.com/drive/u/0/folders/1GKnPGjzz3JZ7VKhRTGsjU37VMbBaum7h)
+- Ideally your EoD: [Course 3 Outline/Learning Objectives/Project feedback](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/3/lesson_learning_objectives.md)
+    - Consideration of refactoring [course 2, lesson 5](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/2/outline.md) into Course 3 to rebalance
+- Project 2:
+  - [Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit?ts=5f16103f): gap analysis on manual grading rubric with the [blueprint eval script](https://confluence.eng.nutanix.com:8443/pages/viewpage.action?pageId=96339829) || Code: [udacity/hce/eval/](https://github.com/mlavi/calmbootcamp/tree/master/udacity/hce/eval)
+  - Solution Example blueprint:
+    - [upload a new version](https://drive.google.com/file/d/1Glca_6_VZnD2tVyuwwWCNIoyFqozS8oI/view?usp=sharing) with these updates:
+      - refactor with naming best practices
+      - add test acceptance action for webapp behind load balancer with SW Eng/Release manager reqs (add description and source)
+      - Optional, nice to have: why does the decompile not work, are these all edge cases to report in #calm-dsl?
