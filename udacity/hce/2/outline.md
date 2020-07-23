@@ -4,7 +4,10 @@
 - [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm):
   - [Project Proposal](https://docs.google.com/document/d/1Y0ulqpMF6Atod_yBlaUwULdtIDDbKQWYHp8Rk1KUx6Y/edit) = Private cloud automation: three tier web app
   - [Project Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit)
-  - Course Outline G.sheet and Lesson G.Docs
+  - Course Outline [G.sheet](https://docs.google.com/spreadsheets/d/1QgWyk0LlNr3ofiHxx3nVDdSMc965N-tFz6okgv6KdVk/edit?usp=sharing)
+    - Lesson 1: [G.Doc](https://docs.google.com/document/d/1lP5gmNRha9QEa_5z7LC342FHZKF3_8ItndGmWaXUCy8/edit#heading=h.ra72982c88h9), [Slides](https://docs.google.com/presentation/d/1rXnla0xHJfIy8F6IMbbj27U_LI9dPXs5RAo1Q6y5rUU/edit#slide=id.p1), [Demo Videos](https://drive.google.com/drive/u/0/folders/1sQkrrDDXqpUgz8N_EO9WX0d9wh3CPe7o)
+    - L2:
+    - L3: Monday [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit)
 ---
 0.  Lesson 0: Welcome to Course 2
   - Concept: Meet your instructor: Mark Lavi

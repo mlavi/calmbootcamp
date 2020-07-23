@@ -4,17 +4,33 @@
 ---
 Videos 3-5 minutes
 Blueprint into/concept (importance/components)
-C2:L0,L5
+C2:
+- L0
+- L1:
+  - I've done small edits directly throughout to make it easier to read.
+  - Big Picture and Developing Your Intuition About Cluster and Workload Management: I'll help populate
+  - 18: Quiz: Prism Element vs. Prism Central
+    - Recommend changing from Era to Acropolis or some other fundamental (already installed) component that isn't control pane related. Students will have no exposure to Era in the course, so it might be considered unfair. Era will eventually be in PC, it is being worked on. We don't mention Karbon or Objects, which also can be enabled in PC today.
+  - 80-81: would it be possible to modify the labels in text and image to be clearer, e.g.:
+    - Backupbasic becomes BackUpBasic
+    - Engenvironment becomes EngineeringEnvironment
+    - Eng becomes Engineering, Fin = Finance, HR = HumanResources
+  - 96-108: we'll eventually drop the "self service" label because this is a remnant of a separate product that is now simply a feature of PC for AHV only, covered by PC Projects. Hence I would ask that rename these sections and headings (maybe not the text) from Prism Self-Service to Prism Central Projects.
+    - Same for L1 slides: 28-30
+  - I noticed that Prism Central_Uploading an Image from a Workstation.mp4 is over 8 minutes long, probably not an issue, but Udacity likes to keep videos to 3-5 minutes.
+- L2:
+  - I've done small edits directly throughout to make it easier to read.
+  - Big Picture & Developing Your Intuition About Application Management: I'll help populate
+  - 
+- L5 References
 ---
 Tasks:
-  - Chris.R: get Smartsheet access, https://app.smartsheet.com/sheets/jpc6R53QvXWV83hw65CWfqWphC2QmV2PQPwXfFx1
   - Sahil hybrid cloud resource management request
   - Course 2 project, outline with learning objectives, content
     - Mark: Web application acceptance test needs to be provided in solution blueprint and externalized.
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
 - Engineering: Wes, Chris, Mark
   - Course 1 Project: Wes
-    - Course scenarios to explore: Multi-tenancy, idle education on-prem clusters, reducing project infra requirements for cost optimization
   - Course 2: uLab SSH pill/keygen exercise to student workspace? see [./coco-ulab.txt](coco-ulab.txt)
   - Course 2+ architecture
     - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR
@@ -24,7 +40,6 @@ Tasks:
         - # of Calm instances (current vs. all time high water mark for the month)
       - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-taking-backup-and-restoring-calm-data-t.html
   - Project automatic evaluation, cluster config capture
-  - Course 4 uLab instructions/requirements,
 ---
 Hybrid Cloud Engineer Nanodegree
 
