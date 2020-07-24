@@ -1,4 +1,3 @@
-
 # Course 2 Outline: Private Cloud Automation
 - Objectives: [2/lesson_learning_objectives](2/lesson_learning_objectives.md)
 - [*Udacity Course 2 Folder*](https://drive.google.com/drive/folders/1C3nNTHU8GKmpV1GvlpQoFze5Y2eS_Rjm):

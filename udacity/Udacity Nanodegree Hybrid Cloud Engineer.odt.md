@@ -21,7 +21,11 @@ C2:
 - L2:
   - I've done small edits directly throughout to make it easier to read.
   - Big Picture & Developing Your Intuition About Application Management: I'll help populate
-  - 
+    - Blueprints are the heart of the system: artifacts and software.
+  - 29: Added intro paragraph, many clarifications on distributable (vs. distribution), SSH, and cloud-init.
+    - Can add a reference to https://distrowatch.com/ if desired.
+  - 41: 
+- L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit#heading=h.ra72982c88h9)
 - L5 References
 ---
 Tasks:
@@ -31,7 +35,7 @@ Tasks:
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
 - Engineering: Wes, Chris, Mark
   - Course 1 Project: Wes
-  - Course 2: uLab SSH pill/keygen exercise to student workspace? see [./coco-ulab.txt](coco-ulab.txt)
+  - Course 2: uLab SSH pill/keygen exercise to student workspace? see [coco-ulab.txt](coco-ulab.txt)
   - Course 2+ architecture
     - Discussion with Charan/NTNX Engg, Spec with Wes, Clean up/purge UserVMs, Ops/DR
       - Work in reverse: Dashboard
