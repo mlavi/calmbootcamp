@@ -6,15 +6,31 @@
   - Project Deliverables
   - TBD: Course Outline G.sheet and Lesson G.Docs
 
-## Learning Objectives
+## Course and Lesson Learning Objectives
 
 Student will be able to (SWBAT):
 
 - L1 Identify strategies for hybrid cloud design across infrastructure, architecture, and operations
+  - Lesson learning objectives:
+    1. Discern between workload migration and synthesis strategies
+    2. Reconcile requirements against scalability challenges
+    3. Reconcile requirements against agility challenges
+    4. Identify opportunities for continous operations
 - L2 Provision, configure, and use a public cloud infrastructure provider in a project
+  - Lesson learning objectives:
+    1. Provision a public cloud provider account
+    2. Configure the public cloud provider for secure workload automation
+    3. Add the public cloud provider and configure in a project
+    4. Deploy a marketplace blueprint and audit a workload on a public cloud (achieving public cloud PaaS)
 - L3 Implement hybrid cloud scalability and deployment choice to a web application
+  - Lesson learning objectives:
+    1. Augment the web tier application to add a public cloud in a blueprint
+    2. Operate the load balancer across public and private cloud web tiers in a blueprint
+    3. Configure a application profiles for additional deployment scenarios
 - L4 Identify strategies for hybrid cloud management for fiscal and security compliance
-
+  - Lesson learning objectives:
+    1. Design a fiscal governance policy for public and private clouds
+    2. Design a security governance policy for public and private clouds
 ---
 
 ## Course 3 Outline
@@ -27,10 +43,10 @@ Course 3: Public and Hybrid Cloud Management
   - Concept: Developing Your Intuition
   - Concept: Infrastructure Provider Strategies
       - [*The Fallacy of Lift and Shift:*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.wnz1xm87cwau) from cloud first to cloud smart
-    - Pets vs Livestock
-    - DevOps
-    - Enterprise Clouds
-    - Automation Maturity
+    - Pets vs Livestock for scalability
+      - Enterprise Clouds
+    - DevOps for agility
+    - DevOps and Automation Maturity
       - [*Stages 5, 6, and 9 from Pets to Cattle*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.yu6iubxzh9kf)
         i.  [*Synthesis with Scripting:\
             Push Button Environments*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.yu6iubxzh9kf)
@@ -44,7 +60,6 @@ Course 3: Public and Hybrid Cloud Management
       - Concept: Everything else we didn't cover for Calm features
         - Windows: Analogs to Linux, cloud-init, Shell
         - DSL
-        - DevOps
         - CI/CD
         -   Sidebar:
             -   Scale up memory, vCPU with X-Play?
@@ -54,6 +69,7 @@ Course 3: Public and Hybrid Cloud Management
                 - TBD: Walkthrough, Exercise, Quiz?
                 - Reference: Nutanix.dev
   - Exercise/Lab: C3L1E1
+    - X-Play or Calm runbook for continuous ops?
   - Exercise/Lab: C3L1E2
   - Exercise/Lab: C3L1E3
   - Concept: Lesson Review: we learned to do TBD
