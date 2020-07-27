@@ -24,8 +24,8 @@ C2:
     - Blueprints are the heart of the system: artifacts and software.
   - 29: Added intro paragraph, many clarifications on distributable (vs. distribution), SSH, and cloud-init.
     - Can add a reference to https://distrowatch.com/ if desired.
-  - 41: 
-- L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit#heading=h.ra72982c88h9)
+  - 41:
+- L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit#heading=h.ra72982c88h9) Slides? check folder.
 - L5 References
 ---
 Tasks:

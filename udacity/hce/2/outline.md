@@ -430,71 +430,72 @@
     - create a table
     - grant privs on table
     - update a password on the web application user
+    - Reference: [Package_MySqlPackage_Action___install___Task_InitializeDb.sh](5/Package_MySqlPackage_Action___install___Task_InitializeDb.sh)
+  - Concept: Orchestration dependencies across services
   - LAB/EXERCISE: Add the database service:
       -   Walkthrough/demo: Refactor the monolith, reuse the tasks!
       -   Exercise:
           -   Complete the [*Creating the Database Service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-database-service) skeleton
           -   Delete the mysql tasks
           -   Add MySQL service and tasks to actions
-          -   Wire logical dependency
+          -   Wire logical dependency: [*Adding dependencies*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-dependencies)
           -   Save and launch to test
           -   Review
       -   Review
-  - LAB/EXERCISE: Add a database password change custom action
-    - Walkthrough steps
-    - Exercise steps
-    - Concept: Orchestration dependencies across services
-      -   Walkthrough
-      -   Exercise: [*Adding dependencies*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#adding-dependencies)
-    - Concept: Load Balancer Pill
-      - Load balancing allows us to remove pets for failure while also scaling out performance.
-      - We will design the load balancer to distribute web requests across a web-tier of servers.
-      - Why HAProxy? Opensource and very flexible.
-      - Alternatives include F5, etc.
-      - For CentOS 7, we use:
-        - install "sudo yum install haproxy"
-      - start and stop; restart:
-      - logs are located at /var/log/\*, use tail to review
-        - tail -n20; tail -f error.log &
-      - configuration under: /etc/
-      - More resources to learn HAProxy: http://www.haproxy.org/
-    - Concept: Design the Load Balancer tier
-      - Walkthrough/demo: Add the load balancer service
-      - LAB/EXERCISE: Add the load balancer service
-          - [*Creating the load balancer service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-load-balancer-service)
-          - Add tasks to the library?
-          - TBD: can they be pre-made, are they global or scoped to project?
-    - Concept: Calm scale-in and scale-out web service
-      - Walkthrough/demo:
-        - add scale-in and scale-out web tier
-        - add orchestrated task on load balancer server: update configuration
-        - save blueprint and test
-    - Exercise:
-        -   Add web tier actions: scale in and scale out [*Scaling Out*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_day2_linux/calm_day2_linux.rst#scaling-out)
-        -   Add load balancer task, orchestrate dependencies
-        -   Test deployment by launching blueprint
-        -   Post deployment action: scale out
-        -   Audit: Observe web tier population +1
-        -   Reload the load balancer to observe new node in rotation
-        -   Post deployment action: scale in
-        -   Audit: Observe web tier population -1
-        -   Reload the load balancer to observe new node no longer in rotation
-        -   Delete application
-        -   Add web scale tasks to the Task Library from blueprint by cut and paste?
-    -   Quiz: why is scalability important?
-        -   Single point of failure
-        -   How much time saved?
-        -   TBD
-        -   Review answer
-    - Concept: Multiple application profiles
-      - Walkthrough:
-        - Rename default application profile to: Small (remember best practices)
-        - Clone Small application profile, rename to Medium
-        - Localize medium application profile services, change the VMs to:
-          - DB = 2vCPU, 2GB RAM
-          - Web = 2vCPU
-      - Exercise
-        - Reproduce the above.
+  - Concept: Day 2, custom actions.
+    - We will repeat a portion of the database setup, to allow the database user password to be updated in a self-service fashion for anyone with an operator (or superset, higher) role in the project.
+    - This is considered a post-deployment or maintenance task that takes place during the lifecycle of the application. Normally, this is a domain of a system or database administrator, but now this can be delegated to end users saving time and still allowing oversight through auditing the action logs.
+    - Reference: [Profile_Nutanix_Action_UpdateDBPassword_Task_UpdatePassword.sh](5/Package_MySqlPackage_Action___install___Task_InitializeDb.sh)
+    - Lab/exercise: Add a database password change custom action
+  - Concept: Load Balancer Pill
+    - Load balancing allows us to remove pets for failure while also scaling out performance.
+    - We will design the load balancer to distribute web requests across a web-tier of servers.
+    - Why HAProxy? Opensource and very flexible.
+    - Alternatives include F5, etc.
+    - For CentOS 7, we use:
+      - install "sudo yum install haproxy"
+    - start and stop; restart:
+    - logs are located at /var/log/\*, use tail to review
+      - tail -n20; tail -f error.log &
+    - configuration under: /etc/
+    - More resources to learn HAProxy: http://www.haproxy.org/
+  - Concept: Design the Load Balancer tier
+    - Walkthrough/demo: Add the load balancer service
+    - LAB/EXERCISE: Add the load balancer service
+        - [*Creating the load balancer service*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_linux_app/calm_linux_app.rst#creating-the-load-balancer-service)
+        - Add tasks to the library?
+        - TBD: can they be pre-made, are they global or scoped to project?
+  - Concept: Calm scale-in and scale-out web service
+    - Walkthrough/demo:
+      - add scale-in and scale-out web tier
+      - add orchestrated task on load balancer server: update configuration
+      - save blueprint and test
+  - Exercise:
+      -   Add web tier actions: scale in and scale out [*Scaling Out*](https://github.com/mlavi/calmbootcamp/blob/master/calm_linux_track/calm_day2_linux/calm_day2_linux.rst#scaling-out)
+      -   Add load balancer task, orchestrate dependencies
+      -   Test deployment by launching blueprint
+      -   Post deployment action: scale out
+      -   Audit: Observe web tier population +1
+      -   Reload the load balancer to observe new node in rotation
+      -   Post deployment action: scale in
+      -   Audit: Observe web tier population -1
+      -   Reload the load balancer to observe new node no longer in rotation
+      -   Delete application
+      -   Add web scale tasks to the Task Library from blueprint by cut and paste?
+  -   Quiz: why is scalability important?
+      -   Single point of failure
+      -   How much time saved?
+      -   TBD
+      -   Review answer
+  - Concept: Multiple application profiles
+    - Walkthrough:
+      - Rename default application profile to: Small (remember best practices)
+      - Clone Small application profile, rename to Medium
+      - Localize medium application profile services, change the VMs to:
+        - DB = 2vCPU, 2GB RAM
+        - Web = 2vCPU
+    - Exercise
+      - Reproduce the above.
   - Concept: Lesson 5 Review: we learned to test the deployment, scale the web tier in and out
 
 6. Course 2 Review: Private Cloud Automation for self-service enterprise apps
