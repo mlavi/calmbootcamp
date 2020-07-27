@@ -23,7 +23,7 @@ Student will be able to (SWBAT):
     2. Configure the public cloud provider for secure workload automation
     3. Add the public cloud provider and configure in a project
     4. Deploy a marketplace blueprint and audit a workload on a public cloud (achieving public cloud PaaS)
-- L3 Implement hybrid cloud scalability and deployment choice to a web application
+- L3 Implement hybrid cloud scalability and deployment choice for a web application
   - Lesson learning objectives:
     1. Augment the web tier application to add a public cloud in a blueprint
     2. Operate the load balancer across public and private cloud web tiers in a blueprint
