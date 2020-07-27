@@ -93,3 +93,21 @@ Notes:
     - Re-create Course 2 private cloud IaaS (source: TBD) under CI/CD
     - Re-create Project 3 hybrid cloud SaaS (source: TBD) under CI/CD
   - Project: Project 3 variant with Calm DSL
+
+---
+[]{#anchor-9}Course 4: Hybrid Cloud Application Design and Infrastructure as Code
+
+- Introduction/Setup your Python DSL environment
+- Labs and exercises:
+    -   Lab 1: Monolithic Linux VM
+        i.  Exercise 1: create your own VM
+    -   Lab 2: Cloud-init and shell script configuration
+        i.  Exercise 2: create your own single VM app (a different web server, NGinX?) and do a test deployment
+    -   Lab 3: Multi-service VM blueprint with orchestration dependencies
+        i.  Exercise 3: create your own multi-service blueprint with different web server from Exercise 2 and do a test deployment
+    -   Lab 4: Scale-in/out web tier action
+        i.  Exercise 4: reuse your web server from Exercise 2 with a different minimum and maximum population and test
+    -   Lab 5: Multi-cloud VM blueprint of web tier
+        i.  Exercise 5: reuse your web server from Exercise 2 with a different minimum and maximum population and test
+- Review: Automation Drives Hybrid Cloud Applications
+- Project 4: Hybrid Cloud 3-Tier Web Application

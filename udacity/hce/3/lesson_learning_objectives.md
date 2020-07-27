@@ -1,4 +1,4 @@
-# Course 3: Hybrid Cloud Automation
+# []{#anchor-8}Course 3: Hybrid Cloud Automation
 
 - Objectives: 3/lesson_learning_objectives
 - Udacity Course 3 Folder:
@@ -10,23 +10,22 @@
 
 Student will be able to (SWBAT):
 
-- L1
-- L2
-- L3
-- L4
+- L1 Identify strategies for hybrid cloud design across infrastructure, architecture, and operations
+- L2 Provision, configure, and use a public cloud infrastructure provider in a project
+- L3 Implement hybrid cloud scalability and deployment choice to a web application
+- L4 Identify strategies for hybrid cloud management for fiscal and security compliance
 
 ---
-## Project 3 Proposal, Deliverable
-TBD
 
 ## Course 3 Outline
 Will become: https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/3/outline.md
-[]{#anchor-8}Course 3: Public and Hybrid Cloud Management
+Course 3: Public and Hybrid Cloud Management
 
-1.  Lesson 1: Concepts and Strategies for Hybrid Cloud Design
-  - Lesson learning objectives:
-  - Lesson Review: we learned to do TBD
-    - Infrastructure Providers
+1. Lesson 1: Strategies for Hybrid Cloud Design
+  - Concept: Lesson learning objectives:
+  - Concept: Big Picture
+  - Concept: Developing Your Intuition
+  - Concept: Infrastructure Provider Strategies
       - [*The Fallacy of Lift and Shift:*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.wnz1xm87cwau) from cloud first to cloud smart
     - Pets vs Livestock
     - DevOps
@@ -42,91 +41,95 @@ Will become: https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/3/out
         -   Immutable infrastructure and build artifact overview
         -   Continuous Integration, Delivery, and Deployment overview
         -   Continuous Operations overview
+      - Concept: Everything else we didn't cover for Calm features
+        - Windows: Analogs to Linux, cloud-init, Shell
+        - DSL
+        - DevOps
+        - CI/CD
+        -   Sidebar:
+            -   Scale up memory, vCPU with X-Play?
+            -   Protecting AHV VM workloads with microsegmentation with Flow policies
+            1.  Learning about Prism Central APIs
+                - Nutanix REST explorer/OpenAPI/Swagger
+                - TBD: Walkthrough, Exercise, Quiz?
+                - Reference: Nutanix.dev
+  - Exercise/Lab: C3L1E1
+  - Exercise/Lab: C3L1E2
+  - Exercise/Lab: C3L1E3
+  - Concept: Lesson Review: we learned to do TBD
 
-2.  scale up the monolith?
-    - Concept: Calm Application Profiles, partX
-      - Lesson learning objective: Configure an application profile to accommodate additional deployment scenarios.
-      - Less is more: the problem with delegating everything
-      - Deployment permutations: T-Shirt sizing
-      - A preview of course 3: a blueprint is inherently hybrid
-    - Quiz: what steps would be required to make a blueprint hybrid with a new provider?
-      1.  Settings \> Provider \> Add New, Save, Verify\
-          > Projects \> \$STUDENTID: Add Provider,\
-          > Blueprint \> Edit \$blueprint, Select or Create App Profile, Add services from new provider, Save (correct)
-      2.  TBD
-      3.  Review answer
-
-3.  Public Cloud overview
+2. Lesson 2: Public cloud infrastructure provider
+  - Concept: Lesson learning objectives:
+  - Concept: Big Picture
+  - Concept: Developing Your Intuition
+  - Concept: Public Cloud overview
     - How to evaluate tradeoffs for SaaS/PaaS versus IaaS
     - AWS concepts and their Course 2 counterparts:
-        -   Free tier
-        -   EC2 Regions and Availability Zones
-        -   AMI
-        -   Security Groups
+        - Free tier
+        - EC2 Regions and Availability Zones
+        - AMI
+        - Security Groups
         - SSH keypairs
-        -   IAM
-        -   VPC
-        -   Elastic IP
-    - Lab: Create an AWS account
+        - IAM
+        - VPC
+        - Elastic IP
+    - Exercise/Lab: C3L2E1 Create an AWS account
       - Provision AWS free tier
         - Create an IAM account
         - Create a VPC and security groups
         - Identify CentOS AMI in your region
-    - SIMULATION/Webapp: Calm > Settings > Providers: Add AWS
+    - SIMULATION/Webapp: C3L2E2 Calm > Settings > Providers: Add AWS
         - Set up Calm \> Settings \> Provider for AWS
         - Allow region, Add AMI
         - Save provider and verify
         - Add AWS to existing student project
         - Add environment config for AWS
-    - Lab: deploy off-prem to a public cloud
-        -   Publish LAMP blueprint to hybrid project
-        -   Deploy LAMP to AHV
-        -   Deploy LAMP to AWS
+    - Exercise/Lab: C3L2E3 Deploy off-prem to a public cloud
+      -   Publish LAMP blueprint to hybrid project
+      -   Deploy LAMP to AHV
+      -   Deploy LAMP to AWS
+  - Quiz: what steps would be required to make a blueprint hybrid with a new provider?
+    1.  Settings \> Provider \> Add New, Save, Verify
+        \> Projects \> \$STUDENTID: Add Provider,
+        \> Blueprint \> Edit \$blueprint, Select or Create App Profile, Add services from new provider, Save (correct)
+    2.  TBD
+    3.  Review answer
+  - Concept: Lesson Review: we learned to do TBD
 
-4. Lesson: Global Load Balancing between infrastructure providers
-    - Concept: When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
-    - Lab: clone and modify LAMP
-        -   Hybrid deployment to AHV+AWS
-        -   Add global load balancing via AWS App balancer or HAProxy
-        -   Scale in and out AWS, AHV
-        -   Deploy and test a hybrid deployment, scale AWS and AHV independently
-        -   Trigger scale in or out via webhook API
-    -   Repeat for Azure, GCP, Xi?
+3. Lesson 3: Implement hybrid cloud scalability and deployment choice
+  - Concept: Lesson learning objectives:
+  - Concept: Big Picture
+  - Concept: Developing Your Intuition
+  - Concept: Global Load Balancing between infrastructure providers
+      - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
+  - Exercise/Lab: C3L3E1 Clone and modify Marketplace LAMP
+      -   Hybrid deployment to AHV+AWS
+      -   Add global load balancing via AWS App balancer or HAProxy
+      -   Scale in and out AWS, AHV
+      -   Deploy and test a hybrid deployment, scale AWS and AHV independently
+      -   Trigger scale in or out via webhook API
+      -   Repeat for Azure, GCP, Xi?
+    - Concept: Calm Application Profiles, partX
+      - Lesson learning objective: Configure an application profile to accommodate additional deployment scenarios.
+      - Less is more: the problem with delegating everything
+      - Deployment permutations: T-Shirt sizing
+      - A blueprint is inherently hybrid
+  - Exercise/Lab: C3L3E2
+  - Exercise/Lab: C3L3E3
+  - Concept: Lesson Review: we learned to do TBD
 
-5. Lesson X: Hybrid Cloud Management, Enterprise Cloud Management (e.g. Beam)
-    -   Cost management: spending models and remediation
-    -   Security and compliance: reporting and remediation
-    -   Fiscal compliance: showback, metadata, reserved instances
-    -   Security compliance
-    - Concept: Everything else we didn't cover for Calm features
-      - Windows: Analogs to Linux, cloud-init, Shell
-      - DSL
-      - DevOps
-      - CI/CD
-      -   Sidebar:
-          -   Scale up memory, vCPU with X-Play?
-          -   Protecting AHV VM workloads with microsegmentation with Flow policies
-          1.  Learning about Prism Central APIs
-              - Nutanix REST explorer/OpenAPI/Swagger
-              - TBD: Walkthrough, Exercise, Quiz?
-              - Reference: Nutanix.dev
+4. Lesson 4: Hybrid Cloud Management
+  - Concept: Lesson learning objectives:
+  - Concept: Big Picture
+  - Concept: Developing Your Intuition
+  - Concept: Enterprise Cloud Management (e.g. Beam)
+    - Cost management: spending models and remediation
+      - Fiscal compliance: showback, metadata, reserved instances
+    - Security and compliance: reporting and remediation
+  - Exercise/Lab: C3L4E1
+  - Exercise/Lab: C3L4E2
+  - Exercise/Lab: C3L4E3
+  - Concept: Lesson Review: we learned to do TBD
 
-6. Review: hybrid cloud design and management
-7. Project: extend Course 3 project to a public cloud for a hybrid web tier with global load balancing.
----
-[]{#anchor-9}Course 4: Hybrid Cloud Application Design and Infrastructure as Code
-
-6.  Introduction/Setup your Python DSL environment
-7.  Labs and exercises:
-    -   Lab 1: Monolithic Linux VM
-        i.  Exercise 1: create your own VM
-    -   Lab 2: Cloud-init and shell script configuration
-        i.  Exercise 2: create your own single VM app (a different web server, NGinX?) and do a test deployment
-    -   Lab 3: Multi-service VM blueprint with orchestration dependencies
-        i.  Exercise 3: create your own multi-service blueprint with different web server from Exercise 2 and do a test deployment
-    -   Lab 4: Scale-in/out web tier action
-        i.  Exercise 4: reuse your web server from Exercise 2 with a different minimum and maximum population and test
-    -   Lab 5: Multi-cloud VM blueprint of web tier
-        i.  Exercise 5: reuse your web server from Exercise 2 with a different minimum and maximum population and test
-8.  Review: Automation Drives Hybrid Cloud Applications
-9.  Project 4: Hybrid Cloud 3-Tier Web Application
+5. Course Review: hybrid cloud design and management
+6. Project 3: extend Course 2 project to a public cloud for a hybrid web tier with deployment choice.
