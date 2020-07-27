@@ -2,31 +2,47 @@
 
 [Nanodegree Course Outline](https://docs.google.com/document/d/1YR6dTsMn6xF0kXmrq-AiP4kSHgLvnvCKEUVozcXLLuE/edit)
 ---
-Videos 3-5 minutes
-Blueprint into/concept (importance/components)
+#Udacity next steps, ordered with any priority and deadline first:
+- [C3 LO](3/lesson_learning_objectives.md)
+  - Consideration of refactoring [course 2, lesson 5](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/2/outline.md) into Course 3 to rebalance
+- C2L2,3 draft review, quiz? slides? labs?
+- P2 solution refinements
+  - [Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit?ts=5f16103f): gap analysis on manual grading rubric with the [blueprint eval script](https://confluence.eng.nutanix.com:8443/pages/viewpage.action?pageId=96339829) || Code: [udacity/hce/eval/](https://github.com/mlavi/calmbootcamp/tree/master/udacity/hce/eval)
+  - Solution Example blueprint:
+    - [upload a new version](https://drive.google.com/file/d/1Glca_6_VZnD2tVyuwwWCNIoyFqozS8oI/view?usp=sharing) with these updates:
+      - refactor with naming best practices
+      - add test acceptance action for webapp behind load balancer with SW Eng/Release manager reqs (add description and source)
+      - Optional, nice to have: why does the decompile not work, are these all edge cases to report in #calm-dsl?
+- P3 Proposal+Deliverables
+- C3 Outline
+---
 C2:
 - L0
-- L1:
-  - I've done small edits directly throughout to make it easier to read.
-  - Big Picture and Developing Your Intuition About Cluster and Workload Management: I'll help populate
-  - 18: Quiz: Prism Element vs. Prism Central
-    - Recommend changing from Era to Acropolis or some other fundamental (already installed) component that isn't control pane related. Students will have no exposure to Era in the course, so it might be considered unfair. Era will eventually be in PC, it is being worked on. We don't mention Karbon or Objects, which also can be enabled in PC today.
-  - 80-81: would it be possible to modify the labels in text and image to be clearer, e.g.:
-    - Backupbasic becomes BackUpBasic
-    - Engenvironment becomes EngineeringEnvironment
-    - Eng becomes Engineering, Fin = Finance, HR = HumanResources
-  - 96-108: we'll eventually drop the "self service" label because this is a remnant of a separate product that is now simply a feature of PC for AHV only, covered by PC Projects. Hence I would ask that rename these sections and headings (maybe not the text) from Prism Self-Service to Prism Central Projects.
-    - Same for L1 slides: 28-30
-  - I noticed that Prism Central_Uploading an Image from a Workstation.mp4 is over 8 minutes long, probably not an issue, but Udacity likes to keep videos to 3-5 minutes.
-- L2:
-  - I've done small edits directly throughout to make it easier to read.
-  - Big Picture & Developing Your Intuition About Application Management: I'll help populate
+- L1: Big Picture and Developing Your Intuition About Cluster and Workload Management
+  - Blueprint into/concept (importance/components)
+  - What would happen if we didn't have it?
+  - Comments:
+    - I've done small edits directly throughout to make it easier to read.
+    - 18: Quiz: Prism Element vs. Prism Central
+      - Recommend changing from Era to Acropolis or some other fundamental (already installed) component that isn't control pane related. Students will have no exposure to Era in the course, so it might be considered unfair. Era will eventually be in PC, it is being worked on. We don't mention Karbon or Objects, which also can be enabled in PC today.
+    - 80-81: would it be possible to modify the labels in text and image to be clearer, e.g.:
+      - Backupbasic becomes BackUpBasic
+      - Engenvironment becomes EngineeringEnvironment
+      - Eng becomes Engineering, Fin = Finance, HR = HumanResources
+    - 96-108: we'll eventually drop the "self service" label because this is a remnant of a separate product that is now simply a feature of PC for AHV only, covered by PC Projects. Hence I would ask that rename these sections and headings (maybe not the text) from Prism Self-Service to Prism Central Projects.
+      - Same for L1 slides: 28-30
+    - I noticed that Prism Central_Uploading an Image from a Workstation.mp4 is over 8 minutes long, probably not an issue, but Udacity likes to keep videos to 3-5 minutes.
+- L2: Big Picture & Developing Your Intuition About Application Management
     - Blueprints are the heart of the system: artifacts and software.
-  - 29: Added intro paragraph, many clarifications on distributable (vs. distribution), SSH, and cloud-init.
-    - Can add a reference to https://distrowatch.com/ if desired.
+  - Comments:
+    - I've done small edits directly throughout to make it easier to read.
+    - 29: Added intro paragraph, many clarifications on distributable (vs. distribution), SSH, and cloud-init.
+      - Can add a reference to https://distrowatch.com/ if desired.
   - 41:
 - L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit#heading=h.ra72982c88h9) Slides? check folder.
-- L5 References
+  - Big Picture & Developing Your Intuition
+- L4: Big Picture & Developing Your Intuition
+- L5: Big Picture & Developing Your Intuition
 ---
 Tasks:
   - Sahil hybrid cloud resource management request
@@ -77,36 +93,3 @@ Notes:
     - Re-create Course 2 private cloud IaaS (source: TBD) under CI/CD
     - Re-create Project 3 hybrid cloud SaaS (source: TBD) under CI/CD
   - Project: Project 3 variant with Calm DSL
-
----
-Goal: 10-15 min lab/exercise, ideal to have 3 per lesson.
-intro, text summary, image, vocab, links/references, quiz, exercise
-Insure added to each lesson introduction:
-- Overview: heading/video/summary
-- Big Picture: heading/video/summary
-- Developing your Inspiration: heading/video/summary
-- Add Quiz feedback
-- L1, L3 big picture: what would happen if we didn't have it?
-- L5 refactor/sources:
-  - learn web scale, exercise
-  - learn database, exercise
-  - learn load balancer, exercise
-- This week:
-  - C2L1-2 draft review, quiz? slides? labs?
-  - Build
-  - 27th? [C3 LO](3/lesson_learning_objectives.md), P3 Proposal+Deliverables, Outline
-
-#Udacity next steps, ordered with any priority and deadline first:
-- Optional, due your EoD: Technical review of Course 2:
-  1. [Lesson 1](https://docs.google.com/document/d/1lP5gmNRha9QEa_5z7LC342FHZKF3_8ItndGmWaXUCy8/edit#heading=h.ra72982c88h9)
-  2. [Lesson 2](https://docs.google.com/document/d/13hgVPWSRiyC4GsSP7q5DqzLV57Y-fVn1uZa4Gwg9-5A/edit)
-  3. [PPTs for L1+L2](https://drive.google.com/drive/u/0/folders/1GKnPGjzz3JZ7VKhRTGsjU37VMbBaum7h)
-- Ideally your EoD: [Course 3 Outline/Learning Objectives/Project feedback](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/3/lesson_learning_objectives.md)
-    - Consideration of refactoring [course 2, lesson 5](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/2/outline.md) into Course 3 to rebalance
-- Project 2:
-  - [Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit?ts=5f16103f): gap analysis on manual grading rubric with the [blueprint eval script](https://confluence.eng.nutanix.com:8443/pages/viewpage.action?pageId=96339829) || Code: [udacity/hce/eval/](https://github.com/mlavi/calmbootcamp/tree/master/udacity/hce/eval)
-  - Solution Example blueprint:
-    - [upload a new version](https://drive.google.com/file/d/1Glca_6_VZnD2tVyuwwWCNIoyFqozS8oI/view?usp=sharing) with these updates:
-      - refactor with naming best practices
-      - add test acceptance action for webapp behind load balancer with SW Eng/Release manager reqs (add description and source)
-      - Optional, nice to have: why does the decompile not work, are these all edge cases to report in #calm-dsl?
