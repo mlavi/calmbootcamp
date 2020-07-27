@@ -82,6 +82,7 @@
   - Concept: Global Load Balancing between infrastructure providers
       - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
   - Exercise/Lab: C3L3E1 Clone and modify Marketplace LAMP
+      - Goal: configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
       -   Hybrid deployment to AHV+AWS
       -   Add global load balancing via AWS App balancer or HAProxy
       -   Scale in and out AWS, AHV

@@ -14,8 +14,8 @@ Student will be able to (SWBAT):
 - L1 Identify strategies for hybrid cloud design across infrastructure, architecture, and operations
   - Lesson learning objectives:
     1. Discern between workload migration and synthesis strategies
-    2. Reconcile requirements against scalability challenges
-    3. Reconcile requirements against agility challenges
+    2. Reconcile requirements against scalability challenges: global load balancing considerations
+    3. Reconcile requirements against agility challenges: security, lock-in considerations
     4. Identify opportunities for continous operations
 - L2 Provision, configure, and use a public cloud infrastructure provider in a project
   - Lesson learning objectives:
