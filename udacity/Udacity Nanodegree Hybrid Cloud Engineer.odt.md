@@ -48,6 +48,7 @@ Tasks:
   - Sahil hybrid cloud resource management request
   - Course 2 project, outline with learning objectives, content
     - Mark: Web application acceptance test needs to be provided in solution blueprint and externalized.
+    - Ask the business: can we reuse Udacity content?
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
 - Engineering: Wes, Chris, Mark
   - Course 1 Project: Wes
