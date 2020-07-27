@@ -3,7 +3,7 @@
 [Nanodegree Course Outline](https://docs.google.com/document/d/1YR6dTsMn6xF0kXmrq-AiP4kSHgLvnvCKEUVozcXLLuE/edit)
 ---
 #Udacity next steps, ordered with any priority and deadline first:
-- [C3 LO](3/lesson_learning_objectives.md)
+- [C3 LO](hce/3/lesson_learning_objectives.md)
   - Consideration of refactoring [course 2, lesson 5](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/2/outline.md) into Course 3 to rebalance
 - C2L2,3 draft review, quiz? slides? labs?
 - P2 solution refinements
