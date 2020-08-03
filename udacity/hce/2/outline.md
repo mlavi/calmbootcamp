@@ -16,8 +16,15 @@
     - Automation is the key to self-service
     - From VM IaaS monolith to the PaaS scalable web application to SaaS life cycle operations
 
-1.  Lesson 1: Managing multiple cluster and workload resources
+1.  Lesson 1: Multiple Cluster and Workload Resources
   - Concept: Lesson 1 overview and objectives
+    - Big Picture:
+      - In Course 1, you learned how to operate VM workloads on a single Nutanix cluster with the AHV hypervisor. When you have a more than one Nutanix cluster, management can become split and uncoordinated between each cluster. You must reproduce your work in each cluster to have a consistent configuration, governance policy, and resources. The on-premise management problem compounds quickly when you have multiple Nutanix clusters with different hypervisors, as many of our customers do! Furthermore, the public cloud typically represents even further fragmentation as a separate silo for IT governance, operations, and security, so we will address hybrid cloud management in Course 3.
+      - In Lesson 1 of Course 2, we'll introduce you to the advanced version of the Prism control plane, which manages multiple clusters and provides additional facilities across those clusters, allowing management at scale. Nutanix Prism Central unites management across all different types of Nutanix clusters and their workloads, from a single pane of glass preventing the need for multiple consoles. Rather than learn about all of the capabilities and features of Prism Central, we will focus on governance with projects and roles, AHV VM image management, and Calm automation.
+    - Developing Your Intuition:
+      - It is easy and simple to work with one of anything because configuration and operations are instant and atomic. As soon as you have a second cluster, your configuration and operational work can easily double in order to maintain consistency! You crossed over to the new world of scale, where we work to eliminate any single points of failure in our infrastructure, architecture, operations, and culture. Working at scale provides many new challenges for failures and remediation, but this is how organizations mature to tackle bigger initiatives with faster time to market.
+      - In order to enable delegation for customer self-service as well as automation, there must be guard rails for safety, security audits, and resource management. All of these topics fit under the umbrella of governance and they must be addressed altogether systematically. When governance and operations are divided across multiple systems, the fragmentation it causes makes it harder to achieve consistency while also driving up complexity. As a hybrid cloud engineer, the trade offs between governance, consistency, and convenience are critical evaluations you must make for short-term and long-term business requirements.
+
     - Big Picture: intro, text summary, image, vocab, links/references
     - Developing your Inspiration:
     - Map business requirements to governance facilities in Prism Central: RBAC, Projects, and Providers
@@ -53,6 +60,12 @@
     - Identify Calm automation and orchestration benefits
     - Publish pre-seeded blueprints to the marketplace for customer self-service, on-demand VM IaaS workloads.
     - Complete a deployment, audit, and deprovision for for VM IaaS
+    - Big Picture
+      - With private cloud governance covered in Lesson 1, we can build and automate workloads in projects with role based access controls. The next step is to make self-service workloads available through the Marketplace, which is a customer friendly web interface. We'll begin with creating a project with a default AHV VM environment and then publishing pre-seeded blueprint to that project. In Lesson 2, you'll see how Nutanix Calm automation powers the life cycle of publish, launch, audit, and deleting a workload with Calm blueprints and then perform this in the exercises.
+    - Developing Your Intuition
+      - In Course 1, we covered the NIST definition of Cloud as having essential characteristics. The success of the public cloud is generally due to rapid provisioning of facilities in an on-demand fashion under a "pay as you go" Operational Expenditure model. In order to replicate the cloud experience on-premise, a private cloud must offer self-service of automated facilities. There is a maturity in progression from IaaS to PaaS to SaaS to provide these experiences in a private cloud and we'll work in Course 3 to do this for a public, then hybrid cloud.
+      - Blueprints are the heart of the Calm, they model a business process for infrastructure, operations, and governance together. This unifies the different IT and application silos that normally fragment and slow the business. Blueprints can be exported as a JSON file and shared between people and unfederated Calm instances. It is a typical practice for blueprints to be placed under revision control, there are many Calm blueprints freely available in public Git repositories. In other words, Calm blueprints are software artifacts and they can encompass advanced software engineering practices, but do not be alarmed: we will progressively build up your familiarity with Calm capabilities over the remaining lessons through the easy to use Prism Central web console.
+
   - Concept: Calm Overview: automation for application lifecycle management
     - Big Picture: intro, text summary, image, vocab, links/references
     - Developing your Inspiration:
