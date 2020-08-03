@@ -7,6 +7,7 @@
   :hidden:
 
   labsetup/labsetup
+  dayinlife/dayinlife
 
 
 .. toctree::
@@ -38,6 +39,9 @@
   calm_escript/calm_escript
   calm_dsl/calm_dsl
   calm_marketplace/calm_marketplace
+  endpoints/endpoints
+  runbooks/runbooks
+  optionallabs/blueprint
 
 .. toctree::
   :maxdepth: 2
