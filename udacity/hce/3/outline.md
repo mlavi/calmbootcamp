@@ -1,5 +1,10 @@
 # Course 3 Outline: Public and Hybrid Cloud Management
 
+- Justify public cloud use with security, lock-in, and global load balancing considerations
+- Learn just enough AWS free-tier to add to Calm settings: provider and a project
+- Configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
+- Understand multiple Hybrid Cloud resource management with Beam
+
 1. Lesson 1: Strategies for Hybrid Cloud Design
   - Concept: Lesson learning objectives:
   - Concept: Big Picture
@@ -31,10 +36,41 @@
                 - Nutanix REST explorer/OpenAPI/Swagger
                 - TBD: Walkthrough, Exercise, Quiz?
                 - Reference: Nutanix.dev
-  - Exercise/Lab: C3L1E1
+  - EXERCISE/LAB: C3L1E2
     - X-Play or Calm runbook for continuous ops?
-  - Exercise/Lab: C3L1E2
-  - Exercise/Lab: C3L1E3
+  - Concept: Multiple application profiles
+  5. Configure workload capacity choice with blueprint application profiles
+  - Concept: Application Profiles Pill (abbeviated, check if fully moved)[move to course 3]
+    - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
+      - The default profile was used in the single-VM blueprint, but it was invisible to the user.
+      - If needed, the default profile can be renamed for a better description for operators.
+    - Additional application profiles provide the operator role (or higher) deployment choices when using an application deployment.
+      - This increases blueprint reuse (of actions and governance) instead of making separate blueprints for each permutation of deployment.
+      - Use application profiles to reduce the amount of delegated run-time properties: less choice reduces complexity and increases productivity: less is more!
+    - Application Profile best practice: make this as simple and user-friendly as possible, use nouns that reflect the audience use case/jargon. Capitalized noun, ideally without spaces. Make application profiles a set of mutually exclusive choices. Avoid pets when possible! e.g.:
+      - Production, Staging, UserAcceptanceTesting, Test, QualityAssurance, Development, ContinousIntegration
+      - Public, Private, Hybrid
+      - AHV, AWS, Azure, GCP, ESX, K8s
+      - DataCenter1, BranchOffice9, Colo3, DisasterRecoveryWest, DisasterRecoveryCentral
+      - Small, Medium, Large, Jumbo
+      - Titanium, Gold, Silver, Bronze
+    - Example use of profile for operator choice:
+      - Recommended configurations, such as capacity size: small versus medium versus large resource consumption for different needs.
+      - Limited to full configuration delegation with run-time property overrides.
+      - Different infrastructure providers for a public, private, and/or hybrid deployment.
+      - Any combination of the above.
+      - Add reference: [Calm Glossary](../../../appendix/glossary.rst) when needed for students
+      - *Calm in Action, Calm Automation playlists?*
+
+    - Walkthrough:
+      - Rename default application profile to: Small (remember best practices)
+      - Clone Small application profile, rename to Medium
+      - Localize medium application profile services, change the VMs to:
+        - DB = 2vCPU, 2GB RAM
+        - Web = 2vCPU
+    - EXERCISE/LAB: C3L1E1
+      - Reproduce the above.
+  - EXERCISE/LAB: C3L1E3
   - Concept: Lesson Review: we learned to do TBD
 
 2. Lesson 2: Public cloud infrastructure provider
@@ -52,7 +88,7 @@
         - IAM
         - VPC
         - Elastic IP
-    - Exercise/Lab: C3L2E1 Create an AWS account
+    - EXERCISE/LAB: C3L2E1 Create an AWS account
       - Provision AWS free tier
         - Create an IAM account
         - Create a VPC and security groups
@@ -63,7 +99,7 @@
         - Save provider and verify
         - Add AWS to existing student project
         - Add environment config for AWS
-    - Exercise/Lab: C3L2E3 Deploy off-prem to a public cloud
+    - EXERCISE/LAB: C3L2E3 Deploy off-prem to a public cloud
       -   Publish LAMP blueprint to hybrid project
       -   Deploy LAMP to AHV
       -   Deploy LAMP to AWS
@@ -81,7 +117,7 @@
   - Concept: Developing Your Intuition
   - Concept: Global Load Balancing between infrastructure providers
       - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
-  - Exercise/Lab: C3L3E1 Clone and modify Marketplace LAMP
+  - EXERCISE/LAB: C3L3E1 Clone and modify Marketplace LAMP
       - Goal: configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
       -   Hybrid deployment to AHV+AWS
       -   Add global load balancing via AWS App balancer or HAProxy
@@ -94,8 +130,8 @@
       - Less is more: the problem with delegating everything
       - Deployment permutations: T-Shirt sizing
       - A blueprint is inherently hybrid
-  - Exercise/Lab: C3L3E2
-  - Exercise/Lab: C3L3E3
+  - EXERCISE/LAB: C3L3E2
+  - EXERCISE/LAB: C3L3E3
   - Concept: Lesson Review: we learned to do TBD
 
 4. Lesson 4: Hybrid Cloud Management
@@ -106,9 +142,9 @@
     - Cost management: spending models and remediation
       - Fiscal compliance: showback, metadata, reserved instances
     - Security and compliance: reporting and remediation
-  - Exercise/Lab: C3L4E1
-  - Exercise/Lab: C3L4E2
-  - Exercise/Lab: C3L4E3
+  - EXERCISE/LAB: C3L4E1
+  - EXERCISE/LAB: C3L4E2
+  - EXERCISE/LAB: C3L4E3
   - Concept: Lesson Review: we learned to do TBD
 
 5. Course Review: hybrid cloud design and management

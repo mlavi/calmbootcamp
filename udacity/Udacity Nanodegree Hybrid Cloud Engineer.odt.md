@@ -9,32 +9,22 @@ Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
 #Udacity Content:
-- C2 reviews: L3 (Chris), L4 & L5 (Mark, Michael.Haigh?)
-  - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
-    - Provide a heading for motivation: phrase
-    - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
-    - Add a screenshot of the visual from the Big Picture video
-    - Detail the main points
-  - Developing Your Intuition
-    - Provide a heading for building intuition for the fundamental topics
-    - Explain and use visuals to build an intuition about the topics you are about to cover. As an expert, you can right away tell what is needed to solve a problem. This is your intuition. Think about how an expert will know this was the right way or approach to solve the problem.
-    - Detail the main points about developing the students' intuition about X.
-    - Check if students' demonstrate good intuition for the fundamental topics by applying it to new scenarios. Use quizzes to bring to the forefront possible misconceptions students may have, use response options to mirror misconceptions and provide specific feedback to clarify misconceptions
-- C2L1: Multiple Cluster and Workload Resources
-  - Big Picture:
-    - In Course 1, you learned how to operate VM workloads on a single Nutanix cluster with the AHV hypervisor. When you have a more than one Nutanix cluster, management can become split and uncoordinated between each cluster. You must reproduce your work in each cluster to have a consistent configuration, governance policy, and resources. The on-premise management problem compounds quickly when you have multiple Nutanix clusters with different hypervisors, as many of our customers do! Furthermore, the public cloud typically represents even further fragmentation as a separate silo for IT governance, operations, and security, so we will address hybrid cloud management in Course 3.
-    - In Lesson 1 of Course 2, we'll introduce you to the advanced version of the Prism control plane, which manages multiple clusters and provides additional facilities across those clusters, allowing management at scale. Nutanix Prism Central unites management across all different types of Nutanix clusters and their workloads, from a single pane of glass preventing the need for multiple consoles. Rather than learn about all of the capabilities and features of Prism Central, we will focus on governance with projects and roles, AHV VM image management, and Calm automation.
-  - Developing Your Intuition:
-    - It is easy and simple to work with one of anything because configuration and operations are instant and atomic. As soon as you have a second cluster, your configuration and operational work can easily double in order to maintain consistency! You crossed over to the new world of scale, where we work to eliminate any single points of failure in our infrastructure, architecture, operations, and culture. Working at scale provides many new challenges for failures and remediation, but this is how organizations mature to tackle bigger initiatives with faster time to market.
-    - In order to enable delegation for customer self-service as well as automation, there must be guard rails for safety, security audits, and resource management. All of these topics fit under the umbrella of governance and they must be addressed altogether systematically. When governance and operations are divided across multiple systems, the fragmentation it causes makes it harder to achieve consistency while also driving up complexity. As a hybrid cloud engineer, the trade offs between governance, consistency, and convenience are critical evaluations you must make for short-term and long-term business requirements.
+- C2 reviews: L3 (Chris), L4 & L5 (Michael.Haigh)
+- P2 + P3: change from wonderful co (twc) to the e-commerce company (tecc)
+- Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
+  - Provide a heading for motivation: phrase
+  - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
+  - Add a screenshot of the visual from the Big Picture video
+  - Detail the main points
+  - Big Picture: intro, text summary, image, vocab, links/references
+- Developing Your Intuition
+  - Provide a heading for building intuition for the fundamental topics
+  - Explain and use visuals to build an intuition about the topics you are about to cover. As an expert, you can right away tell what is needed to solve a problem. This is your intuition. Think about how an expert will know this was the right way or approach to solve the problem.
+  - What would happen if we didn't have it?
+  - Detail the main points about developing the students' intuition about X.
+  - Check if students' demonstrate good intuition for the fundamental topics by applying it to new scenarios. Use quizzes to bring to the forefront possible misconceptions students may have, use response options to mirror misconceptions and provide specific feedback to clarify misconceptions
 - C2L2:
-  - Big Picture
-    - With private cloud governance covered in Lesson 1, we can build and automate workloads in projects with role based access controls. The next step is to make self-service workloads available through the Marketplace, which is a customer friendly web interface. We'll begin with creating a project with a default AHV VM environment and then publishing pre-seeded blueprint to that project. In Lesson 2, you'll see how Nutanix Calm automation powers the life cycle of publish, launch, audit, and deleting a workload with Calm blueprints and then perform this in the exercises.
-  - Developing Your Intuition
-    - In Course 1, we covered the NIST definition of Cloud as having essential characteristics. The success of the public cloud is generally due to rapid provisioning of facilities in an on-demand fashion under a "pay as you go" Operational Expenditure model. In order to replicate the cloud experience on-premise, a private cloud must offer self-service of automated facilities. There is a maturity in progression from IaaS to PaaS to SaaS to provide these experiences in a private cloud and we'll work in Course 3 to do this for a public, then hybrid cloud.
-    - Blueprints are the heart of the Calm, they model a business process for infrastructure, operations, and governance together. This unifies the different IT and application silos that normally fragment and slow the business. Blueprints can be exported as a JSON file and shared between people and unfederated Calm instances. It is a typical practice for blueprints to be placed under revision control, there are many Calm blueprints freely available in public Git repositories. In other words, Calm blueprints are software artifacts and they can encompass advanced software engineering practices, but do not be alarmed: we will progressively build up your familiarity with Calm capabilities over the remaining lessons through the easy to use Prism Central web console.
-      - Blueprint into/concept (importance/components)
-      - What would happen if we didn't have it?
+    - Blueprint into/concept (importance/components)
     - We'll take you on the journey from IaaS to PaaS to SaaS.
   - Feedback:
     - I've done small edits directly throughout to make it easier to read.
@@ -49,9 +39,7 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
     - 96-108: we'll eventually drop the "self service" label because this is a remnant of a separate product that is now simply a feature of PC for AHV only, covered by PC Projects. Hence I would ask that rename these sections and headings (maybe not the text) from Prism Self-Service to Prism Central Projects.
       - Same for L1 slides: 28-30
     - I noticed that Prism Central_Uploading an Image from a Workstation.mp4 is over 8 minutes long, probably not an issue, but Udacity likes to keep videos to 3-5 minutes.
-- C2L3:Big Picture+Developing Your Intuition
 - C2L4:*Big Picture+Developing Your Intuition* skip: because L4 is a continuation of L3, which was split into more digestable chunks
-- C2L5:Big Picture+Developing Your Intuition
 - C2L0
 - P2 solution refinements
   - [Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit?ts=5f16103f): gap analysis on manual grading rubric with the [blueprint eval script](https://confluence.eng.nutanix.com:8443/pages/viewpage.action?pageId=96339829) || Code: [udacity/hce/eval/](https://github.com/mlavi/calmbootcamp/tree/master/udacity/hce/eval)
@@ -62,7 +50,6 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
       - Optional, nice to have: why does the decompile not work, are these all edge cases to report in #calm-dsl?
 - [C3 LO](hce/3/lesson_learning_objectives.md)
   - Consideration of refactoring [course 2, lesson 5](https://github.com/mlavi/calmbootcamp/blob/master/udacity/hce/2/outline.md) into Course 3 to rebalance
-  - P3 Proposal+Deliverables
   - C3 Outline
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
     - Sahil/Hitesh hybrid cloud resource management enablement materials
@@ -94,7 +81,6 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
         - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-taking-backup-and-restoring-calm-data-t.html
 - Course 2 Project:
   - Mark: Web application acceptance test needs to be provided in solution blueprint and externalized.
-  - uLab SSH pill/keygen exercise to student workspace? see [coco-ulab.txt](coco-ulab.txt)
   - Project automatic evaluation, cluster config capture, evaluator toolkit with Calm DSL
 - Course 2+ architecture: Single-node versus Multi-tenant cluster
   - Modeled in spreadsheet, Course2+Infra tab = https://docs.google.com/spreadsheets/d/1nvnBgewY9eTVJh4EUxDHXI63t1DjxdaBYzQ1P4CvLkY/edit#gid=1955317004

@@ -9,12 +9,12 @@
     - L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit)
     - L4: Video 1-2 screencasts to record, called out in slides
     - L5: Video 1-2 screencasts to record, called out in slides
-- change from wonderful co to the e-commerce company
+- change from wonderful co (twc) to the e-commerce company (tecc)
 ---
 0.  Lesson 0: Welcome to Course 2 and 3
   - Concept: Meet your instructor: Mark Lavi
     - https://docs.google.com/document/d/1nBgHS6b201Z3g11suFH8DZYjH9T94flFgOwqPmgl7gs/edit#heading=h.yafbfdzd3lst
-  - Introduction, why this content is important, who are the business stakejholders, when or when nto to use, what is the historical development, course 2 outline, tools/env/depenecies, project overview
+  - Introduction, why this content is important, who are the business stakeholders, when or when not to use, what is the historical development, course 2 outline, tools/dependencies, project overview
   - Concept: Course 2 overview:
     - Multi-cluster, scale out control plane = a private cloud
     - Automation is the key to self-service
@@ -64,23 +64,20 @@
     - Identify Calm automation and orchestration benefits
     - Publish pre-seeded blueprints to the marketplace for customer self-service, on-demand VM IaaS workloads.
     - Complete a deployment, audit, and deprovision for for VM IaaS
-    - Big Picture
-      - With private cloud governance covered in Lesson 1, we can build and automate workloads in projects with role based access controls. The next step is to make self-service workloads available through the Marketplace, which is a customer friendly web interface. We'll begin with creating a project with a default AHV VM environment and then publishing pre-seeded blueprint to that project. In Lesson 2, you'll see how Nutanix Calm automation powers the life cycle of publish, launch, audit, and deleting a workload with Calm blueprints and then perform this in the exercises.
-    - Developing Your Intuition
-      - In Course 1, we covered the NIST definition of Cloud as having essential characteristics. The success of the public cloud is generally due to rapid provisioning of facilities in an on-demand fashion under a "pay as you go" Operational Expenditure model. In order to replicate the cloud experience on-premise, a private cloud must offer self-service of automated facilities. There is a maturity in progression from IaaS to PaaS to SaaS to provide these experiences in a private cloud and we'll work in Course 3 to do this for a public, then hybrid cloud.
-      - Blueprints are the heart of the Calm, they model a business process for infrastructure, operations, and governance together. This unifies the different IT and application silos that normally fragment and slow the business. Blueprints can be exported as a JSON file and shared between people and unfederated Calm instances. It is a typical practice for blueprints to be placed under revision control, there are many Calm blueprints freely available in public Git repositories. In other words, Calm blueprints are software artifacts and they can encompass advanced software engineering practices, but do not be alarmed: we will progressively build up your familiarity with Calm capabilities over the remaining lessons through the easy to use Prism Central web console.
-
+  - Concept: Big Picture
+    - With private cloud governance covered in Lesson 1, we can build and automate workloads in projects with role based access controls. The next step is to make self-service workloads available through the Marketplace, which is a customer friendly web interface. We'll begin with creating a project with a default AHV VM environment and then publishing pre-seeded blueprint to that project. In Lesson 2, you'll see how Nutanix Calm automation powers the life cycle of publish, launch, audit, and deleting a workload with Calm blueprints and then perform this in the exercises.
+  - Concept: Developing Your Intuition
+    - In Course 1, we covered the NIST definition of Cloud as having essential characteristics. The success of the public cloud is generally due to rapid provisioning of facilities in an on-demand fashion under a "pay as you go" Operational Expenditure model. In order to replicate the cloud experience on-premise, a private cloud must offer self-service of automated facilities. There is a maturity in progression from IaaS to PaaS to SaaS to provide these experiences in a private cloud and we'll work in Course 3 to do this for a public, then hybrid cloud.
+    - Blueprints are the heart of the Calm, they model a business process for infrastructure, operations, and governance together. This unifies the different IT and application silos that normally fragment and slow the business. Blueprints can be exported as a JSON file and shared between people and unfederated Calm instances. It is a typical practice for blueprints to be placed under revision control, there are many Calm blueprints freely available in public Git repositories. In other words, Calm blueprints are software artifacts and they can encompass advanced software engineering practices, but do not be alarmed: we will progressively build up your familiarity with Calm capabilities over the remaining lessons through the easy to use Prism Central web console.
   - Concept: Calm Overview: automation for application lifecycle management
-    - Big Picture: intro, text summary, image, vocab, links/references
-    - Developing your Inspiration:
-      - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
-      -   Demo: Calm navigation, self-service applications on-demand under governance
-      -   [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
+    - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
+    - Demo: Calm navigation, self-service applications on-demand under governance
+    - [*https://github.com/mlavi/calmbootcamp/blob/master/what\_is\_calm/what\_is\_calm.rst*](/what_is_calm/what_is_calm.rst)
   - Quiz: Calm automation does...
-      -   infra only
-      -   apps only
-      -   both (correct)
-      -   Review answer
+      - infra only
+      - apps only
+      - both (correct)
+      - Review answer
   - Concept: VM IaaS for self-service IT
     - Most important first step for a private cloud
     - Concept: Linux OS, CentOS 7 for a fast, license free base OS
@@ -100,7 +97,8 @@
       - https://portal.nutanix.com/page/documents/details/?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-ssh-keys-for-linux-and-windows.html
       - LAB/EXERCISE/SIMULATION: perhaps U-lab Ubuntu 16.04+?:
         - *TBD: Create and save "udacity" SSH passphrase-less key pair to student workspace?*
-        - Windows desktop exercise
+        - Windows desktop exercise via PuTTYgen or Cygwin ssh-keygen
+        - uLab SSH pill/keygen exercise to student workspace? see [coco-ulab.txt](coco-ulab.txt)
     - Concept: Cloud-init for basic, dynamic, secure configuration
       - cloud-init is YAML, space is critical
       - trouble shooting can be difficult and implementations can vary by OS version
@@ -307,27 +305,10 @@
     - Launch blueprint, verify SSH key works via web terminal, delete application.
     - Save your blueprint to the workspace.
     - Clone your blueprint to C2L4-Web, we'll use the clone for the start of the next exercise.
-  - [move to course 3] Concept: Application Profiles Pill
+  - Concept: Application Profiles Pill (abbeviated, check if fully moved)[move to course 3]
     - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
       - The default profile was used in the single-VM blueprint, but it was invisible to the user.
       - If needed, the default profile can be renamed for a better description for operators.
-    - Additional application profiles provide the operator role (or higher) deployment choices when using an application deployment.
-      - This increases blueprint reuse (of actions and governance) instead of making separate blueprints for each permutation of deployment.
-      - Use application profiles to reduce the amount of delegated run-time properties: less choice reduces complexity and increases productivity: less is more!
-    - Application Profile best practice: make this as simple and user-friendly as possible, use nouns that reflect the audience use case/jargon. Capitalized noun, ideally without spaces. Make application profiles a set of mutually exclusive choices. Avoid pets when possible! e.g.:
-      - Production, Staging, UserAcceptanceTesting, Test, QualityAssurance, Development, ContinousIntegration
-      - Public, Private, Hybrid
-      - AHV, AWS, Azure, GCP, ESX, K8s
-      - DataCenter1, BranchOffice9, Colo3, DisasterRecoveryWest, DisasterRecoveryCentral
-      - Small, Medium, Large, Jumbo
-      - Titanium, Gold, Silver, Bronze
-    - Example use of profile for operator choice:
-      - Recommended configurations, such as capacity size: small versus medium versus large resource consumption for different needs.
-      - Limited to full configuration delegation with run-time property overrides.
-      - Different infrastructure providers for a public, private, and/or hybrid deployment.
-      - Any combination of the above.
-      - Add reference: [Calm Glossary](../../../appendix/glossary.rst) when needed for students
-      - *Calm in Action, Calm Automation playlists?*
   - Concept: Calm Actions1
     - The default application profile contains several actions.
     - Actions are comprised of one or more tasks, which appear as gray ovals on a service.
@@ -406,12 +387,11 @@
     2. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
     3. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
     4. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
-    5. [move to course 3] Configure workload capacity choice with blueprint application profiles
-    -   Add a database and load balancer to the blueprint to manage a three tier web application lifecycle and variable population
-    -   Configure delegatable scale-in and scale-out actions on a web application tier with orchestrated changes to the load balancer.
+      - Add a database and load balancer to the blueprint to manage a three tier web application lifecycle and variable population
+      - Configure delegatable scale-in and scale-out actions on a web application tier with orchestrated changes to the load balancer.
     - Big Picture: intro, text summary, image, vocab, links/references
-    - Developing your Inspiration:
-    - Achieve self-service SaaS for life cycle action on a three tier web app blueprint
+      - Achieve self-service SaaS for life cycle action on a three tier web app blueprint
+    - Developing your Inspiration
   - Concept: Calm Actions3
     - Calm can handle more complex PaaS and SaaS needs:
       - Additional Create stages: service pre-create and service package install
@@ -504,15 +484,6 @@
       -   How much time saved?
       -   TBD
       -   Review answer
-  - [move to course 3] Concept: Multiple application profiles
-    - Walkthrough:
-      - Rename default application profile to: Small (remember best practices)
-      - Clone Small application profile, rename to Medium
-      - Localize medium application profile services, change the VMs to:
-        - DB = 2vCPU, 2GB RAM
-        - Web = 2vCPU
-    - Exercise
-      - Reproduce the above.
   - Concept: Lesson 5 Review: we learned to test the deployment, scale the web tier in and out
 
 6. Course 2 Review: Private Cloud Automation for self-service enterprise apps
