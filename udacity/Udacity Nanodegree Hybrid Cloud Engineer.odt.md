@@ -2,6 +2,12 @@ z[]{#anchor}[*Udacity Nanodegree: Hybrid Cloud Engineer*](https://confluence.eng
 
 [Nanodegree Course Outline](https://docs.google.com/document/d/1YR6dTsMn6xF0kXmrq-AiP4kSHgLvnvCKEUVozcXLLuE/edit)
 ---
+DevIntuit+BigPic examples:
+Rick Gaston10:48 AM
+https://classroom.udacity.com/nanodegrees/nd9991/parts/49ac1f4a-6345-4b9f-85dc-6db637ba8c22/modules/b8fdb0eb-12d7-4db5-bda5-d021ea89d7cb/lessons/dcbda48c-aa97-4c42-bc33-ea235089492e/concepts/e5454cf7-5106-465f-be6f-bbf259f93b0f
+Michael Conway10:51 AM
+https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
+
 #Udacity Content:
 - C2 reviews: L3 (Chris), L4 & L5 (Mark, Michael.Haigh?)
   - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary

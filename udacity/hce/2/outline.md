@@ -6,11 +6,15 @@
   - Course Outline [G.sheet](https://docs.google.com/spreadsheets/d/1QgWyk0LlNr3ofiHxx3nVDdSMc965N-tFz6okgv6KdVk/edit?usp=sharing)
     - Lesson 1: [G.Doc](https://docs.google.com/document/d/1lP5gmNRha9QEa_5z7LC342FHZKF3_8ItndGmWaXUCy8/edit#heading=h.ra72982c88h9), [Slides](https://docs.google.com/presentation/d/1rXnla0xHJfIy8F6IMbbj27U_LI9dPXs5RAo1Q6y5rUU/edit#slide=id.p1), [Demo Videos](https://drive.google.com/drive/u/0/folders/1sQkrrDDXqpUgz8N_EO9WX0d9wh3CPe7o)
     - L2:
-    - L3: Monday [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit)
+    - L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit)
+    - L4: Video 1-2 screencasts to record, called out in slides
+    - L5: Video 1-2 screencasts to record, called out in slides
+- change from wonderful co to the e-commerce company
 ---
-0.  Lesson 0: Welcome to Course 2
+0.  Lesson 0: Welcome to Course 2 and 3
   - Concept: Meet your instructor: Mark Lavi
     - https://docs.google.com/document/d/1nBgHS6b201Z3g11suFH8DZYjH9T94flFgOwqPmgl7gs/edit#heading=h.yafbfdzd3lst
+  - Introduction, why this content is important, who are the business stakejholders, when or when nto to use, what is the historical development, course 2 outline, tools/env/depenecies, project overview
   - Concept: Course 2 overview:
     - Multi-cluster, scale out control plane = a private cloud
     - Automation is the key to self-service
@@ -303,7 +307,7 @@
     - Launch blueprint, verify SSH key works via web terminal, delete application.
     - Save your blueprint to the workspace.
     - Clone your blueprint to C2L4-Web, we'll use the clone for the start of the next exercise.
-  - Concept: Application Profiles Pill
+  - [move to course 3] Concept: Application Profiles Pill
     - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
       - The default profile was used in the single-VM blueprint, but it was invisible to the user.
       - If needed, the default profile can be renamed for a better description for operators.
@@ -402,7 +406,7 @@
     2. Orchestrate the deployment and configuration of the database server with SQL, tasks, and macros.
     3. Add a custom action to change a database user password, publish and test the blueprint for PaaS self-service.
     4. Orchestrate the configuration of the load balancer with a web tier array using scale actions.
-    5. Configure workload capacity choice with blueprint application profiles
+    5. [move to course 3] Configure workload capacity choice with blueprint application profiles
     -   Add a database and load balancer to the blueprint to manage a three tier web application lifecycle and variable population
     -   Configure delegatable scale-in and scale-out actions on a web application tier with orchestrated changes to the load balancer.
     - Big Picture: intro, text summary, image, vocab, links/references
@@ -500,7 +504,7 @@
       -   How much time saved?
       -   TBD
       -   Review answer
-  - Concept: Multiple application profiles
+  - [move to course 3] Concept: Multiple application profiles
     - Walkthrough:
       - Rename default application profile to: Small (remember best practices)
       - Clone Small application profile, rename to Medium
