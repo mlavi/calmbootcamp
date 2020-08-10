@@ -51,6 +51,8 @@
         - TBD: Walkthrough, Exercise, Quiz?
         - Reference: Nutanix.dev
   - Concept: scalability and global load balancing considerations
+  - Concept: Global Load Balancing between infrastructure providers
+      - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
   - EXERCISE/LAB: C3L1E1
     - Two web tiers on private cloud, mixed into load balancer
   - EXERCISE/LAB: C3L1E2
@@ -67,8 +69,11 @@
     3. Add the public cloud provider and configure in a project
     4. Deploy a marketplace blueprint and audit a workload on a public cloud (achieving public cloud PaaS)
   - Concept: Big Picture
+    A cloud experience should be generally be similar across different providers, but each will have particular differences in terminology and implementation. In course 1 we outlined the progression from IaaS to PaaS to SaaS offerings. When dealing with a public cloud provider, you'll be able to choose from a variety of data centers in different regions of the world, that will anchor you to the local capabilities of the region. Generally, while most public cloud facilities are available in all regions, they may have different costs and potential limitations.
+
+    In course 3, we'll focus on just adding one public cloud provider: the leader of the industry, Amazon Web Services (AWS). We'll add AWS to Calm as a new provider and then enable it in your project. Then we'll augment our three tier web app blueprint to become a hybrid cloud web tier across both public and private cloud IaaS. 
+
   - Concept: Developing Your Intuition
-    A cloud experience should be generally be similar, but have particular differences in terminology and implementation.
     We'll explore governance in AWS public cloud with IAM, then VM, OS Image, and SSH keypair properties of EC2, just as we did with Nutanix AOS and AHV. Here's a map:
     | Term | Nutanix | AWS |
     | ---- | ------- | --- |
@@ -92,7 +97,7 @@
         - Pick a well known region, we suggest us-west-2 for minimal expense.
         - Create an IAM user, assign minimal privileges
         - Create a VPC and security groups
-        - Upload your keypair
+        - Upload your SSH keypair
         - Identify CentOS AMI in your region
     - EXERCISE/LAB: C3L2E2 Add AWS provider to Calm and Project Environment
         - Set up Calm \> Settings \> Provider for AWS
@@ -121,8 +126,6 @@
     3. Configure a application profiles for additional deployment scenarios
   - Concept: Big Picture
   - Concept: Developing Your Intuition
-  - Concept: Global Load Balancing between infrastructure providers
-      - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
   - EXERCISE/LAB: C3L3E1 Clone and modify Marketplace LAMP
       - Goal: configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
       -   Hybrid deployment to AHV+AWS
