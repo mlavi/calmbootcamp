@@ -8,9 +8,17 @@ https://classroom.udacity.com/nanodegrees/nd9991/parts/49ac1f4a-6345-4b9f-85dc-6
 Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
-#Udacity Content:
-- C2 reviews: L3 (Chris), L4 & L5 (Michael.Haigh)
-- P2 + P3: change from wonderful co (twc) to the e-commerce company (tecc)
+# Udacity Content
+- prep for recording:
+  - sh/sh/ha/breakfast
+  - dress t-shirt
+  - tell family hours
+  - cloud council
+  - C2L1-2 slide speaker note fixups
+  - Move mac+monitor
+  - Check light levels
+  - Remove/silence 0800/0400
+  - Water bottle
 - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
   - Provide a heading for motivation: phrase
   - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
@@ -23,6 +31,8 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
   - What would happen if we didn't have it?
   - Detail the main points about developing the students' intuition about X.
   - Check if students' demonstrate good intuition for the fundamental topics by applying it to new scenarios. Use quizzes to bring to the forefront possible misconceptions students may have, use response options to mirror misconceptions and provide specific feedback to clarify misconceptions
+- C2 reviews: L3 (Chris), L4 & L5 (Michael.Haigh)
+- C2L0
 - C2L2:
     - Blueprint into/concept (importance/components)
     - We'll take you on the journey from IaaS to PaaS to SaaS.
@@ -40,7 +50,6 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
       - Same for L1 slides: 28-30
     - I noticed that Prism Central_Uploading an Image from a Workstation.mp4 is over 8 minutes long, probably not an issue, but Udacity likes to keep videos to 3-5 minutes.
 - C2L4:*Big Picture+Developing Your Intuition* skip: because L4 is a continuation of L3, which was split into more digestable chunks
-- C2L0
 - P2 solution refinements
   - [Deliverables](https://docs.google.com/document/d/1p3lg1ohIPsjmHMV2cDB_zMxa8JsYBV4W6v-kHI4X74s/edit?ts=5f16103f): gap analysis on manual grading rubric with the [blueprint eval script](https://confluence.eng.nutanix.com:8443/pages/viewpage.action?pageId=96339829) || Code: [udacity/hce/eval/](https://github.com/mlavi/calmbootcamp/tree/master/udacity/hce/eval)
   - Solution Example blueprint:
@@ -54,9 +63,10 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
     - Mark: Review GSO Calm bootcamp materials https://nutanixinc.sharepoint.com/NutanixServices/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=QhzmVK&cid=acc31002%2Dff6a%2D47d4%2D876a%2Ddddecfcd4fe5&FolderCTID=0x012000A59174B379A79A41BEE13DF17B200DC4&viewid=dd304715%2Dcab0%2D4510%2D81a9%2Db5f019e0633a&id=%2FNutanixServices%2FShared%20Documents%2FPractice%20Development%2FPublished%20Service%20Kits%2FCloud%2FCalm%2FCalm%20Workshop
     - Sahil/Hitesh hybrid cloud resource management enablement materials
 
-#Udacity Engineering:
+# Udacity Engineering
 
 - Course 1 Project: Wes
+  - Title, Change from wonderful co (twc) to the e-commerce company (tecc)
 - Course 2+3 polish:
   - Student state:
     - Blueprints
