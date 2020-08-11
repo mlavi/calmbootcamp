@@ -8,23 +8,23 @@
       3. Reconcile requirements against agility challenges: security, lock-in considerations
       4. Identify opportunities for continous operations
   - Concept: Big Picture
-    - The goal for a hybrid cloud engineer is to design and execute the organization's business to run in a uniform and scalable manner for consistent operations and governance. In course 1, you learned how to operate a modern private cloud and in course 2, you learned how to automate private cloud workloads from an IaaS to PaaS to SaaS cloud experience. We'll use everything covered, map the parallels to the public cloud, and then augment our existing automation to use the public in a hybrid manner.
+    - The goal for a hybrid cloud engineer is to design and execute the organization's business to run in a uniform and scalable manner for consistent operations and governance. In course 1, you learned how to operate a modern private cloud and in course 2, you learned how to automate private cloud workloads from an IaaS to PaaS to SaaS cloud experience. We'll use everything covered, map the parallels to the public cloud, and then augment our existing automation to use the public cloud in a hybrid manner.
     - In course 1, we covered the NIST definition of cloud and the common mistake to conflate the term exclusively with public cloud. Furthermore, we showed how (public) cloud first has not always been the best choice and the strategy has evolved to cloud smart. Hence the industry has emphasized hybrid cloud solutions in order to achieve cloud smart.
-    - Correspondingly, we will tackle the difference between creating and moving workloads, because moving or translating a workload between two infrastructure providers does not achieve the goal of cloud smart.
+    - Correspondingly, we will tackle the difference between creating and moving workloads; moving or translating a workload between two infrastructure providers does not achieve the goal of cloud smart.
   - Concept: Developing Your Intuition
     - The definition of hybrid from Wiktionary: "Something of mixed origin or composition; often, a tool or technology that combines the benefits of formerly separate tools or technologies." We will explore hybrid in a few manners during course 3:
       - Combining public and private clouds into a hybrid cloud application deployment for scalable performance
       - Combining different deployment scenarios under the same governance and operational model for consistency
-    - Accomplishing these simple goals can be hard when tools and providers are typically domain specific, resulting in separate silos of abilities and fragmentation. The hybrid cloud engineer must always arbitrate this natural conflict when a new capability that satisfies a new business requirement (for a single platform, cloud, tool, etc.) against the complexity encompassed to reproduce it in a hybrid model. In other words, many bottoms-up and domain specific automation approaches, methods, and tools challenge the ability to inter-operate consistently in multiple providers. Fortunately, Nutanix Calm blueprints incorporate internal and external technologies and providers which can be blended together easily to create, consumed, and manage the workload life cycle: this is an inherently hybrid approach!
+    - Accomplishing these simple goals can be hard when tools and providers are typically domain specific, resulting in separate silos of abilities and fragmentation. The hybrid cloud engineer must always arbitrate this natural conflict when a new capability that satisfies a new business requirement (for a single platform, cloud, tool, etc.) against the complexity encompassed to reproduce it in a hybrid model. In other words, many bottoms-up and domain specific automation approaches, methods, and tools challenge the ability to inter-operate consistently with multiple providers. Fortunately, Nutanix Calm blueprints incorporate internal and external technologies and providers which can be blended together easily to create, consume, and manage the workload life cycle: this is an inherently hybrid approach!
     - Reference: https://en.wiktionary.org/wiki/hybrid
   - Concept: Infrastructure Provider Strategies
-    - Infrastructure providers are similar in that they offer compute, memory, and storage often consumed as VMs. They also offer many advanced PaaS and SaaS-like facilities and applications, but these can be proprietary in their feature set and operation. The potential proprietary nature of any PaaS and SaaS feature, operation, and API can form a dependency which causes fragmentation and provider lock-in. On the other hand, making advanced features and applications work in a provider independent fashion also has costs to develop and operate.
-    - The first problem encountered when we speak to customers who ask how to make one public cloud SaaS offering work the same way on another public cloud or private cloud, not realizing they have taken on a proprietary arrangement. A hybrid cloud engineer must be aware of these business lock-ins and negotiate requirements and tradeoffs when adopting or avoiding them. Simply put, a hybrid cloud engineer should advise when the evaluation to leave a provider must be added as a business requirement.
+    - Infrastructure providers are similar in that they offer compute, memory, and storage often consumed as VMs. They also offer many advanced PaaS and SaaS-like facilities and applications, although these can be proprietary in their feature set and operation. The potential proprietary nature of any PaaS and SaaS feature, operation, and API can form a dependency which causes fragmentation and provider lock-in. On the other hand, making advanced features and applications work in a provider-independent fashion also has costs to develop and operate.
+    - The first problem encountered when we speak to customers who ask how to make one public cloud SaaS offering work the same way on another public cloud or private cloud, is not realizing they have taken on a proprietary arrangement. A hybrid cloud engineer must be aware of these business lock-ins and negotiate requirements and tradeoffs when adopting or avoiding them. Simply put, a hybrid cloud engineer should advise when the evaluation to leave a provider must be added as a business requirement.
     - Therefore, treating compute, memory, and storage for VMs should be considered a safe target for hybrid cloud applications to preserve infrastructure provider independence for a cloud smart strategy.
-    - The second problem customers ask to solve are are for tools or services to move VM workloads between public and private clouds.
+    - The second problem customers ask to solve are for tools or services to move VM workloads between public and private clouds.
       - [*The Fallacy of Lift and Shift:*](https://docs.google.com/document/d/1OzRYOZqcr_gp3fxseBEwBsCOXe9lWUADAnZ-NRBDPuM/edit?pli=1#heading=h.wnz1xm87cwau) from cloud first to cloud smart
-      - RESEARCH/TODO: is there any ECA content for Move? Find the Move HoW, but not a potential lab exercise.
-    - Providers and technologies evolve their capabilities and business models to compete for your business: a hybrid cloud engineer surveys the market to see what their current and competing solutions offer to better improve business operations and requirements. Re-evaluating your current workloads for hybrid cloud deployment can be a difficult task, the best first step is often to reproduce what you currently have with automation to make it IaaS and evolve to PaaS if required. At that point, when you can synthesize a new workload from a blueprint with a few clicks, it becomes easier to reproduce.
+      - **RESEARCH/TODO: is there any ECA content for Move? Find the Move HoW, but not a potential lab exercise.**
+    - Providers and technologies evolve their capabilities and business models to compete for your business: a hybrid cloud engineer surveys the market to see what their current and competing solutions offer to better improve business operations and requirements. Re-evaluating your current workloads for hybrid cloud deployment can be a difficult task.  The best first step is often to reproduce what you currently have with automation to make it IaaS and evolve to PaaS if required. At that point, when you can synthesize a new workload from a blueprint with a few clicks, it becomes easier to reproduce.
   - Concept: Pets vs Livestock for scalability
       - Enterprise Clouds
       - NTNX Clusters on AWS?
@@ -43,20 +43,20 @@
       - Continuous Operations overview
     - Concept: Expanded Calm features
       - Windows: Analogs to Linux, cloud-init, Shell
-      - Protecting AHV VM workloads with microsegmentation with Flow policies
-      - DSL
+      - Protecting AHV VM workloads with microsegmentation and Flow policies
+      - Nutanix Calm DSL
       - Runbooks
       - Learning about Prism Central APIs
-        - Nutanix REST explorer/OpenAPI/Swagger
+        - Nutanix REST API Explorer/OpenAPI/Swagger
         - TBD: Walkthrough, Exercise, Quiz?
-        - Reference: Nutanix.dev
+        - Reference: [Nutanix.dev](https://www.nutanix.dev)
   - Concept: scalability and global load balancing considerations
   - Concept: Global Load Balancing between infrastructure providers
       - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
   - EXERCISE/LAB: C3L1E1
     - Two web tiers on private cloud, mixed into load balancer
   - EXERCISE/LAB: C3L1E2
-  - EXERCISE/LAB: C3L1E3 Continous ops
+  - EXERCISE/LAB: C3L1E3 Continuous ops
     - X-Play or Calm runbook for continuous ops: Scale up memory, vCPU with X-Play?
   - Concept: Lesson Review: we learned to do TBD
 
@@ -65,13 +65,13 @@
   - L2 Provision, configure, and use a public cloud infrastructure provider in a project
     - Learn just enough AWS free-tier to add to Calm settings: provider and a project
     1. Provision a public cloud provider account
-    2. Configure the public cloud provider for secure workload automation
+    2. Configure the public cloud provider for secure workload automation **(Question: How do we define "secure"?)**
     3. Add the public cloud provider and configure in a project
     4. Deploy a marketplace blueprint and audit a workload on a public cloud (achieving public cloud PaaS)
   - Concept: Big Picture
-    A cloud experience should be generally be similar across different providers, but each will have particular differences in terminology and implementation. In course 1 we outlined the progression from IaaS to PaaS to SaaS offerings. When dealing with a public cloud provider, you'll be able to choose from a variety of data centers in different regions of the world, that will anchor you to the local capabilities of the region. Generally, while most public cloud facilities are available in all regions, they may have different costs and potential limitations.
+    A cloud experience should be generally be similar across different providers, but each will have particular differences in terminology and implementation. In course 1 we outlined the progression from IaaS to PaaS to SaaS offerings. When dealing with a public cloud provider, you'll be able to choose from a variety of data centers in different regions of the world, anchoring you to the local capabilities of the region. Generally, while most public cloud facilities are available in all regions, they may have different costs and potential limitations.
 
-    In course 3, we'll focus on just adding one public cloud provider: the leader of the industry, Amazon Web Services (AWS). We'll add AWS to Calm as a new provider and then enable it in your project. Then we'll augment our three tier web app blueprint to become a hybrid cloud web tier across both public and private cloud IaaS. 
+    In course 3, we'll focus on just adding one public cloud provider: the leader of the industry, Amazon Web Services (AWS). We'll add AWS as a new Calm provider and then enable it in your project. Then we'll augment our three tier web app blueprint to become a hybrid cloud web tier across both public and private cloud IaaS.
 
   - Concept: Developing Your Intuition
     We'll explore governance in AWS public cloud with IAM, then VM, OS Image, and SSH keypair properties of EC2, just as we did with Nutanix AOS and AHV. Here's a map:
@@ -141,7 +141,7 @@
       - A blueprint is inherently hybrid
       - Concept: Multiple application profiles
       5. Configure workload capacity choice with blueprint application profiles
-      - Concept: Application Profiles Pill (abbeviated, check if fully moved)[move to course 3]
+      - Concept: Application Profiles Pill (abbreviated, check if fully moved)[move to course 3]
         - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
           - The default profile was used in the single-VM blueprint, but it was invisible to the user.
           - If needed, the default profile can be renamed for a better description for operators.
