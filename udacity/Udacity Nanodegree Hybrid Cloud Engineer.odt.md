@@ -1,4 +1,4 @@
-z[]{#anchor}[*Udacity Nanodegree: Hybrid Cloud Engineer*](https://confluence.eng.nutanix.com:8443/display/DVM/Udacity+Nanodegree%3A+Hybrid+Cloud+Engineer)
+[]{#anchor}[*Udacity Nanodegree: Hybrid Cloud Engineer*](https://confluence.eng.nutanix.com:8443/display/DVM/Udacity+Nanodegree%3A+Hybrid+Cloud+Engineer)
 
 [Nanodegree Course Outline](https://docs.google.com/document/d/1YR6dTsMn6xF0kXmrq-AiP4kSHgLvnvCKEUVozcXLLuE/edit)
 ---
@@ -10,15 +10,13 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
 
 # Udacity Content
 - prep for recording:
-  - sh/sh/ha/breakfast
-  - dress t-shirt
-  - tell family hours
-  - cloud council
-  - C2L1-2 slide speaker note fixups
-  - Move mac+monitor
+  - dress t-shirt, water
   - Check light levels
-  - Remove/silence 0800/0400
-  - Water bottle
+  - C2L3: Creating and Publishing a Single VM Blueprint
+    - BP: traditional IT departments typically focus on infrastructure, divided across storage, compute, network teams and it is not uncommon to see larger organizations further divided across security, public cloud, virtualization, Windows, and Linux OS teams. Further compounding fragmentation for running the business can be specialized teams which focus on databases and other business critical application platforms: these application teams can, but do not regularly fall under the domain of IT. Therefore, it is a regular practice that IT maintains the infrastructure portion of a stack and delegates everything above the operating system to the application teams. The disconnect in responsibility between infrastructure and application is a huge business challenge full stack governance and often, is further compounded by public and private cloud fragmentation in different team, fiscal, and operating models.
+
+    Calm helps reconcile the division of labor, infrastructure, and domain expertise to bring the full operational life cycle of infrastructure and applications together under a unified context of the blueprint. This lesson will focus on a single VM covering virtualization, compute, storage, network, and operating system team silos to deliver self-service VM IaaS through the marketplace.
+    - DYI:
 - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
   - Provide a heading for motivation: phrase
   - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
