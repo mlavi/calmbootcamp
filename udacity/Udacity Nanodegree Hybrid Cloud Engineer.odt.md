@@ -12,7 +12,12 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
 - prep for recording:
   - dress t-shirt, water
   - Check light levels
+  - C2L2: re-record S23
   - C2L3: Creating and Publishing a Single VM Blueprint
+    - Slides:
+      - 27, 55: breakup/reorg
+      - big pic/DYI redo with slide images from C2L1: 14, 29, 34, ; C2L2, 13,19, 38 ; C2L5:12,18
+      - lots of demos
 - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
   - Provide a heading for motivation: phrase
   - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
