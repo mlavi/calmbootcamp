@@ -9,7 +9,19 @@
     - L3: [G.doc](https://docs.google.com/document/d/1WfDgmht1oY8i3fi389CN6Sv8Oy62VwQrPkmwxh6l4bk/edit)
     - L4: Video 1-2 screencasts to record, called out in slides
     - L5: Video 1-2 screencasts to record, called out in slides
+      Reviewed up to slide 43, screenshots needed
 - change from wonderful co (twc) to the e-commerce company (tecc)
+---
+Classroom: https://classroom.udacity.com/nanodegrees/nd321-beta/parts/a18fb237-4576-4b0e-b495-0fee8f61c68b
+C2 L1-5 demos/lab exercise harmony/walkthrough demo screencasts
+C2 L5 course wrap up, review slides
+C2 L0 review/enhance, include the importance and historical development
+why on-premises portion in title
+C3 L1-2 review, slides
+C3 L4 Beam development
+C3 Project outstanding (and P2)
+
+Exercise 15-20 minute
 ---
 0.  Lesson 0: Welcome to Course 2 and 3
   - Concept: Meet your instructor: Mark Lavi
@@ -37,6 +49,7 @@
     - Prism Element control plane for a single Nutanix cluster
     - PC = Scale out control plane for multiple Nutanix clusters, cluster by hypervisor/hardware provider
     - SIMULATION/LAB: PC deployment sizing choices and discussion
+      - Can't be easily done in NX-on-GCP
     - Concept: warnings and alert logs for cluster resource management
     - Note that we will skip advanced PC workload management facilities: AIOps, sizer runway, etc.
   - Quiz L1Q1: PE vs PC
@@ -55,8 +68,6 @@
       - SIMULATION/LAB: create a PC project (not Calm project) with an AHV simple quota
   - Quiz L1Q2: Map business requirement scenario to PC concepts
       - Review answer
-  - Concept: [Calm enablement choices for capacity planning](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_enable/calm_enable/)
-  - SIMULATION/LAB: Calm enablement (abbreviated video?)
   - Lesson 1 Review: we learned to do 1,2,3
 
 2. Lesson 2: Calm automation for application lifecycle management
@@ -69,6 +80,8 @@
   - Concept: Developing Your Intuition
     - In Course 1, we covered the NIST definition of Cloud as having essential characteristics. The success of the public cloud is generally due to rapid provisioning of facilities in an on-demand fashion under a "pay as you go" Operational Expenditure model. In order to replicate the cloud experience on-premise, a private cloud must offer self-service of automated facilities. There is a maturity in progression from IaaS to PaaS to SaaS to provide these experiences in a private cloud and we'll work in Course 3 to do this for a public, then hybrid cloud.
     - Blueprints are the heart of the Calm, they model a business process for infrastructure, operations, and governance together. This unifies the different IT and application silos that normally fragment and slow the business. Blueprints can be exported as a JSON file and shared between people and unfederated Calm instances. It is a typical practice for blueprints to be placed under revision control, there are many Calm blueprints freely available in public Git repositories. In other words, Calm blueprints are software artifacts and they can encompass advanced software engineering practices, but do not be alarmed: we will progressively build up your familiarity with Calm capabilities over the remaining lessons through the easy to use Prism Central web console.
+  - Concept: [Calm enablement choices for capacity planning](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_enable/calm_enable/)
+    - SIMULATION/LAB: Calm enablement (abbreviated video?)
   - Concept: Calm Overview: automation for application lifecycle management
     - [Calm basics](https://nutanix.handsonworkshops.com/workshops/4202ba14-b4db-4cc4-ab73-2134e70b518e/view/calm_basics/basics/)
     - Demo: Calm navigation, self-service applications on-demand under governance
@@ -117,36 +130,36 @@
       a.  Review answer
   - LAB/SIMULATION: create your first Calm (not PC) project.
     - Simulation is safer versus pre-create $STUDENTID-C2L2-demo project with $STUDENTID as a Project Admin to configure remaining properties.
-      a.  Create project \$STUDENTID-project
-      b.  Add yourself as a project administrator
-      c.  Add AHV cluster, do not use quotas.
-      d.  Save and confirm your project
-      e.  Review exercise: you created a project for governance
+      a. Create project \$STUDENTID-project
+      b. Add yourself as a project administrator
+      c. Add AHV cluster, do not use quotas.
+      d. Save and confirm your project
+      e. Review exercise: you created a project for governance
   - Concept: Calm Projects, part 2
-          a.  Provider Quotas
-          b.  Environments
-            - Add SSH credential: superuser, upload your SSH passphraseless private key
-              - L2 reuse your SSH key from your workspace
-            - Add Nutanix tab, skip Windows, turn down Linux VM config:
-            - Keep name, 1/1/1
-            - cloud-init with @@{superuser.publickey}@@ and @@{INSTANCE_PUBLIC_KEY}@@
-              - These are Calm macros, we'll discuss in detail later in the lesson.
-            - Disk, clone from img service, CentOS 7 (preloaded on cluster), bootable
-            - NIC 1: VLAN, Dynamic IP
-            - Check login with superuser credential
-            - Save
-  - LAB/SIMULATION: Configure a project environment for a basic Linux VM with cloud-init and SSH key credentials
+      a. Provider Quotas
+      b. Environments
+        - Add SSH credential: superuser, upload your SSH passphraseless private key
+          - L2 reuse your SSH key from your workspace
+        - Add Nutanix tab, skip Windows, turn down Linux VM config:
+        - Keep name, 1/1/1
+        - cloud-init with @@{superuser.publickey}@@ and @@{INSTANCE_PUBLIC_KEY}@@
+          - These are Calm macros, we'll discuss in detail later in the lesson.
+        - Disk, clone from img service, CentOS 7 (preloaded on cluster), bootable
+        - NIC 1: VLAN, Dynamic IP
+        - Check login with superuser credential
+        - Save
+  - (L2E2? COMBINED WITH PREVIOUS SESSION?) LAB/SIMULATION: Configure a project environment for a basic Linux VM with cloud-init and SSH key credentials
   - Concept: Nutanix Marketplace
-      -   Blueprint Publishing workflow
-      -   Self service: Nutanix Marketplace
-      -   Demo video: Project summary of my cluster
-  - LAB/EXERCISE: publish a marketplace blueprint to a student project, launch blueprint, audit application, delete application
+      - Blueprint Publishing workflow
+      - Self service: Nutanix Marketplace
+      - Demo video: Project summary of my cluster
+  - (L2E3? COMBINED WITH PREVIOUS SESSION?) LAB/EXERCISE: publish a marketplace blueprint to a student project, launch blueprint, audit application, delete application
   - *Concept: Best practices for Blueprint standards:
     - Reference: PracDev Template - Nutanix Calm Design.docx ask Stephane.B and Jesse Gonzalez for permission to quote or reference!
     - Review that we introduce macro pill sooner
     - Parcel out to each section: credential*
   - Concept: Review lesson learnings:
-      -   Calm overview, governance, self-service life cycle management of an existing blueprint with auditing
+      - Calm overview, governance, self-service life cycle management of an existing blueprint with auditing
 
 3.  Lesson 3: Create and publish your first Calm single-VM blueprint to achieve self-service VM IaaS
   - Concept: Learning objectives:

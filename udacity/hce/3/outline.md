@@ -83,14 +83,30 @@
     | SSH | private key | SSH keypair |
   - Concept: Public Cloud overview
     - AWS concepts and their Course 2 counterparts:
-        - Free tier: t2.micro and t3.micro
+        - Free tier: t2.micro and t3.micro: 12 months free, Compute
+          - See fine print details! Not govcloud or China
+          - https://aws.amazon.com/free/?nc2=h_ql_pr_ft&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Categories=categories%23compute&awsf.Free%20Tier%20Types=tier%2312monthsfree
+        - https://aws.amazon.com/ec2/pricing/on-demand Linux:
+          - us-east-1 (Virgina): t3.micro 	2 	Variable 	1 GiB 	EBS Only 	$0.0104 per Hour
+          - us-east-2 (Ohio): t3.micro 	2 	Variable 	1 GiB 	EBS Only 	$0.0104 per Hour
+          - us-west-2 (Oregon): t3.micro 	2 	Variable 	1 GiB 	EBS Only 	$0.0104 per Hour
+          - us-west-1 (N.California): t3.micro 	2 	Variable 	1 GiB 	EBS Only 	$0.0124 per Hour
+          - us-west-3 (Los Angeles): t3.micro 	2 	Variable 	1 GiB 	EBS Only 	$0.0125 per Hour
+          - ca-central-1 (Ca): t3.micro 	2 	Variable 	1 GiB 	EBS Only 	$0.0116 per Hour
+          - ami-02b0c55eeae6d5096
+          Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type - ami-02b0c55eeae6d5096
+The Amazon Linux AMI is an EBS-backed, AWS-supported image. The default image includes AWS command line tools, Python, Ruby, Perl, and Java. The repositories include Docker, PHP, MySQL, PostgreSQL, and other packages.
+Red Hat Enterprise Linux 8 (HVM), SSD Volume Type - ami-0a54aef4ef3b5f881 (64-bit x86) / ami-0ffd59b53e6797671 (64-bit Arm)
+Red Hat Enterprise Linux version 8 (HVM), EBS General Purpose (SSD) Volume Type
+RHEL 8.2
+/var/log/cloud-init*
+Hint: online YAML validator for user data
         - EC2 Regions and Availability Zones
+        - IAM
         - AMI
         - Security Groups
         - SSH keypairs
-        - IAM
-        - VPC
-        - Elastic IP (and DNS?)
+        - Hold on: VPC and Elastic IP (and DNS?), IAM Role
     - EXERCISE/LAB: C3L2E1 Create an AWS account
       - Provision AWS free tier
         - Create an AWS account
