@@ -267,26 +267,28 @@ Exercise 15-20 minute
 
 - Lesson 4
   - Concept: Learning objectives:
-    1. Identify multiple service blueprint life cycle: development, launch, audit, publish, clone.
-    2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM leveraging the Task Library.
-    2. Configuration and deployment of a web server with a sample PHP web application, from the LAMP stack.
+    1. Identify multiple service (VM) blueprint life cycle: development, launch, audit, publish, clone.
+    2. Create a Calm blueprint to automate the configuration, deployment, restarting of a web server on a Linux VM
+    3. Leverage the Nutanix Calm Task Library to make use of pre-seeded tasks
+    4. Configuration and deployment of a web server with a sample PHP web application, from the LAMP stack.
     - Big Picture: intro, text summary, image, vocab, links/references
     - Developing your Inspiration:
   - Concept: Calm Blueprint Life cycle: Clone blueprint within a project.
     - What is dropped inside the same project? Credentials + secrets.
     - What is dropped outside the project? Potentially cluster, network, image.
   - Concept: Calm Blueprint Life cycle: Download and Upload blueprints
-    - Blueprints are JSON format and recommended to store in source code control systems.
+    - Blueprints are JSON format and recommended to store in source code control systems e.g. GitHub
     - Secrets and credentials are emptied when downloading a blueprint unless a password is provided to encrypt the blueprint and preserve these values.
     - You can upload a JSON blueprint into Calm, there are many example blueprints at:
       - https://github.com/nutanix/blueprints
     - Blueprints can be also be made with Python using the Calm Domain Specific Language:
-      - This requires basic Python skills and outside the scope of this course, reference: https://github.com/nutanix/calm-dsl/
+      - This requires basic Python skills and is outside the scope of this course
+      - Calm DSL public repository/reference: https://github.com/nutanix/calm-dsl/ and https://www.nutanix.dev/calm-dsl
   - Concept: Calm Multi-VM Blueprint development with the visual editor
-    - After completing the simplest single-VM IaaS blueprint, we'll configure capabilities for multiple VMs, infrastructure providers, and operations the blueprint to can represent the entire application life cycle model, to address PaaS and SaaS use cases. These multiple requirements of infrastructure, application, operations, and governance are contained in the blueprint for highly automated and reusable workloads.
+    - After completing the simplest single-VM IaaS blueprint, we'll configure capabilities for multiple VMs, infrastructure providers, and operations.  The blueprint can represent the entire application life cycle model, to address PaaS and SaaS use cases. These multiple requirements of infrastructure, application, operations, and governance are contained in the blueprint for highly automated and reusable workloads.
     - Blueprint name best practice: lowercase, use dashes not spaces for descriptive word limiters.
     - Upload/download and save to revision control.
-    - Use the Markdown in the description to document:
+    - Use Markdown in the description to document:
       - authors
       - version
       - assumptions/hard-coded pets
@@ -295,20 +297,20 @@ Exercise 15-20 minute
       - URL/repo link for more documentation
   - Concept: Calm Services and Substrates
     - Substrates map from Calm > Settings > Providers that are further configured in a Project, potentially with resource allow lists and quotas.
-    - Properties of a VM are static unless you delegate runtime property and/or set as a macro.
+    - Properties of a VM are static unless you specifically delegate user control by a setting a property as "Runtime", or set the value to match a [Calm Macro](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0_0:nuc-components-macros-overview-c.html).
     - Service name best practice: InterCap/Pascal convention/CamelCase: no spaces. e.g.: Mysql or DbMySql
-    - VM name best practice: typically an IT naming convention, which also implies hostname and DNS/service discovery, but in lieu of any standard, use service best name practice and append a service type suffix: Vm (this will lay the groundwork for K8s pods in the future), e.g.: MysqlVm
+    - VM name best practice: typically an IT naming convention, which also implies hostname and DNS/service discovery, but in lieu of any standard, use service best name practice and append a service type suffix: Vm (this will lay the groundwork for other services such as Kubernetes pods in the future), e.g.: MysqlVm
     - Credential name best practice: lowercase, no spaces. Ideal for name to represent the function, role, or facility used. e.g.: domain_admin, local_admin, dba, webteam, web, backups
     - In course 2, we'll focus on VM services from the AHV provider, and in course 3, we'll add a public cloud provider for VM services to accomplish a hybrid cloud deployment.
     - References:
       - [Calm Glossary](../../../appendix/glossary.rst) when needed for students
       - *Calm in Action, Calm Automation playlists?*
       - [Service Documentation](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0%3Anuc-components-service-introduction-c.html)
-  - Concept: Calm Macros Pill
-    - Calm Macros are variables using the @@{name}@@ syntax, they allow dynamic configuration of values during blueprint execution.
+  - Concept: [Calm Macros](https://portal.nutanix.com/page/documents/details?targetId=Nutanix-Calm-Admin-Operations-Guide-v3_0_0:nuc-components-macros-overview-c.html) Pill
+    - Calm Macros are variables using the @@{name}@@ syntax and allow dynamic configuration of values during blueprint execution.
     - Macros can be used in Service properties and in Tasks
     - Macros are global, but can be defined in the application profile and on a service
-    - Macros best practice: lowercase, use _ to delimit descriptive words.
+    - Macros best practice: lowercase, use underscore ("_") to delimit descriptive words.
     - Add references:
       - [Calm Glossary](../../../appendix/glossary.rst)
       - *Calm in Action, Calm Automation playlists?*

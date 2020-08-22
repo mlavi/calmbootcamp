@@ -56,6 +56,7 @@
   - EXERCISE/LAB: C3L1E1
     - Two web tiers on private cloud, mixed into load balancer
   - EXERCISE/LAB: C3L1E2
+    - Different task types e.g. HTTP tasks?  Could be used to demonstrate Calm's integration potential with any other product exposing an API
   - EXERCISE/LAB: C3L1E3 Continuous ops
     - X-Play or Calm runbook for continuous ops: Scale up memory, vCPU with X-Play?
   - Concept: Lesson Review: we learned to do TBD
@@ -141,7 +142,13 @@ Hint: online YAML validator for user data
     2. Operate the load balancer across public and private cloud web tiers in a blueprint
     3. Configure a application profiles for additional deployment scenarios
   - Concept: Big Picture
+    - The goal for effective scalability and deployment choices is to ensure tasks that are otherwise reactive are managed in efficient time-sensitive manner.  In course 2, you learned about some of the strategies that can be applied to Hybrid Cloud Management and had time to think about how those strategies apply to effective decision making.
+    - By thinking about how applications and deployment strategies can apply in different and yet similar manners irrespective of the cloud environment running an application, it became apparent how planning these strategies can impact application lifecycles at later stages.
+    - In essence, these strategic planning ititiatives can help drive the adoption of application-specific technologies such as Cloud-Init for configuration automation and shell tasks for task automation, while also opening the door to considering domain-specific automation approaches such as the Nutanix Calm DSL and runbooks.
+    - In previous lessons, the idea of domain-specific tools being not-so-desirable was discussed, although there is certainly a place for certain technologies that follow this pattern, if they can aid in improving application agility and lifecycle management.  As an example, the Nutanix Calm DSL, when applied to Nutanix Calm specifically, won't apply to improving lifecycle efficiency in other products, but can allow some tasks that were otherwise repetitive and complex to be distilled down to a much similar approach.  From another angle, the use of the Nutanix Calm DSL to automate runbook execution is an excellent way of streamlining the scalability and deployment decisions that are critical to this lesson.
   - Concept: Developing Your Intuition
+    - In this lesson, we'll explore a number of ways that scalability and deployment decisions can be planned strategically and efficiently without sacrificing the domain knowledge that most automation engineers have spent so long to develop.
+    - As an example, what happens when the web component of an web application requires additional resources?  This lesson will demonstrate how this can be achieved quickly and efficiently, thereby avoiding the need for manual resource deployment.
   - EXERCISE/LAB: C3L3E1 Clone and modify Marketplace LAMP
       - Goal: configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
       -   Hybrid deployment to AHV+AWS
