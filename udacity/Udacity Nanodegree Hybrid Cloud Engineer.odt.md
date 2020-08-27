@@ -9,12 +9,17 @@ Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
 # Udacity Content
-- 
-- P3: https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2
-- prep for recording:
+- C2: all lesson walkthroughs 10-15,
+  - Course Lessons headline intro/outro
+  - Word to Ghostwriter to Markdown # tables blocked?
+  - C2L2: re-record S23, macro pill
+- P2: Wed/with Rick+Mike. Rick out Labor day.
+  - P3: https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2
+- Thurs: C3 lesson review + exercises
+- Prep for recording:
   - dress t-shirt, water
   - Check light levels
-  - C2L2: re-record S23
+  - 18" ream from front of new desk for headshots
   - C2L3: Creating and Publishing a Single VM Blueprint
     - Slides:
       - 27, 55: breakup/reorg

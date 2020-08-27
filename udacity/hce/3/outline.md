@@ -149,6 +149,20 @@ Hint: online YAML validator for user data
   - Concept: Developing Your Intuition
     - In this lesson, we'll explore a number of ways that scalability and deployment decisions can be planned strategically and efficiently without sacrificing the domain knowledge that most automation engineers have spent so long to develop.
     - As an example, what happens when the web component of an web application requires additional resources?  This lesson will demonstrate how this can be achieved quickly and efficiently, thereby avoiding the need for manual resource deployment.
+  - Concept (08-27):
+      - It should be simple it should be to add another data center or infrastructure provider to the Calm settings, the project, and then the blueprint.
+      - Allow multiple data center deployments, allow multiple public clouds, allow hybrid multi cloud permutations.
+      - Adding the AWS provider to Calm Settings
+        - Specify AWS regions and RedHat 8.2 Linux AMI (from the free tier of that region, use the EC2 region launch wizard to find the AMI ID)
+  - Concept (08-27):
+      - Adding the new AWS provider to your student Project (HybridCloudEngineer)
+      - Remember that AWS AMI, Security groups, and SSH keys are AWS region specific and must be provisioned already for use: Calm can consume these configurations, it will not create them: that would be an advanced topic outside the course scope.
+      - Now the blueprints in your project can add and use AWS VM services in the enabled AWS regions
+  - Concept (08-27): move L1 load balancing concepts here
+  - Concept (08-27): Architecting for access
+    For the final project, we need the database to be on the public cloud so all web VMs (on-prem AHV and off-prem AWS) can reach it to update it unless we use a VPC, which is very advanced.
+    I'll look at how we address global load balancing in L1 now and then augment in this context for hybrid load balancer.
+    References: https://www.nutanix.com/go/10-steps-devops-at-scale
   - EXERCISE/LAB: C3L3E1 Clone and modify Marketplace LAMP
       - Goal: configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
       -   Hybrid deployment to AHV+AWS
@@ -162,9 +176,7 @@ Hint: online YAML validator for user data
       - Less is more: the problem with delegating everything
       - Deployment permutations: T-Shirt sizing
       - A blueprint is inherently hybrid
-      - Concept: Multiple application profiles
-      5. Configure workload capacity choice with blueprint application profiles
-      - Concept: Application Profiles Pill (abbreviated, check if fully moved)[move to course 3]
+    - Concept: Multiple application profiles
         - Every blueprint has a default profile, it can be thought of a base layer of the blueprint.
           - The default profile was used in the single-VM blueprint, but it was invisible to the user.
           - If needed, the default profile can be renamed for a better description for operators.
@@ -185,15 +197,19 @@ Hint: online YAML validator for user data
           - Any combination of the above.
           - Add reference: [Calm Glossary](../../../appendix/glossary.rst) when needed for students
           - *Calm in Action, Calm Automation playlists?*
-        - Walkthrough:
-          - Rename default application profile to: Small (remember best practices)
-          - Clone Small application profile, rename to Medium
-          - Localize medium application profile services, change the VMs to:
-            - DB = 2vCPU, 2GB RAM
-            - Web = 2vCPU
+        - Summary: Configure workload capacity choice with blueprint application profiles
   - EXERCISE/LAB: C3L3E2
+    - Rename default application profile to: Small (remember best practices)
+    - Clone Small application profile, rename to Medium
+    - Localize medium application profile services, change the VMs to:
+      - DB = 2vCPU, 2GB RAM
+      - Web = 2vCPU
   - EXERCISE/LAB: C3L3E3
-  - Concept: Lesson Review: we learned to do TBD
+  - Concept: Lesson Review and conclusion:
+    - Now you understand how simple it is to go hybrid, anywhere, with very little effort and maximum governance and operational reuse.
+    Every infrastructure provider has valuable PaaS offerings, but these advantages must be weighed against lock-in they necessitate that prevents hybrid cloud engineering.
+    The key to hybrid cloud engineering is treat every infrastructure provider equally, this simplicity allows each provider to be interchangable, not a pet.
+    That's the Nutanix difference: to make computing invisible, anywhere.
 
 4. Lesson 4: Hybrid Cloud Management
   - Concept: Lesson learning objectives:
