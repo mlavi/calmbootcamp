@@ -58,7 +58,7 @@
     - Use CentOS8 image, reuse C2L5 blueprint, retrofit with CentOS 8 tasks from library
   - EXERCISE/LAB: C3L1E2
     - Different task types e.g. HTTP tasks?  Could be used to demonstrate Calm's integration potential  with any other product exposing an API
-    - Mark: find a web service
+    - Mark: find a web service for HTTP task
   - EXERCISE/LAB: C3L1E3 Continuous ops
     - X-Play or Calm runbook for continuous ops: Scale up memory, vCPU with X-Play?
   - Concept: Lesson Review: we learned to do TBD
