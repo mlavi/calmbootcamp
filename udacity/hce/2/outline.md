@@ -310,7 +310,7 @@ Exercise 15-20 minute
     - Calm Macros are variables using the @@{name}@@ syntax and allow dynamic configuration of values during blueprint execution.
     - Macros can be used in Service properties and in Tasks
     - Macros are global, but can be defined in the application profile and on a service
-    - Macros best practice: lowercase, use underscore ("_") to delimit descriptive words.
+    - Macros best practice: lowercase, use underscore ("\_") to delimit descriptive words.
     - Add references:
       - [Calm Glossary](../../../appendix/glossary.rst)
       - *Calm in Action, Calm Automation playlists?*
@@ -391,7 +391,7 @@ Exercise 15-20 minute
               d.  Add install task
               e.  Save and troubleshoot any validation issues
               f.  Launch and Audit deployment
-    -   Review exercise: you did your first push button automated web server lifecycle with a few clicks.
+    - Review exercise: you did your first push button automated web server lifecycle with a few clicks.
   - Quiz: a new employee asks for a web server. What is the best answer to give them a repeatable, delegatable web server?
         -   Insure external people or groups are in a new project, then Blueprint Publish, Approve, Add project(s) and Publish to Marketplace
         -   Publish a web server blueprint to the default project in the marketplace.
