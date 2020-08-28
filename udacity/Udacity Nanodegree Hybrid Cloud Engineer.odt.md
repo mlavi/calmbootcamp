@@ -8,6 +8,12 @@ https://classroom.udacity.com/nanodegrees/nd9991/parts/49ac1f4a-6345-4b9f-85dc-6
 Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
+Setup: Frame, SSH keys, Blueprint upload/download
+This video will walk you through how to use the workspace environment you’ll be using for the rest of the exercises and project in this course. We’ll show you how to save blueprint and SSH files to your local desktop, and then how to make use of them in future sessions.
+Rick Gaston12:34 PM
+We can resume Frame sessions, but the Nutanix Frame cluster will expire four hours after the start of your sessions.
+
+
 # Udacity Content
 - C2: all lesson walkthroughs 10-15,
   - Course Lessons headline intro/outro
