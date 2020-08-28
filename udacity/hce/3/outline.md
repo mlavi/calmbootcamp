@@ -55,8 +55,10 @@
       - When to go PaaS: AWS ELB vs. App Balancer lock-in vs. HAProxy, F5, etc.
   - EXERCISE/LAB: C3L1E1
     - Two web tiers on private cloud, mixed into load balancer
+    - Use CentOS8 image, reuse C2L5 blueprint, retrofit with CentOS 8 tasks from library
   - EXERCISE/LAB: C3L1E2
-    - Different task types e.g. HTTP tasks?  Could be used to demonstrate Calm's integration potential with any other product exposing an API
+    - Different task types e.g. HTTP tasks?  Could be used to demonstrate Calm's integration potential  with any other product exposing an API
+    - Mark: find a web service
   - EXERCISE/LAB: C3L1E3 Continuous ops
     - X-Play or Calm runbook for continuous ops: Scale up memory, vCPU with X-Play?
   - Concept: Lesson Review: we learned to do TBD
@@ -120,12 +122,13 @@ Hint: online YAML validator for user data
         - Set up Calm \> Settings \> Provider for AWS
         - Allow region, Add CentOS AMI
         - Save provider and verify
-        - Add AWS to existing student project
+        - COURSE3 CLUSTER with CentOS8.2? Add AWS to existing student project
         - Add environment config for AWS
     - EXERCISE/LAB: C3L2E3 Deploy off-prem to a public cloud
-      -   Publish LAMP blueprint to hybrid project
-      -   Deploy LAMP to AHV
-      -   Deploy LAMP to AWS
+      - Publish LAMP blueprint to hybrid project
+      - Deploy LAMP to AHV
+      - Deploy LAMP to AWS
+      - Can we take an IAM.CSV to Calm DSL
   - Quiz: what steps would be required to make a blueprint hybrid with a new provider?
     1.  Settings \> Provider \> Add New, Save, Verify
         \> Projects \> \$STUDENTID: Add Provider,
@@ -142,9 +145,9 @@ Hint: online YAML validator for user data
     2. Operate the load balancer across public and private cloud web tiers in a blueprint
     3. Configure a application profiles for additional deployment scenarios
   - Concept: Big Picture
-    - The goal for effective scalability and deployment choices is to ensure tasks that are otherwise reactive are managed in efficient time-sensitive manner.  In course 2, you learned about some of the strategies that can be applied to Hybrid Cloud Management and had time to think about how those strategies apply to effective decision making.
+    - The goal for effective scalability and deployment choices is to ensure tasks that are otherwise reactive are managed in efficient time-sensitive manner. In course 2, you learned about some of the strategies that can be applied to Hybrid Cloud Management and had time to think about how those strategies apply to effective decision making.
     - By thinking about how applications and deployment strategies can apply in different and yet similar manners irrespective of the cloud environment running an application, it became apparent how planning these strategies can impact application lifecycles at later stages.
-    - In essence, these strategic planning ititiatives can help drive the adoption of application-specific technologies such as Cloud-Init for configuration automation and shell tasks for task automation, while also opening the door to considering domain-specific automation approaches such as the Nutanix Calm DSL and runbooks.
+    - In essence, these strategic planning initiatives can help drive the adoption of application-specific technologies such as Cloud-Init for configuration automation and shell tasks for task automation, while also opening the door to considering domain-specific automation approaches such as the Nutanix Calm DSL and runbooks.
     - In previous lessons, the idea of domain-specific tools being not-so-desirable was discussed, although there is certainly a place for certain technologies that follow this pattern, if they can aid in improving application agility and lifecycle management.  As an example, the Nutanix Calm DSL, when applied to Nutanix Calm specifically, won't apply to improving lifecycle efficiency in other products, but can allow some tasks that were otherwise repetitive and complex to be distilled down to a much similar approach.  From another angle, the use of the Nutanix Calm DSL to automate runbook execution is an excellent way of streamlining the scalability and deployment decisions that are critical to this lesson.
   - Concept: Developing Your Intuition
     - In this lesson, we'll explore a number of ways that scalability and deployment decisions can be planned strategically and efficiently without sacrificing the domain knowledge that most automation engineers have spent so long to develop.
@@ -159,18 +162,18 @@ Hint: online YAML validator for user data
       - Remember that AWS AMI, Security groups, and SSH keys are AWS region specific and must be provisioned already for use: Calm can consume these configurations, it will not create them: that would be an advanced topic outside the course scope.
       - Now the blueprints in your project can add and use AWS VM services in the enabled AWS regions
   - Concept (08-27): move L1 load balancing concepts here
+    - Discuss Add global load balancing via AWS App balancer or HAProxy
+    - Trigger scale in or out via webhook API
   - Concept (08-27): Architecting for access
     For the final project, we need the database to be on the public cloud so all web VMs (on-prem AHV and off-prem AWS) can reach it to update it unless we use a VPC, which is very advanced.
     I'll look at how we address global load balancing in L1 now and then augment in this context for hybrid load balancer.
     References: https://www.nutanix.com/go/10-steps-devops-at-scale
-  - EXERCISE/LAB: C3L3E1 Clone and modify Marketplace LAMP
+  - EXERCISE/LAB: C3L3E1 Clone and retrofit C2L5 blueprint or Marketplace LAMP/CentOS7?
       - Goal: configure a hybrid web tier blueprint: clone and localize web tier on AWS, rehost database on public cloud
-      -   Hybrid deployment to AHV+AWS
-      -   Add global load balancing via AWS App balancer or HAProxy
-      -   Scale in and out AWS, AHV
-      -   Deploy and test a hybrid deployment, scale AWS and AHV independently
-      -   Trigger scale in or out via webhook API
-      -   Repeat for Azure, GCP, Xi?
+      - Hybrid deployment to AHV+AWS
+      - Scale in and out AWS, AHV web tier
+      - Deploy and test a hybrid deployment, scale AWS and AHV independently
+      - Dropped: Repeat for Azure, GCP, Xi?
     - Concept: Calm Application Profiles, partX
       - Lesson learning objective: Configure an application profile to accommodate additional deployment scenarios.
       - Less is more: the problem with delegating everything
@@ -198,7 +201,7 @@ Hint: online YAML validator for user data
           - Add reference: [Calm Glossary](../../../appendix/glossary.rst) when needed for students
           - *Calm in Action, Calm Automation playlists?*
         - Summary: Configure workload capacity choice with blueprint application profiles
-  - EXERCISE/LAB: C3L3E2
+  - EXERCISE/LAB: C3L3E2 app profile resource choice
     - Rename default application profile to: Small (remember best practices)
     - Clone Small application profile, rename to Medium
     - Localize medium application profile services, change the VMs to:
@@ -216,21 +219,20 @@ Hint: online YAML validator for user data
     - L4 Identify strategies for hybrid cloud management for fiscal and security compliance
     - Understand multiple Hybrid Cloud resource management with Beam
     1. Design a fiscal governance policy for public and private clouds
-    2. Design a security governance policy for public and private clouds
+    2. Out of scope: Design a security governance policy for public and private clouds
   - Concept: Big Picture
   - Concept: Developing Your Intuition
   - Concept: Enterprise Cloud Management (e.g. Beam)
     - Cost management: spending models and remediation
       - Fiscal compliance: showback, metadata, reserved instances
     - Security and compliance: reporting and remediation
-    - SE enablement https://drive.google.com/drive/folders/1f1ZWGJL-TzW6QtM3895AE96wNyaUO_g5
-      - Ask HenryL/WillP
+    - SE enablement https://drive.google.com/drive/folders/1f1ZWGJL-TzW6QtM3895AE96wNyaUO_g5 (HenryL/WillP)
   - EXERCISE/LAB: C3L4E1
-    - Connect Beam with your IAM key
-    - Turn on security report?
-    - Wait 24 hours for first report
+    - MikeB: Rescope to Beam demo environment for fiscal governance, part 1 (a la TestDrive?)
   - EXERCISE/LAB: C3L4E2
+    - MikeB: Rescope to Beam demo environment for fiscal governance, part 2 (a la TestDrive?)
   - EXERCISE/LAB: C3L4E3
+    - MikeB: Rescope to Beam demo environment for fiscal governance, part 3 (a la TestDrive?)
   - Concept: Lesson Review: we learned to do TBD
 
 5. Course Review: hybrid cloud design and management
