@@ -8,6 +8,21 @@ https://classroom.udacity.com/nanodegrees/nd9991/parts/49ac1f4a-6345-4b9f-85dc-6
 Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
+C2 Labs:
+- L1:
+  - 50:simulation:LDAP
+  - 60:drop RBAC exercise
+  - 84:drop PC project exercise
+  - 96:redo/defer:Image management/upload: what instructions? it has a demo video
+- L2:
+  - video: add vmware provider, calm project
+  - 25:Calm enablement simulation
+  - 37:done: SSH keypair
+  - Ed team exercise docL2: E3,4,5,6=create calm project,
+- L3:
+  - 32:drop? Marketplace recap exercise
+  - 70:Create a single VM blueprint
+Bug: UI timeout and no password file entry for PC
 # Udacity Content
 - C2: all lesson walkthroughs 10-15,
   - Course Lessons headline intro/outro
