@@ -524,3 +524,89 @@ Exercise 15-20 minute
     - What happens when you clone an app profile, scope?
   - Concept: Blueprint optimization: operation/task dependencies
 - AWS foundation: EC2+VPC
+---
+- Concept: Linux Administration Overview
+[pic?] ssh user_account@LinuxHost.example.com to access the command line shell (Bash)
+  - Every user has an account and executes programs under their account name.
+  - Remote command line access via SSH: use your SSH key to login to a user account.
+    - Typically, we'll use IP addresses for our ephemeral VMs.
+  - Programs have file permissions for user ownership and access; they run under your user account.
+  - System maintenance requires to be run as the administrative user.
+  - The administrative account is called the superuser, so administrative tools often start with su.
+  - While the administrative account is typically user "root," for security purposes, root is blocked from SSH logins.
+[pic?] User: sudo command = root
+  - User accounts can be added to the sudo-ers file to be allowed access to administrative tools.
+  - Prefacing sudo before commands will grant superuser access.
+- Concept: Linux Administration Tips
+  - Programs are installed by package managers, so package and program are synonyms.
+  - Synonyms for application infrastructure packages: server, service, deamon, facility, listener.
+    - Hence you will see use of: mysqld (MySQL daemon), httpd (Apache daemon), sshd (SSH daemon)
+  - In the command line interface, case matters and everything defaults to lowercase on Linux.
+  - You will see frequent use of "sudo" in the shell scripts on server facilities.
+  - You can learn detailed usage on most commands using: man, which is an abbreviation for manual page.
+  - We'll use sudo to execute installation, configuration, and operations of the load balancer, web server, and database.
+  - Humor on sudo.
+- Concept: CentOS and Red Hat Linux Administration
+  - We'll use the same release of CentOS and RedHat in order to keep parity for administrative programs and operations
+    - There can be subtle to major differences between Linux distributions and even different releases of the same distribution.
+  - Firewall and security group access:
+    - ssh is TCP port 22
+  - Package management: yum
+    - sudo yum install -y haproxy
+  - Operations of the load balancer, web server, and database will use: systemctl
+    - sudo systemctl start haproxy
+  - Standard journal log viewer: journalctl
+    - sudo journalctl -u mysqld
+    - add the -f argument to journalctl to keep watching logs live, use Control+C to Cancel out back to the command prompt.
+  - Configuration files in: /etc/
+  - Troubleshooting logs, most in /var/log/
+    - /var/log/messages
+    - /var/log/secure
+      - shows SSH logins
+    - /var/log/cloud-init.log
+    - /var/log/cloud-init-output.log
+  - Further references:
+    - [CentOS Documentation](https://docs.centos.org/en-US/docs/)
+    - [OpenSSH Project](https://www.openssh.com/)
+    - [Cloud-init Project](https://cloudinit.readthedocs.io/en/latest/)
+    - [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- Concept: HAProxy Load Balancer Server Administration
+  - Standard install and maintenance cycle:
+    - sudo yum install -y haproxy
+    - sudo systemctl {enable,start,status,stop,restart} haproxy
+  - Firewall and security group access:
+    - http is TCP port 80
+  - Configuration files in: /etc/haproxy/haproxy.cfg
+  - Troubleshooting logs: journalctl -u haproxy
+  - Further reference: [HAProxy Project: Documentation](http://www.haproxy.org/#docs
+    - [HAProxy 1.8 Configuration](http://cbonte.github.io/haproxy-dconv/1.8/configuration.html#4)
+    - HAProxy version: haproxy -v
+- Concept: Apache Web Server Administration
+  - Standard install and maintenance cycle:
+    - sudo yum install -y httpd
+    - sudo systemctl {enable,start,status,stop,restart} httpd
+  - Firewall and security group access:
+    - http is TCP port 80
+    - https is TCP port 443 (outside of the scope of our course)
+  - Configuration files in: /etc/httpd/
+    - Document root: /var/www/html/
+  - Troubleshooting logs:
+    - sudo journalctl -u httpd
+    - tail /etc/httpd/logs/\*.log
+  - Further reference: [Apache HTTP Server Project: Documentation](http://httpd.apache.org/docs/)
+    - Apache version: httpd -v
+  - Tip: Although httpd started the project, the Apache project has grown to a large open source organization for many software projects, so the term can be used for both the httpd web server and the umbrella parent organization.
+    - Humor: Apache was named after "a patchy server" to indicate the project’s early days of software development.
+- Concept: MySQL Database Server Administration
+  - Standard install and maintenance cycle:
+    - sudo yum install -y mysqld
+    - sudo systemctl {enable,start,status,stop,restart} mysqld
+  - Firewall and security group access:
+    - mysqld listens on TCP port 3306
+  - Configuration files in: /etc/my.cnf
+  - Troubleshooting logs:
+    - sudo journalctl -f -u mysqld
+    - sudo tail /var/log/mysqld.log
+  - Further reference: [MySQL Documentation](https://dev.mysql.com/doc/)
+    - [MySQL server administration](http://dev.mysql.com/doc/refman/en/using-systemd.html)
+      - MySQL version: mysqld -v

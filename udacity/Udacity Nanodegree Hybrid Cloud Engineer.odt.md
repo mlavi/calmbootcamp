@@ -9,22 +9,12 @@ Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
 # Udacity Content
-- Today Update P2 deliverable doc:
-  - Download your blueprint from NTNX cluster to Frame desktop
-  - Compress to Zip archive with Windows File Explorer
-  - Download Zip archive to your laptop
-- Setup: Frame, SSH keys, Blueprint upload/download
-This video will walk you through how to use the workspace environment you’ll be using for the rest of the exercises and project in this course. We’ll show you how to save blueprint and SSH files to your local desktop, and then how to make use of them in future sessions.
-We can resume Frame sessions, but the Nutanix Frame cluster will expire four hours after the start of your sessions.
-- Find C3L2 web service for HTTP task demo
-- Review L4+L5 exercises
 - C2: all lesson walkthroughs 10-15,
   - Course Lessons headline intro/outro
+  - C2 Proj change for DB+learning object review
   - Word to Ghostwriter to Markdown # tables blocked?
   - C2L2: re-record S23, macro pill
-- P2: Wed/with Rick+Mike. Rick out Labor day.
-  - P3: https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-GenericCloud-8.2.2004-20200611.2.x86_64.qcow2
-- Thurs: C3 lesson review + exercises
+  - Rick out Labor day.
 - Prep for recording:
   - dress t-shirt, water
   - Check light levels
@@ -34,6 +24,7 @@ We can resume Frame sessions, but the Nutanix Frame cluster will expire four hou
       - 27, 55: breakup/reorg
       - big pic/DYI redo with slide images from C2L1: 14, 29, 34, ; C2L2, 13,19, 38 ; C2L5:12,18
       - lots of demos
+- C3: Sept 14 production (orig September 16-24?)
 - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
   - Provide a heading for motivation: phrase
   - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
@@ -181,3 +172,44 @@ Notes:
         i.  Exercise 5: reuse your web server from Exercise 2 with a different minimum and maximum population and test
 - Review: Automation Drives Hybrid Cloud Applications
 - Project 4: Hybrid Cloud 3-Tier Web Application
+---
+- Today Update P2 deliverable doc:
+  - Download your blueprint from NTNX cluster to Frame desktop
+  - Compress to Zip archive with Windows File Explorer
+  - Download Zip archive to your laptop
+- Setup: Frame, SSH keys, Blueprint upload/download
+
+---
+The Udacity Workspace with Nutanix
+
+From the Udacity classroom, you will be able to perform exercises and work on course projects with a Nutanix AHV cluster.
+You will access the Nutanix cluster via a Virtual Desktop service called Nutanix Frame, which gives you a Windows 10 Desktop automatically configured to do the following:
+- Login to Windows, open Chrome web browser, and login to Prism Central web console
+- On the Windows desktop:
+  - Passwords.txt, which contains Prism Element and Prism Central address, administrator username, and passwords to your Nutanix cluster should your Prism session expire and you need to login via the web browser again. For new browser sessions, you may need to accept the self-signed security certificates when accessing Prism.
+  - A shortcut to your student Workspace, where you can save and load your credential and blueprint work.
+- C:\Scripts\ which has shell scripts for Calm tasks and cloud-init.txt for VM configuration.
+
+Both the Frame desktop and the Nutanix cluster live for four hours and then they are both destroyed, so you will see instructions to save your work, sometimes multiple times during an exercise.
+
+- You must save your work off the Nutanix cluster to the Udacity student workspace, the easiest way to navigate to it on the Frame desktop is via the Windows File Explorer with any of these equivalent paths:
+  - Quick access: **Desktop** then the **Workspace** shortcut
+  - This PC: **Desktop** then the **Workspace** shortcut
+  - This PC: Local Disk (C:), **cygwin64** folder, then the **workspace** folder
+  - C:\cygwin64\workspace\
+- Remember that saving any work on your Frame desktop outside of the Udacity student workspace will be lost when the Frame desktop session terminates!
+- If you need to pause or reload your web browser, Frame desktop sessions can be resumed most times without loss.
+- If Frame desktop is stuck on an expired or problematic Nutanix cluster or if you need more than four hours time to complete your work, you should:
+  - Download your work to the Udacity workspace
+  - On the lower left of Frame session: click the **Gear** icon to show a pop-up menu and choose: **Close session**
+  - This will terminate your Frame desktop and Nutanix cluster access.
+  - In the classroom, navigate to another portion of the lesson, then return to the lesson workspace to get a new Frame desktop and Nutanix cluster.
+
+Finally, I'm going to show you how to download a blueprint from your Nutanix cluster to the Frame virtual desktop to your student workspace. For the project submission, you'll need to
+- Download your blueprint from NTNX cluster to Frame desktop. Remember to not encrypt the blueprint!
+- Compress to Zip archive with Windows File Explorer
+- Download the Zip archive to your desktop or laptop
+- Browse to the Course Project submission concept and upload your blueprint Zip archive!
+
+This video will walk you through how to use the workspace environment you’ll be using for the majority of the course exercises and projects. We’ll show you how to save blueprint and SSH files to your local desktop, and then how to make use of them in future sessions.
+We can resume Frame sessions, but the Nutanix Frame cluster will expire four hours after the start of your sessions.
