@@ -8,6 +8,8 @@ https://classroom.udacity.com/nanodegrees/nd9991/parts/49ac1f4a-6345-4b9f-85dc-6
 Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
 
+https://github.com/nutanix-testdrive/entrypoint-calm/blob/master/entrypoint/specs/calm_environment.json
+
 C2 Labs:
 - L1:
   - 50:simulation:LDAP
@@ -22,7 +24,12 @@ C2 Labs:
 - L3:
   - 32:drop? Marketplace recap exercise
   - 70:Create a single VM blueprint
-Bug: UI timeout and no password file entry for PC
+Bug:
+- PC UI timeout
+- HybridCloudEngineer Project Environment: Cloud-init
+RFE:
+- Upload variables and scripts to library
+
 # Udacity Content
 - C2: all lesson walkthroughs 10-15,
   - Course Lessons headline intro/outro
