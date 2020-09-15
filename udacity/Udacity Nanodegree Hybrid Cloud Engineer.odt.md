@@ -10,6 +10,28 @@ https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/part
 ccdev = Curriculum and Certification Development:  Udacity    >    Course2    >    Scripts    >     CentOS-8-Scripts
 https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewid=7a4ffbff%2Dfb83%2D41c3%2Db800%2Dc5b1b6de7296&id=%2FBU%2FGEEFR%2FCCD%2FUdacity%2FCourse2%2FScripts%2FCentOS%2D8%2DScripts
 
+https://github.com/nutanix-testdrive/entrypoint-calm/blob/master/entrypoint/specs/calm_environment.json
+
+C2 Labs:
+- L1:
+  - 50:simulation:LDAP
+  - 60:drop RBAC exercise
+  - 84:drop PC project exercise
+  - 96:redo/defer:Image management/upload: what instructions? it has a demo video
+- L2:
+  - video: add vmware provider, calm project
+  - 25:Calm enablement simulation
+  - 37:done: SSH keypair
+  - Ed team exercise docL2: E3,4,5,6=create calm project,
+- L3:
+  - 32:drop? Marketplace recap exercise
+  - 70:Create a single VM blueprint
+Bug:
+- PC UI timeout
+- HybridCloudEngineer Project Environment: Cloud-init
+RFE:
+- Upload variables and scripts to library
+
 # Udacity Content
 - C2: all lesson walkthroughs 10-15,
   - Course Lessons headline intro/outro
@@ -185,7 +207,7 @@ Notes:
 - Setup: Frame, SSH keys, Blueprint upload/download
 
 ---
-The Udacity Workspace with Nutanix
+# The Udacity Classroom Workspace with Nutanix
 
 From the Udacity classroom, you will be able to perform exercises and work on course projects with a Nutanix AHV cluster.
 You will access the Nutanix cluster via a Virtual Desktop service called Nutanix Frame, which gives you a Windows 10 Desktop automatically configured to do the following:
@@ -212,9 +234,16 @@ Both the Frame desktop and the Nutanix cluster live for four hours and then they
 
 Finally, I'm going to show you how to download a blueprint from your Nutanix cluster to the Frame virtual desktop to your student workspace. For the project submission, you'll need to
 - Download your blueprint from NTNX cluster to Frame desktop. Remember to not encrypt the blueprint!
-- Compress to Zip archive with Windows File Explorer
-- Download the Zip archive to your desktop or laptop
-- Browse to the Course Project submission concept and upload your blueprint Zip archive!
+  - By default, this will save to: This PC: **Downloads** folder.
+  - Open Windows File Explorer, navigate to Quick access: **Downloads** folder.
+  - Right click on your blueprint JSON file, choose **Copy**
+  - Navigate to: Quick access: **Desktop** then the **Workspace** shortcut
+  - Right click anywhere in the blank area, choose **Paste** your file.
+  - Your blueprint file should be visible, right click on it and choose **Send to** and then **Compressed (zipped) folder**
+  - A new file ending in .zip will appear with the filename highlighted, accept the default name by clicking outside the file.
+  - Right click on the new file ending in .zip, choose **Download with Frame**
+- Your blueprint Zip archive will download to your desktop or laptop.
+- Browse to the Udacity Hybrid Cloud Engineering Classroom, Course Project submission page and upload your blueprint Zip archive!
 
 This video will walk you through how to use the workspace environment you’ll be using for the majority of the course exercises and projects. We’ll show you how to save blueprint and SSH files to your local desktop, and then how to make use of them in future sessions.
 We can resume Frame sessions, but the Nutanix Frame cluster will expire four hours after the start of your sessions.
