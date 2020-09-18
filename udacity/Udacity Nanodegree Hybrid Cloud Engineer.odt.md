@@ -7,50 +7,64 @@ Rick Gaston10:48 AM
 https://classroom.udacity.com/nanodegrees/nd9991/parts/49ac1f4a-6345-4b9f-85dc-6db637ba8c22/modules/b8fdb0eb-12d7-4db5-bda5-d021ea89d7cb/lessons/dcbda48c-aa97-4c42-bc33-ea235089492e/concepts/e5454cf7-5106-465f-be6f-bbf259f93b0f
 Michael Conway10:51 AM
 https://coco.udacity.com/nanodegrees/nd321-beta/locale/en-us/versions/1.0.0/parts/1018600/modules/1018601/lessons/1019374
-ccdev = Curriculum and Certification Development:  Udacity    >    Course2    >    Scripts    >     CentOS-8-Scripts
+ccdev = Curriculum and Certification Development:  Udacity > Course2 > Scripts > CentOS-8-Scripts
 https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewid=7a4ffbff%2Dfb83%2D41c3%2Db800%2Dc5b1b6de7296&id=%2FBU%2FGEEFR%2FCCD%2FUdacity%2FCourse2%2FScripts%2FCentOS%2D8%2DScripts
 
 https://github.com/nutanix-testdrive/entrypoint-calm/blob/master/entrypoint/specs/calm_environment.json
-
-C2 Labs:
-- L1:
-  - 50:simulation:LDAP
-  - 60:drop RBAC exercise
-  - 84:drop PC project exercise
-  - 96:redo/defer:Image management/upload: what instructions? it has a demo video
-- L2:
-  - video: add vmware provider, calm project
-  - 25:Calm enablement simulation
-  - 37:done: SSH keypair
-  - Ed team exercise docL2: E3,4,5,6=create calm project,
-- L3:
-  - 32:drop? Marketplace recap exercise
-  - 70:Create a single VM blueprint
 Bug:
-- PC UI timeout
-- HybridCloudEngineer Project Environment: Cloud-init
+- ClusterEndPoint: PC UI timeout
+- Frame: IAM.csv parse, create providers, add to HCE project+environment; obsolete JRH credential later
 RFE:
-- Upload variables and scripts to library
+- ClusterEndPoint: Upload variables and scripts to library
+- Frame: Login to Beam with UdacityStudentID%30 for 3 student/account concurrency in passwords.txt?
 
 # Udacity Content
+- C3: Sept 14 production starts
+  - Labs L1-4 https://docs.google.com/document/d/1hcrS5affqzffsDs-PxnK8lpIpxy_Tsg-VeYzMvBp70E/edit?ts=5f5a9c7d
+    - L3 E2 and 3 swap
+    - L1 E2 C:\Scripts\API\HTTP_Task_Response_Variables.txt added to https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewid=7a4ffbff%2Dfb83%2D41c3%2Db800%2Dc5b1b6de7296&id=%2FBU%2FGEEFR%2FCCD%2FUdacity%2FCourse3%2FScripts%2FAPI
+Variable: CLUSTER_UUID
+Path: $.entities[0].status.cluster_reference.uuid
+Variable: CLUSTER_NAME
+Path: $.entities[0].status.cluster_reference.name
+Variable: DEF_SUB_UUID
+Path: $.entities[0].metadata.uuid
+Variable: DEF_SUB_NAME
+Path: $.entities[0].status.name
+- C3 reshoot slides:
+    - L1 update Cloudbase-init -> SysPrep
+    - L3 comment (dev intiut vs big picture?)
+  - L4
+    - https://jira.nutanix.com/browse/BEAM-10430 demo creds
+    - GTS2020 https://nutanix.handsonworkshops.com/workshops/73114240-32b0-4999-b9c9-42bdc02dc5bb/view/beam_cost_governance/beam_cost_governance/
+  - Prep for recording:
+    - dress t-shirt, water
+    - Check light levels
+    - 18" ream from front of new desk for headshots
+- C2 Labs:
+  - L1:
+    - 50:simulation:LDAP
+    - 60:drop RBAC exercise
+    - 84:drop PC project exercise
+    - 96:redo/defer:Image management/upload: what instructions? it has a demo video
+  - L2:
+    - video: add vmware provider, calm project
+    - 25:Calm enablement simulation
+    - 37:done: SSH keypair
+    - Ed team exercise docL2: E3,4,5,6=create calm project,
+  - L3:
+    - 32:drop? Marketplace recap exercise
+    - 70:Create a single VM blueprint
 - C2: all lesson walkthroughs 10-15,
   - Course Lessons headline intro/outro
   - C2 Proj change for DB+learning object review
   - Word to Ghostwriter to Markdown # tables blocked?
   - C2L2: re-record S23, macro pill
-  - Rick out Labor day.
-- Prep for recording:
-  - dress t-shirt, water
-  - Check light levels
-  - 18" ream from front of new desk for headshots
   - C2L3: Creating and Publishing a Single VM Blueprint
     - Slides:
       - 27, 55: breakup/reorg
       - big pic/DYI redo with slide images from C2L1: 14, 29, 34, ; C2L2, 13,19, 38 ; C2L5:12,18
       - lots of demos
-- C3: Sept 14 production (orig September 16-24?)
-  - C3L3 E2 and 3 swap
-  - C3LabsL1-4 https://docs.google.com/document/d/1hcrS5affqzffsDs-PxnK8lpIpxy_Tsg-VeYzMvBp70E/edit?ts=5f5a9c7d
 
 - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
   - Provide a heading for motivation: phrase
