@@ -6,6 +6,7 @@ OK_PREFIX="[OK]"
 INFO_PREFIX="[INFO]"
 PASS_PREFIX="[PASS]"
 FAIL_PREFIX="[FAIL]"
+LINE_BREAK="----------------------------------------"
 
 echo ""
 echo "$INFO_PREFIX Evaluation script started at `date`"
@@ -28,7 +29,7 @@ do
 	fi
 done
 
-echo "$INFO_PREFIX Enviroment OK."
+echo "$INFO_PREFIX Environment OK."
 
 # function used to display script usage help, when required
 function show_help {
@@ -41,9 +42,67 @@ function show_help {
 	echo "  -b  Blueprint name to evaluate"
 	echo "  -c  Evaluation criteria file to use for comparison"
 	echo ""
-	echo "Example: eval.bash -d ~/blueprints -b blueprint1"
+	echo "Note:"
+	echo "  -b  value can be \"all\", to batch process all JSON blueprints in the specified directory"
+	echo ""
+	echo "Examples:"
+	echo "  eval.bash -c eval.json -d ~/blueprints -b blueprint1"
+	echo "  eval.bash -c eval.json -d . -b all"
 	echo ""
 	exit
+}
+function process_json() {
+	echo $LINE_BREAK
+	# with the blueprint directory found and a blueprint specified, concatenate to make future work easier
+	BP_FULL="$BLUEPRINT_DIRECTORY/$1"
+	# verify the specified blueprint exists
+	if [ ! -f "$BP_FULL" ]
+	then
+		echo "$ERROR_PREFIX $1 not found.  Please specify a valid blueprint by using the -d and -b arguments."
+		show_help
+		exit
+	else
+		echo "$OK_PREFIX $1 found.  Continuing."
+	fi
+	# verify the blueprint is valid
+	# at this point the blueprint directory and blueprint itself have been found in the user-specified locations
+	calm decompile bp --file "$BP_FULL" > /tmp/null 2>&1
+	COMPILE_RESULT=$?
+	if [ ! "$COMPILE_RESULT" == "0" ]
+	then
+		echo "$ERROR_PREFIX The specified blueprint cannot be decompiled.  Please ensure the blueprint contains valid JSON."
+		exit
+	else
+		echo "$OK_PREFIX Blueprint decompiled successfully.  Continuing."
+	fi
+
+	# read the evaluation criteria from the supplied evaluation file
+	JSON_CRITERIA="`cat ${CRITERIA_FILE}`"
+
+	echo ""
+	echo "$INFO_PREFIX Starting evaluation of $BP_FULL."
+	echo ""
+
+	# go over each of the criteria keys in the evaluation file
+	# compare each key's 'expected' value to that key's value in the student's JSON blueprint
+	for row in $(echo "${JSON_CRITERIA}" | jq -r '.criteria[] | @base64')
+	do
+		KEY=`echo ${row} | base64 -d | jq -r '.key'`
+		DESCRIPTION=`echo ${row} | base64 -d | jq -r '.description'`
+		EXPECTED_VALUE=`echo ${row} | base64 -d | jq -r '.expected'`
+		KEY_VALUE=`cat "$BP_FULL" | jq -r "$KEY | length"`
+		# do the comparison
+		if [ "$EXPECTED_VALUE" == "$KEY_VALUE" ]
+		then
+			echo "$PASS_PREFIX ${DESCRIPTION} | Expected ${EXPECTED_VALUE} | Found ${KEY_VALUE}"
+		else
+			echo "$FAIL_PREFIX ${DESCRIPTION} | Expected ${EXPECTED_VALUE} | Found ${KEY_VALUE}"
+		fi
+	done
+
+	echo ""
+	echo "$INFO_PREFIX Evaluation of $BP_FULL completed.  Please see results above."
+	echo ""
 }
 
 # verify the required command-line parameters i.e. the BP directory and the BP we want to work with
@@ -100,58 +159,27 @@ else
         exit
 fi
 
-# with the blueprint directory found and a blueprint specified, concatenate to make future work easier
-BP_FULL="$BLUEPRINT_DIRECTORY/$BLUEPRINT"
-
-# verify the specified blueprint exists
-if [ ! -f "$BP_FULL" ]
+# check to see if the user has indicated they want to parse all blueprints in the specified blueprint directory
+if [ "$BLUEPRINT" == "all" ]
 then
-	echo "$ERROR_PREFIX Specified blueprint not found.  Please specify a valid blueprint by using the -d and -b arguments."
-	show_help
-	exit
+	echo "$INFO_PREFIX All JSON blueprints in $BLUEPRINT_DIRECTORY will be processed."
+	echo ""
+	# go over all JSON files in the specified blueprint directory
+	for BP_JSON_FILE in *.json
+	do
+		# only process the current JSON file if it is not the specified evaluation criteria file
+		if [[ ! "$BP_JSON_FILE" == *"$CRITERIA_FILE"* ]]
+		then
+			process_json $BP_JSON_FILE
+		fi
+	done
 else
-	echo "$OK_PREFIX Specified blueprint found.  Continuing."
+	echo "$INFO_PREFIX Only $BLUEPRINT in $BLUEPRINT_DIRECTORY will be processed."
+	echo ""
+	process_json $BLUEPRINT
 fi
 
-# verify the blueprint is valid
-# at this point the blueprint directory and blueprint itself have been found in the user-specified locations
-calm decompile bp --file "$BP_FULL" > /tmp/null 2>&1
-COMPILE_RESULT=$?
-if [ ! "$COMPILE_RESULT" == "0" ]
-then
-	echo "$ERROR_PREFIX The specified blueprint cannot be decompiled.  Please ensure the blueprint contains valid JSON."
-	exit
-else
-	echo "$OK_PREFIX Blueprint decompiled successfully.  Continuing."
-fi
-
-# read the evaluation criteria from the supplied evaluation file
-JSON_CRITERIA="`cat ${CRITERIA_FILE}`"
-
-echo ""
-echo "$INFO_PREFIX Starting evaluation of $BP_FULL."
-echo ""
-
-# go over each of the criteria keys in the evaluation file
-# compare each key's 'expected' value to that key's value in the student's JSON blueprint
-for row in $(echo "${JSON_CRITERIA}" | jq -r '.criteria[] | @base64')
-do
-        KEY=`echo ${row} | base64 -d | jq -r '.key'`
-	DESCRIPTION=`echo ${row} | base64 -d | jq -r '.description'`
-	EXPECTED_VALUE=`echo ${row} | base64 -d | jq -r '.expected'`
-	KEY_VALUE=`cat "$BP_FULL" | jq -r "$KEY | length"`
-	# do the comparison
-	if [ "$EXPECTED_VALUE" == "$KEY_VALUE" ]
-	then
-		echo "$PASS_PREFIX ${DESCRIPTION} | Expected ${EXPECTED_VALUE} | Found ${KEY_VALUE}"
-	else
-		echo "$FAIL_PREFIX ${DESCRIPTION} | Expected ${EXPECTED_VALUE} | Found ${KEY_VALUE}"
-	fi
-done
-
-echo ""
-echo "$INFO_PREFIX Evaluation of $BP_FULL completed.  Please see results above."
-echo ""
+echo $LINE_BREAK
 
 # cleanup
 echo "$INFO_PREFIX Cleaning up."
