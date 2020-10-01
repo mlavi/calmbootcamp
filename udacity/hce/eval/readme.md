@@ -5,9 +5,8 @@ Please use this script to evaluate student blueprints.
 Workflow:
 
 - Clone this repo
-- Obtain exported Nutanix Calm blueprint.
-
-  This blueprint must be exported from the Nutanix Calm UI and not decompiled using the Calm DSL.
+- Obtain exported Nutanix Calm blueprint(s).
+- The blueprints to be evaluated must be exported from the Nutanix Calm UI and not decompiled using the Calm DSL (the JSON output is different between each method).
 
 ## Script Usage
 
