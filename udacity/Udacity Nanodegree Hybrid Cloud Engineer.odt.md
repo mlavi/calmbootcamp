@@ -19,6 +19,7 @@ RFE:
 - Frame: Login to Beam with UdacityStudentID%30 for 3 student/account concurrency in passwords.txt?
 
 # Udacity Content
+- C2 - L4 “Creating a Multi-VM Blueprint” L4 slide 32-42
 - C3: Sept 14 production starts
   - Labs L1-4 https://docs.google.com/document/d/1hcrS5affqzffsDs-PxnK8lpIpxy_Tsg-VeYzMvBp70E/edit?ts=5f5a9c7d
     - L3 E2 and 3 swap
