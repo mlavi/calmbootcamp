@@ -13,6 +13,7 @@ https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewi
 https://github.com/nutanix-testdrive/entrypoint-calm/blob/master/entrypoint/specs/calm_environment.json
 
 # Udacity Content
+- C2L2 ~atom 62 Calm Projects walkthrough doesn't seem right
 - C3: Sept 14 production starts
   - MARK: P2&3 eval tool to @KenT from @ChrisR
 - Production Order:
