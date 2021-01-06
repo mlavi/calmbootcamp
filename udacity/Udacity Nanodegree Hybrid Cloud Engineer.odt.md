@@ -11,36 +11,122 @@ ccdev = Curriculum and Certification Development:  Udacity > Course2 > Scripts >
 https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewid=7a4ffbff%2Dfb83%2D41c3%2Db800%2Dc5b1b6de7296&id=%2FBU%2FGEEFR%2FCCD%2FUdacity%2FCourse2%2FScripts%2FCentOS%2D8%2DScripts
 
 https://github.com/nutanix-testdrive/entrypoint-calm/blob/master/entrypoint/specs/calm_environment.json
-Bug:
-- ClusterEndPoint: PC UI timeout
-- Frame: IAM.csv parse, create providers, add to HCE project+environment; obsolete JRH credential later
-RFE:
-- ClusterEndPoint: Upload variables and scripts to library
-- Frame: Login to Beam with UdacityStudentID%30 for 3 student/account concurrency in passwords.txt?
 
 # Udacity Content
 - C3: Sept 14 production starts
-  - Labs L1-4 https://docs.google.com/document/d/1hcrS5affqzffsDs-PxnK8lpIpxy_Tsg-VeYzMvBp70E/edit?ts=5f5a9c7d
-    - L3 E2 and 3 swap
-    - L1 E2 C:\Scripts\API\HTTP_Task_Response_Variables.txt added to https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewid=7a4ffbff%2Dfb83%2D41c3%2Db800%2Dc5b1b6de7296&id=%2FBU%2FGEEFR%2FCCD%2FUdacity%2FCourse3%2FScripts%2FAPI
-Variable: CLUSTER_UUID
-Path: $.entities[0].status.cluster_reference.uuid
-Variable: CLUSTER_NAME
-Path: $.entities[0].status.cluster_reference.name
-Variable: DEF_SUB_UUID
-Path: $.entities[0].metadata.uuid
-Variable: DEF_SUB_NAME
-Path: $.entities[0].status.name
-- C3 reshoot slides:
-    - L1 update Cloudbase-init -> SysPrep
-    - L3 comment (dev intiut vs big picture?)
-  - L4
-    - https://jira.nutanix.com/browse/BEAM-10430 demo creds
-    - GTS2020 https://nutanix.handsonworkshops.com/workshops/73114240-32b0-4999-b9c9-42bdc02dc5bb/view/beam_cost_governance/beam_cost_governance/
+  - MARK: P2&3 eval tool to @KenT from @ChrisR
+- Production Order:
   - Prep for recording:
     - dress t-shirt, water
     - Check light levels
     - 18" ream from front of new desk for headshots
+    - Teleprompter?
+      - https://cueprompter.com/
+      - https://zacue.com/
+  - C3 reshoot slides:
+    - Done? L1 update Cloudbase-init -> SysPrep
+    - L3 comment (dev intuit vs big picture?)
+  - C3 exercises
+    - RFE:
+      - L2?,3: AWS automation, Frame: IAM.csv parse, create providers, add to HCE project+environment; obsolete JRH credential later
+      - L4: Frame: hce{4-30}-beam@udacity.com accounts, we'll need to figure out how to distribute students across ~30 Beam logins.
+        - Login to Beam with UdacityStudentID%30 for 3 student/account concurrency in passwords.txt?
+      - ClusterEndPoint: PC UI timeout
+      - ClusterEndPoint: Upload variables and scripts to library
+      - ClusterPool: 10 minute unhibernate reservation button?
+    - MARK:L1 E2 fixes + BUG:out of memory
+     C:\Scripts\API\HTTP_Task_Response_Variables.txt added to https://nutanixinc.sharepoint.com/BU/GEEFR/CCD/Udacity/Forms/AllItems.aspx?viewid=7a4ffbff%2Dfb83%2D41c3%2Db800%2Dc5b1b6de7296&id=%2FBU%2FGEEFR%2FCCD%2FUdacity%2FCourse3%2FScripts%2FAPI
+      Variable: CLUSTER_UUID
+      Path: $.entities[0].status.cluster_reference.uuid
+      Variable: CLUSTER_NAME
+      Path: $.entities[0].status.cluster_reference.name
+      Variable: DEF_SUB_UUID
+      Path: $.entities[0].metadata.uuid
+      Variable: DEF_SUB_NAME
+      Path: $.entities[0].status.name
+    - MARK: L1 E3 Development
+    - L3 E2 and 3 swap
+    - L4 E* ready to go
+      - https://jira.nutanix.com/browse/BEAM-10430 demo creds
+      - GTS2020 https://nutanix.handsonworkshops.com/workshops/73114240-32b0-4999-b9c9-42bdc02dc5bb/view/beam_cost_governance/beam_cost_governance/
+    - Labs L1-4 https://docs.google.com/document/d/1hcrS5affqzffsDs-PxnK8lpIpxy_Tsg-VeYzMvBp70E/edit?ts=5f5a9c7d
+  - C3 headshots
+  - C2L0 slides (and review from Udacity) Vid, Quizzes, half done (end of week)
+---
+- Transcript:
+
+01:27
+this course is aimed at anybody who is trying to further their career
+in adopting cloud skills and advancing automation skills.
+this has become essential for everyone in it and operations
+but also in development and test automation is quintessential everywhere
+and deploying it on public and private
+clouds is also essential
+this is the future indisputably
+everybody in the planet
+is trying to get this even the people
+who are trying to do it just for one
+side or the other side
+in order to be able to automate and run
+business the most efficient manner
+possible you need automation and you
+need to be able to drive it
+to any hybrid cloud
+
+02:14
+one thing is that we can do one click easy automation
+imagine having an apple app store or google play store for enterprise
+applications
+such as sap hana or large e-commerce websites or hr systems all of these can
+become one click that's what we can do with one click automation
+
+02:42
+well the field of hybrid cloud
+engineering is still
+very new and that's what is most
+rewarding and exciting about it
+it's that we're trying to conquer
+problems that have
+only started to exist in the last 10
+years or less
+and it is new for just about everybody
+on the planet with very rare exceptions
+and even the people who are leading
+hybrid cloud engineering on the planet
+need more hybrid cloud engineers
+and they're trying to bring it to more
+parts of their business so
+really it is a nascent field for these
+skill sets right now globally
+
+03:21
+so there's really two sides of the
+equation but
+keep looking there's multiple doorways
+to enter into any business
+or organization that requires these
+skills the first door or first side of the
+equation is software development and test
+they need to automate and deploy their software and maintain their software
+everywhere aws cto werner vogel
+is most famous for saying you build it you run it
+and this is true for all developers so now
+you can't just write things and make them run on your laptop
+we need automation engineers in development to help testing
+and help building and help deployment work properly
+correspondingly the other half of this equation is it and operations
+teams they need to keep these systems up
+and running they need to automate
+how to build everything how to test
+everything how to deploy everything
+because they are the underpinnings of
+infrastructure and operations of build, of test
+and ultimately of production for customers
+how do you deploy so the reality
+is that these skill sets are essential
+and will get you in on almost any door that you knock down
+
+---
 - C2 Labs:
   - L1:
     - 50:simulation:LDAP
@@ -65,7 +151,7 @@ Path: $.entities[0].status.name
       - 27, 55: breakup/reorg
       - big pic/DYI redo with slide images from C2L1: 14, 29, 34, ; C2L2, 13,19, 38 ; C2L5:12,18
       - lots of demos
-
+---
 - Big Picture = visuals for conceptual understanding (flow chart, Venn diagram, etc.), edge cases/special context, glossary
   - Provide a heading for motivation: phrase
   - Explain and use visuals to convey the motivation about the fundamental topics. Motivate them on what they will be able to do!
